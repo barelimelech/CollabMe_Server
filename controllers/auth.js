@@ -11,11 +11,11 @@ const sendError = (res,code,msg)=>{
 }
 
 const register = async (req, res) => {
-    const email = req.body.email
-    const password = req.body.password
+    const username = req.body.Username
+    const password = req.body.Password
 
     try{
-        const exists = await User.findOne({'email' : email})
+        const exists = await User.findOne({'Username' : username})
         if (exists != null){
             return res.status(400).send({
                 'status': 'fail',
@@ -26,8 +26,8 @@ const register = async (req, res) => {
         const hashPwd = await bcrypt.hash(password,salt)
 
         const user = User({
-            'email' : email,
-            'password': hashPwd
+            'Username' : username,
+            'Password': hashPwd
         })
         newUser = await user.save();
         res.status(200).send(newUser)
@@ -42,16 +42,16 @@ const register = async (req, res) => {
 
 
 const login = async (req, res) => {
-    const email = req.body.email
-    const password = req.body.password
-    if (email == null || password == null) return sendError(res,400,'wrong email or password')
+    const username = req.body.Username
+    const password = req.body.Password
+    if (username == null || password == null) return sendError(res,400,'wrong username or password')
     
     try{
-        const user = await User.findOne({'email' : email })
-        if (user == null) return sendError(res,400,'wrong email or password')
+        const user = await User.findOne({'Username' : username })
+        if (user == null) return sendError(res,400,'wrong username or password')
 
-        const match = await bcrypt.compare(password, user.password)
-        if (!match) return sendError(res,400,'wrong email or password')
+        const match = await bcrypt.compare(password, user.Password)
+        if (!match) return sendError(res,400,'wrong username or password')
 
         const accessToken = await jwt.sign(
             {'id':user._id},

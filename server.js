@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
-console.log("hello");
+
 
 if (process.env.NODE_ENV == "development") {
     const swaggerUI = require("swagger-ui-express")
@@ -37,8 +37,8 @@ const port = process.env.PORT
 const indexRouter = require('./routes/index')
 app.use('/',indexRouter)
 
-const postRouter = require('./routes/post_routes')
-app.use('/post',postRouter)
+const offerRouter = require('./routes/offers_routes')
+app.use('/offer',offerRouter)
 
 const authRouter = require('./routes/auth_routes')
 app.use('/auth',authRouter)
