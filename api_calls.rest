@@ -30,7 +30,7 @@ Content-Type: application/json
         "IdOffer" :1,
         "Status":"now",
         "Proffesion": ["sport"],  
-        "User":{"Username":"hello","Password":"12345678"},      
+        "User":"62277413fe8636f7c2c9aff2",      
         "IntrestedVerify":false
 }
 

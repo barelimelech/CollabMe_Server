@@ -31,11 +31,11 @@ const offerSchema = new mongoose.Schema({
         required: false
     },
     User: {
-        type: mongoose.Schema.Types.ObjectId, ref: 'User',
+        type: mongoose.Schema.Types.ObjectId, ref: 'users',
         required: true
     },
     // Users: {
-    //     type: Array,
+    //     type: mongoose.Schema.Types.ObjectId, ref: 'users',
     //     required: true
     // },
     IntrestedVerify: {
@@ -48,5 +48,4 @@ const offerSchema = new mongoose.Schema({
 
   
 })
-
 module.exports = mongoose.model('Offer', offerSchema)
