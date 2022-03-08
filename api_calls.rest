@@ -9,7 +9,7 @@ GET http://localhost:4000/
 
 
 GET http://localhost:4000/offer
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjc3MTEyZmY1ZDk1M2YzMDQxNDVmZSIsImlhdCI6MTY0Njc1MzUwNiwiZXhwIjoxNjQ2NzU3MTA2fQ.Xsd9uQHAIo02jEjWl04YJWX8dGOBj9LtTL66qr510Wk
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjc4MmVhZThkYjAxMjU3MTY5NmNhOCIsImlhdCI6MTY0Njc1Njg4NiwiZXhwIjoxNjQ2NzYwNDg2fQ.mNSdMm5BvXxJwSPJNWxvqEpVVLirY9ib6FCJT06pJa8
 ###
 
 
@@ -19,12 +19,19 @@ GET http://localhost:4000/offer/620d3347abfb42d96325fcc5
 
 
 POST http://localhost:4000/offer
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjc3MTEyZmY1ZDk1M2YzMDQxNDVmZSIsImlhdCI6MTY0Njc1MzUwNiwiZXhwIjoxNjQ2NzU3MTA2fQ.Xsd9uQHAIo02jEjWl04YJWX8dGOBj9LtTL66qr510Wk
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjc4MmVhZThkYjAxMjU3MTY5NmNhOCIsImlhdCI6MTY0Njc1Njg4NiwiZXhwIjoxNjQ2NzYwNDg2fQ.mNSdMm5BvXxJwSPJNWxvqEpVVLirY9ib6FCJT06pJa8
 Content-Type: application/json
 
 {
-    "message" : "this is my authorized new offer",
-    "sender" : "Yossi"
+        "Description":"hi",   
+        "HeadLine":"hello" ,
+        "Price" :10,
+        "Coupon":"free dinner",
+        "IdOffer" :1,
+        "Status":"now",
+        "Proffesion": ["sport"],  
+        "User":{"Username":"hello","Password":"12345678"},      
+        "IntrestedVerify":false
 }
 
 ###
@@ -34,7 +41,7 @@ POST http://localhost:4000/auth/register
 Content-Type: application/json
 
 {
-    "Username": "yossi5",       
+    "Username": "yossi6",       
     "Password":"5566", 
     "Sex":"undefind",
     "Age":28, 
@@ -53,7 +60,7 @@ POST http://localhost:4000/auth/login
 Content-Type: application/json
 
 {
-    "Username" : "yossi",
+    "Username" : "yossi6",
     "Password" : "5566"
 }
 

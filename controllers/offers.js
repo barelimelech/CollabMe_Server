@@ -26,11 +26,30 @@ const getOfferById = async (req, res) => {
 
 const addNewOffer = (req, res) => {
     console.log('addNewOffer ' + req.body.message)
-    sender = req.user.id
+    const description = req.body.Description;
+     
+    const headLine =req.body.HeadLine;
+    const price = req.body.Price;
+    const coupon =  req.body.Coupon;
+    const idOffer = req.body.IdOffer;
+     const status =  req.body.Status;
+     const proffesion =  req.body.Proffesion;
+     const user =  req.body.User;
+     //const users =  req.body.Users;
+     const intrestedVerify =  req.body.IntrestedVerify;
+    
 
     const offer = Offer({
-        message: req.body.message,
-        sender: sender
+        Description:description,
+        HeadLine:headLine ,
+        Price :price,
+        Coupon:coupon,
+        IdOffer :idOffer,
+        Status: status,
+        Proffesion: proffesion,
+        User:user,
+        //Users: users,
+        IntrestedVerify:intrestedVerify,
     })
 
     offer.save((error, newOffer) => {
