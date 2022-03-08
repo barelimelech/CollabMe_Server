@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
-var hello;
+console.log("hello");
 
 if (process.env.NODE_ENV == "development") {
     const swaggerUI = require("swagger-ui-express")
