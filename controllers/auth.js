@@ -13,6 +13,16 @@ const sendError = (res,code,msg)=>{
 const register = async (req, res) => {
     const username = req.body.Username
     const password = req.body.Password
+    const sex = req.body.Sex
+    const age = req.body.Age
+    const platform = req.body.Platform
+    const followers = req.body.Password
+    const profession = req.body.Profession
+    const numOfPosts = req.body.NumberOfPosts
+    const company = req.body.Company
+    const influencer= req.body.Influencer
+
+
 
     try{
         const exists = await User.findOne({'Username' : username})
@@ -27,7 +37,15 @@ const register = async (req, res) => {
 
         const user = User({
             'Username' : username,
-            'Password': hashPwd
+            'Password': hashPwd,
+            "Sex":sex,
+            "Age":age, 
+            "Followers":followers,
+            "Profession":profession,
+            "Platform":platform, 
+            "NumberOfPosts":numOfPosts,
+            "Company":company,
+            "Influencer":influencer 
         })
         newUser = await user.save();
         res.status(200).send(newUser)

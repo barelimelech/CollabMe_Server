@@ -1,9 +1,9 @@
-const Post = require('../models/offer_model')
+const Offer = require('../models/offer_model')
 
-const getPosts = async (req, res) => {
+const getOffers = async (req, res) => {
     try {
-        posts = await Post.find()
-        res.status(200).send(posts)
+        offers = await Offer.find()
+        res.status(200).send(offers)
     } catch (err) {
         res.status(400).send({
             'status': 'fail',
@@ -12,10 +12,10 @@ const getPosts = async (req, res) => {
     }
 }
 
-const getPostById = async (req, res) => {
+const getOfferById = async (req, res) => {
     try {
-        posts = await Post.findById(req.params.id)
-        res.status(200).send(posts)
+        offers = await Offer.findById(req.params.id)
+        res.status(200).send(offers)
     } catch (err) {
         res.status(400).send({
             'status': 'fail',
@@ -24,29 +24,29 @@ const getPostById = async (req, res) => {
     }
 }
 
-const addNewPost = (req, res) => {
-    console.log('addNewPost ' + req.body.message)
+const addNewOffer = (req, res) => {
+    console.log('addNewOffer ' + req.body.message)
     sender = req.user.id
 
-    const post = Post({
+    const offer = Offer({
         message: req.body.message,
         sender: sender
     })
 
-    post.save((error, newPost) => {
+    offer.save((error, newOffer) => {
         if (error) {
             res.status(400).send({
                 'status': 'fail',
                 'error': error.message
             })
         } else {
-            res.status(200).send(newPost)
+            res.status(200).send(newOffer)
         }
     })
 }
 
 module.exports = {
-    getPosts,
-    getPostById,
-    addNewPost
+    getOffers,
+    getOfferById,
+    addNewOffer
 }

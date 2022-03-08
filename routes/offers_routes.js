@@ -1,21 +1,21 @@
 const express = require('express')
 const router = express.Router()
 
-const Post = require('../controllers/posts')
+const Offer = require('../controllers/offers')
 const authenticate = require('../common/auth_middleware')
 
 /**
 * @swagger
 * tags:
-*   name: Post Api
-*   description: The Post API
+*   name: Offer Api
+*   description: The Offer API
 */
 
 /**
 * @swagger
 * components:
 *   schemas:
-*     Post:
+*     Offer:
 *       type: object
 *       required:
 *         - message
@@ -23,10 +23,10 @@ const authenticate = require('../common/auth_middleware')
 *       properties:
 *         message:
 *           type: string
-*           description: The post text 
+*           description: The offer text 
 *         sender:
 *           type: string
-*           description: The user who send the post id
+*           description: The user who send the offer id
 *       example:
 *         message: 'this is swagger test message'
 *         sender: '123456'
@@ -35,65 +35,65 @@ const authenticate = require('../common/auth_middleware')
 
 /**
 * @swagger
-* /post:
+* /Offer:
 *   get:
-*     summary: get all posts
-*     tags: [Post Api]
+*     summary: get all offers
+*     tags: [Offer Api]
 *     responses:
 *       200:
-*         description: The posts list
+*         description: The offers list
 *         content:
 *           application/json:
 *             schema:
 *               type: array
 *               items:
-*                 $ref: '#/components/schemas/Post'
+*                 $ref: '#/components/schemas/Offer'
 */
-router.get('/', authenticate, Post.getPosts)
+router.get('/', authenticate, Offer.getOffers)
 
 /**
 * @swagger
-* /post/{id}:
+* /offer/{id}:
 *   get:
-*     summary: get all posts
-*     tags: [Post Api]
+*     summary: get all offers
+*     tags: [Offer Api]
 *     parameters:
 *       - in: path
 *         name: id
 *         schema:
 *           type: string
 *         required: true
-*         description: The post id
+*         description: The offer id
 *     responses:
 *       200:
-*         description: The posts list
+*         description: The offers list
 *         content:
 *           application/json:
 *             schema:
-*               $ref: '#/components/schemas/Post'
+*               $ref: '#/components/schemas/Offer'
 */
-router.get('/:id', authenticate, Post.getPostById)
+router.get('/:id', authenticate, Offer.getOfferById)
 
 /**
 * @swagger
-* /post:
-*   post:
-*     summary: add new post
-*     tags: [Post Api]
+* /offer:
+*   offer:
+*     summary: add new offer
+*     tags: [Offer Api]
 *     requestBody:
 *       required: true
 *       content:
 *         application/json:
 *           schema:
-*             $ref: '#/components/schemas/Post'
+*             $ref: '#/components/schemas/Offer'
 *     responses:
 *       200:
-*         description: The posts list
+*         description: The offers list
 *         content:
 *           application/json:
 *             schema:
-*               $ref: '#/components/schemas/Post'
+*               $ref: '#/components/schemas/Offer'
 */
-router.post('/', authenticate, Post.addNewPost)
+router.post('/', authenticate, Offer.addNewOffer)
 
 module.exports = router

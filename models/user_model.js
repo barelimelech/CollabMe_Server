@@ -21,11 +21,11 @@ const userSchema = new mongoose.Schema({
         type: Number,
         required: false
     },
-    Proffesion: {
+    Profession :{
         type: Array,
         required: false
     },
-    Platforem: {
+    Platform :{
         type: Array,
         required: false
     },
