@@ -33,6 +33,7 @@ afterAll(done=>{
 
 describe('Testing Offer API',()=>{
     let accessToken = ''
+    let accsessOriginal='';
     let userId = ''
 
     test('test registration',async ()=>{
@@ -61,8 +62,22 @@ describe('Testing Offer API',()=>{
         })
         expect(response.statusCode).toEqual(200)
         accessToken = response.body.accessToken
+        accsessOriginal=response.body.accessToken;
     })
 
+
+    let newAccessToken = '';
+    let newRefreshToken = '';
+    
+        test("Authorized access", async () => {
+            const response = await request(app).get('/offer').set({ authorization: 'JWT ' + accessToken })
+            expect(response.statusCode).toEqual(200);
+        });
+        test("UnAuthorized access", async () => {
+            wrongToken = accsessOriginal.replace(10, accsessOriginal [10] + 1)
+            const response = await request(app).get("/offer").set({authorization : 'JWT' + wrongToken })
+            expect(response.statusCode).not.toEqual(200);
+        });
     
 
     test('offer get',async ()=>{
