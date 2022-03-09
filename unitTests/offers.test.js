@@ -29,7 +29,7 @@ describe('Testing Offer API',()=>{
 
     test('test registration',async ()=>{
         const response = await request(app).post('/auth/register').send({
-            'Usaername' : username,
+            'Username' : username,
             'Password':pwd
         })
         expect(response.statusCode).toEqual(200)
@@ -38,7 +38,7 @@ describe('Testing Offer API',()=>{
 
     test('test login',async ()=>{
         const response = await request(app).post('/auth/login').send({
-            'Usaername' : username,
+            'Username' : username,
             'Password':pwd
         })
         expect(response.statusCode).toEqual(200)

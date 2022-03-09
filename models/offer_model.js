@@ -26,7 +26,7 @@ const offerSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    Proffesion: {
+    Profession: {
         type: Array,
         required: false
     },

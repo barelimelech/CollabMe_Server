@@ -33,7 +33,7 @@ const addNewOffer = (req, res) => {
     const coupon =  req.body.Coupon;
     const idOffer = req.body.IdOffer;
      const status =  req.body.Status;
-     const proffesion =  req.body.Proffesion;
+     const profession =  req.body.Profession;
      const user =  req.body.User;
      //const users =  req.body.Users;
      const intrestedVerify =  req.body.IntrestedVerify;
@@ -46,7 +46,7 @@ const addNewOffer = (req, res) => {
         Coupon:coupon,
         IdOffer :idOffer,
         Status: status,
-        Proffesion: proffesion,
+        Profession: profession,
         User:user,
         //Users: users,
         IntrestedVerify:intrestedVerify,
