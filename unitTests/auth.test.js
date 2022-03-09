@@ -4,8 +4,8 @@ const mongoosse = require('mongoose')
 const { response } = require('../server')
 const User = require('../models/user_model')
 
-const username = 'test@a.com'
-const pwd = '123456'
+const username = 'yossi10'
+const pwd = '5566'
 
 beforeAll(done=>{
     User.remove({'Username' : username}, (err)=>{
@@ -26,7 +26,16 @@ describe('Testing Auth API',()=>{
     test('test registration',async ()=>{
         const response = await request(app).post('/auth/register').send({
             'Username' : username,
-            'Password':pwd
+            'Password':pwd,
+            "Sex":"undefind",
+            "Age":28, 
+            "Followers":10,
+             "Profession":["Art","Sport"],
+            "Platform":["instagram","youtube"], 
+             "NumberOfPosts":20,
+             "Company":false,
+            "Influencer":true 
+
         })
         expect(response.statusCode).toEqual(200)
     })
@@ -37,6 +46,23 @@ describe('Testing Auth API',()=>{
             'Password':pwd
         })
         expect(response.statusCode).toEqual(200)
+        accessToken = response.body.accessToken
+
+       
     })
+
+    /*
+    test('test refreshToken',async ()=>{
+        const response = await request(app).post('/auth/refreshToken').set({ authorization: 'JWT ' + accessToken })
+        console.log(response);
+        expect(response.statusCode).toEqual(200)
+    })
+    test('test logout',async ()=>{
+        const response = await request(app).post('/auth/logout').set({ authorization: 'JWT ' + accessToken })
+        expect(response.statusCode).toEqual(200)
+    })
+    */
+
+
    
 })
