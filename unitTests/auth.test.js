@@ -47,16 +47,30 @@ describe('Testing Auth API',()=>{
         })
         expect(response.statusCode).toEqual(200)
         accessToken = response.body.accessToken
+        refreshToken =  response.body.refreshToken
+        console.log(refreshToken);
+
 
        
     })
 
+      jest.setTimeout(30000);
+        test("timeout access", async()=>{
+             await new Promise(r => setTimeout(r, 3*1000 ));
+             const response = await request(app).get("/post").set({authorization : 'JWT' + accessToken})
+            expect(response.statusCode).not.toEqual(200);
+        });
+        
+        test("Refresh Token", async () => {
+            const response = await request(app).get("/auth/refreshToken").set({authorization : 'JWT ' + refreshToken})
+            expect (response.statusCode).toEqual(200);
+            newAccessToken = response.body.accessToken
+            newRefreshToken = response.body.refreshToken
+            expect (newAccessToken).not.toEqual(null);
+            expect(newRefreshToken).not.toEqual(null);
+        });
+
     /*
-    test('test refreshToken',async ()=>{
-        const response = await request(app).post('/auth/refreshToken').set({ authorization: 'JWT ' + accessToken })
-        console.log(response);
-        expect(response.statusCode).toEqual(200)
-    })
     test('test logout',async ()=>{
         const response = await request(app).post('/auth/logout').set({ authorization: 'JWT ' + accessToken })
         expect(response.statusCode).toEqual(200)
