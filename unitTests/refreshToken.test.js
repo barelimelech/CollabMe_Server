@@ -3,9 +3,9 @@ const request = require('supertest')
 const mongoosse = require('mongoose')
 const { response } = require('../server')
 const User = require('../models/user_model')
-const { refreshToken } = require('../controllers/auth')
-let refreshToken1;
 
+
+var refreshToken1;
 const username = 'yossi10'
 const pwd = '5566'
 
@@ -23,7 +23,8 @@ afterAll(done=>{
 })
 
 
-describe('Testing Auth API',()=>{
+
+describe("Token refresh test ",()=>{
 
     test('test registration',async ()=>{
         const response = await request(app).post('/auth/register').send({
@@ -50,22 +51,21 @@ describe('Testing Auth API',()=>{
         expect(response.statusCode).toEqual(200)
         accessToken = response.body.accessToken
         refreshToken1 =  response.body.refreshToken
-        console.log(refreshToken);
-
-
-       
     })         
-    test('test logout',async ()=>{
-        const response = await request(app).post('/auth/logout').set({ authorization: 'JWT ' + refreshToken1 })
-        expect(response.statusCode).toEqual(200)
-         newAccessToken = response.body.accessToken
-            newRefreshToken = response.body.refreshToken
-            expect (newAccessToken).not.toEqual(null);
-            expect(newRefreshToken).not.toEqual(null);
-    })    
 
-    
+    jest.setTimeout(30000);
+    test("timeout access", async()=>{
+        await new Promise(r => setTimeout(r, 3*1000 ));
+        const response = await request(app).get("/offer").set({authorization : 'JWT' + accessToken})
+        expect(response.statusCode).not.toEqual(200);
+    });
 
-
-   
-})
+    test("Refresh Token", async () => {
+        const response = await request(app).get("/auth/refreshToken").set({authorization : 'JWT ' + refreshToken1})
+        expect (response.statusCode).toEqual(200);
+        newAccessToken = response.body.accessToken 
+        newRefreshToken = response.body.refreshToken
+        expect (newAccessToken).not.toEqual(null);
+        expect(newRefreshToken).not.toEqual(null);
+    }); 
+});
