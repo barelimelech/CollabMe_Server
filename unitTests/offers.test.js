@@ -66,19 +66,7 @@ describe('Testing Offer API',()=>{
     })
 
 
-    let newAccessToken = '';
-    let newRefreshToken = '';
-    
-        test("Authorized access", async () => {
-            const response = await request(app).get('/offer').set({ authorization: 'JWT ' + accessToken })
-            expect(response.statusCode).toEqual(200);
-        });
-        test("UnAuthorized access", async () => {
-            wrongToken = accsessOriginal.replace(10, accsessOriginal [10] + 1)
-            const response = await request(app).get("/offer").set({authorization : 'JWT' + wrongToken })
-            expect(response.statusCode).not.toEqual(200);
-        });
-    
+   
 
     test('offer get',async ()=>{
         const response = await request(app).get('/offer').set({ authorization: 'JWT ' + accessToken })
