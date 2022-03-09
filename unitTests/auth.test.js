@@ -57,7 +57,7 @@ describe('Testing Auth API',()=>{
       jest.setTimeout(30000);
         test("timeout access", async()=>{
              await new Promise(r => setTimeout(r, 3*1000 ));
-             const response = await request(app).get("/post").set({authorization : 'JWT' + accessToken})
+             const response = await request(app).get("/offer").set({authorization : 'JWT' + accessToken})
             expect(response.statusCode).not.toEqual(200);
         });
         
