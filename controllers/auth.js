@@ -128,10 +128,28 @@ const refreshToken = async (req, res, next)=> {
     })
 }
 
-const logout = async (req, res) => {
-    res.status(400).send({
-        'status': 'fail',
-        'error': 'not implemented'
+
+const logout = async (req, res, next) => {
+    authHeaders = req.headers['authorization']
+    const token = authHeaders && authHeaders.split(' ')[1]
+    if(token == null) return res.sendStatus('401')
+    jwt.verify(token, process.env.REFRESH_TOKEN_SECRET, async(err, userInfo) => {
+        if (err) return res.status(403).send(err.message)
+        const userId = userInfo.id
+        try {
+            user = await User.findById(userId)
+            if (user == null) return res.status(403).send('invalid request')
+            if (!user.Tokens.includes(token)) {
+                user.Tokens = [] //invalidate all user tokens
+                await user.save()
+                return res.status(403).send('invalid request')
+            }
+            user.Tokens.splice(user.Tokens.index0f(token), 1)
+            await user.save()
+            res.status(200).send();
+        } catch(err) {
+            res.status(403).send(err.message)
+        }
     })
 }
 
