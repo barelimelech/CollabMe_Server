@@ -70,12 +70,16 @@ describe('Testing Auth API',()=>{
             expect(newRefreshToken).not.toEqual(null);
         });
 
-    /*
+    
     test('test logout',async ()=>{
         const response = await request(app).post('/auth/logout').set({ authorization: 'JWT ' + accessToken })
         expect(response.statusCode).toEqual(200)
+         newAccessToken = response.body.accessToken
+            newRefreshToken = response.body.refreshToken
+            expect (newAccessToken).not.toEqual(null);
+            expect(newRefreshToken).not.toEqual(null);
     })
-    */
+    
 
 
    

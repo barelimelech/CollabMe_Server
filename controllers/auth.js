@@ -136,13 +136,13 @@ const logout = async (req, res, next) => {
         const userId = userInfo.id
         try {
             user = await User.findById(userId)
-            if (user == null) return res.status(403).send('invalid request')
+            if (user == null) return res.status(404).send('invalid request')
             if (!user.Tokens.includes(token)) {
                 user.Tokens = [] //invalidate all user tokens
                 await user.save()
                 return res.status(403).send('invalid request')
             }
-            user.Tokens.splice(user.Tokens.index0f(token), 1)
+            user.Tokens.splice(user.Tokens.indexOf(token), 1)
             await user.save()
             res.status(200).send();
         } catch(err) {
