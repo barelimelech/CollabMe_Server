@@ -13,6 +13,7 @@ const sendError = (res,code,msg)=>{
 const register = async (req, res) => {
     const username = req.body.Username
     const password = req.body.Password
+    const tokens = req.body.Tokens
     const sex = req.body.Sex
     const age = req.body.Age
     const platform = req.body.Platform
@@ -21,8 +22,6 @@ const register = async (req, res) => {
     const numOfPosts = req.body.NumberOfPosts
     const company = req.body.Company
     const influencer= req.body.Influencer
-
-
 
     try{
         const exists = await User.findOne({'Username' : username})
@@ -38,6 +37,7 @@ const register = async (req, res) => {
         const user = User({
             'Username' : username,
             'Password': hashPwd,
+            'Tokens' : tokens,
             "Sex":sex,
             "Age":age, 
             "Followers":followers,
@@ -76,12 +76,56 @@ const login = async (req, res) => {
             process.env.ACCESS_TOKEN_SECRET,
             {expiresIn: process.env.JWT_TOKEN_EXPIRATION}
             )
-        res.status(200).send({'accessToken' : accessToken})
+        const refreshToken = await jwt.sign (
+            {'id':user._id},
+            process.env.REFRESH_TOKEN_SECRET
+        )
+        if (user.Tokens == null) user.Tokens = [refreshToken]
+        else user.Tokens.push(refreshToken);
+        await user.save();
+        res.status(200).send({
+            'accessToken' : accessToken, 
+            'refreshToken' : refreshToken})
 
     }catch(err){
         return sendError(res,400,err.message)
     }
 
+}
+
+const refreshToken = async (req, res, next)=> {
+    authHeaders = req.headers['authorization']
+    const token = authHeaders && authHeaders.split(' ')[1]
+    if (token == null) return res.sendStatus('401')
+
+    console.log(token);
+
+    jwt.verify(token, process.env.REFRESH_TOKEN_SECRET, async(err, userInfo)=>{
+        if (err) return res.status(403).send(err.message)
+        const userId = userInfo._id
+        try {
+        user = await User.findById(userId)
+        if (user == null) return res.status(403).send('error user')
+        if (!user.Tokens.includes(token)) {
+            user.Tokens=[]//invalidate all user tokens
+            await user.save()
+            return res.status(403).send('invalid request')
+        }
+        const accessToken = await jwt.sign(
+            {'id': user.id },
+            process.env.ACCESS_TOKEN_SECRET,
+            { expiresIn: process.env.JWT_TOKEN_EXPIRATION })
+        const refreshToken = await jwt.sign(
+            {'id': user.id },
+            process.env.REFRESH_TOKEN_SECRET)
+        
+        user.Tokens[user.Tokens.index0f(token)] = refreshToken
+        await user.save()
+        res.status(200).send({'accessToken': accessToken, 'refreshToken': refreshToken});
+        } catch (err) {
+            res.status(403).send(err.message)
+        }
+    })
 }
 
 const logout = async (req, res) => {
@@ -94,5 +138,6 @@ const logout = async (req, res) => {
 module.exports = {
     login,
     register,
-    logout
+    logout,
+    refreshToken
 }

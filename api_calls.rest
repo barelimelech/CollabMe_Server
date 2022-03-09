@@ -9,7 +9,7 @@ GET http://localhost:4000/
 
 
 GET http://localhost:4000/offer
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjdlOWEzNDA0YzExZWE4YTEyOTNkNyIsImlhdCI6MTY0Njc4NTgyOCwiZXhwIjoxNjQ2Nzg5NDI4fQ.ZwXZWDbpWp3VIv1ikL0PH3VHedAzwQwrWgyRVhm45ik
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjdlOWEzNDA0YzExZWE4YTEyOTNkNyIsImlhdCI6MTY0NjgyNjg0NCwiZXhwIjoxNjQ2ODMwNDQ0fQ.C2KNTcqIDPkM47kXCL0IUCFUt4H0_y_dseKbO3dw_IE
 ###
 
 
@@ -19,7 +19,7 @@ GET http://localhost:4000/offer/620d3347abfb42d96325fcc5
 
 
 POST http://localhost:4000/offer
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjdlOWEzNDA0YzExZWE4YTEyOTNkNyIsImlhdCI6MTY0Njc4NTgyOCwiZXhwIjoxNjQ2Nzg5NDI4fQ.ZwXZWDbpWp3VIv1ikL0PH3VHedAzwQwrWgyRVhm45ik
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjdlOWEzNDA0YzExZWE4YTEyOTNkNyIsImlhdCI6MTY0NjgyNjg0NCwiZXhwIjoxNjQ2ODMwNDQ0fQ.C2KNTcqIDPkM47kXCL0IUCFUt4H0_y_dseKbO3dw_IE
 Content-Type: application/json
 
 {
@@ -41,7 +41,7 @@ POST http://localhost:4000/auth/register
 Content-Type: application/json
 
 {
-    "Username": "yossi6",       
+    "Username": "yossi8",       
     "Password":"5566", 
     "Sex":"undefind",
     "Age":28, 
@@ -60,7 +60,7 @@ POST http://localhost:4000/auth/login
 Content-Type: application/json
 
 {
-    "Username" : "yossi6",
+    "Username" : "yossi8",
     "Password" : "5566"
 }
 
@@ -71,6 +71,11 @@ POST http://localhost:4000/auth/logout
 Content-Type: application/json
 
 {
-    "message" : "this is my new offer",
+    "message" : "you have been logedout",
     "sender" : "Yossi"
 }
+###
+
+
+POST http://localhost:4000/auth/refreshToken
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjhhOTNkMTBlZjc3NjIyN2YxM2I4MiIsImlhdCI6MTY0NjgzMTkzOH0.qEpS6baDPHT1EmL8-X30j7pzEOy4_DNHLtlrKo411xI

@@ -27,7 +27,7 @@ const offerSchema = new mongoose.Schema({
         required: true
     },
     Profession: {
-        type: Array,
+        type: [String],
         required: false
     },
     User: {

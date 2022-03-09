@@ -9,6 +9,9 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    Tokens: {
+        type: [String]
+    },
     Sex: {
         type: String,
         required: false
@@ -22,11 +25,11 @@ const userSchema = new mongoose.Schema({
         required: false
     },
     Profession :{
-        type: Array,
+        type: [String],
         required: false
     },
     Platform :{
-        type: Array,
+        type: [String],
         required: false
     },
     NumberOfPosts: {
