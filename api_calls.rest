@@ -78,4 +78,4 @@ Content-Type: application/json
 
 
 POST http://localhost:4000/auth/refreshToken
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjhhOTNkMTBlZjc3NjIyN2YxM2I4MiIsImlhdCI6MTY0NjgzMTkzOH0.qEpS6baDPHT1EmL8-X30j7pzEOy4_DNHLtlrKo411xI
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjhhYzA4Mzg2ZmQxMjJlZmRmNTU2NSIsImlhdCI6MTY0NjgzMjY1NX0.Ta6c51izEKpTjWQRu7jnf5bb6-H6NvYLF6XgTsC70Tg
