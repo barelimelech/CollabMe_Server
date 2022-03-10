@@ -13,6 +13,7 @@ const sendError = (res,code,msg)=>{
 const register = async (req, res) => {
     const username = req.body.Username
     const password = req.body.Password
+    const email = req.body.Email
     const tokens = req.body.Tokens
     const sex = req.body.Sex
     const age = req.body.Age
@@ -37,6 +38,7 @@ const register = async (req, res) => {
         const user = User({
             "Username" : username,
             "Password": hashPwd,
+            "Email": email,
             "Tokens" : tokens,
             "Sex":sex,
             "Age":age, 

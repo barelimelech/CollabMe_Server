@@ -40,6 +40,7 @@ describe('Testing Offer API',()=>{
         const response = await request(app).post('/auth/register').send({
             'Username' : username,
             'Password':pwd,
+            'Email': "email@email.email",
             "Sex":"undefind",
             "Tokens":[],
             "Age":28, 

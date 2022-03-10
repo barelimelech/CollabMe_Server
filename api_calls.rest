@@ -43,6 +43,7 @@ Content-Type: application/json
 {
     "Username": "bar1",       
     "Password":"5566", 
+    "Email": "email@email.email",
     "Sex":"undefind",
     "Age":28, 
     "Followers":10,

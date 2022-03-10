@@ -30,6 +30,7 @@ describe("Token refresh test ",()=>{
         const response = await request(app).post('/auth/register').send({
             'Username' : username,
             'Password':pwd,
+            'Email':"email@email.email",
             "Sex":"undefind",
             "Age":28, 
             "Followers":10,
