@@ -17,7 +17,7 @@ const register = async (req, res) => {
     const sex = req.body.Sex
     const age = req.body.Age
     const platform = req.body.Platform
-    const followers = req.body.Password
+    const followers = req.body.Followers
     const profession = req.body.Profession
     const numOfPosts = req.body.NumberOfPosts
     const company = req.body.Company
@@ -35,9 +35,9 @@ const register = async (req, res) => {
         const hashPwd = await bcrypt.hash(password,salt)
 
         const user = User({
-            'Username' : username,
-            'Password': hashPwd,
-            'Tokens' : tokens,
+            "Username" : username,
+            "Password": hashPwd,
+            "Tokens" : tokens,
             "Sex":sex,
             "Age":age, 
             "Followers":followers,

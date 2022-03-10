@@ -41,7 +41,7 @@ POST http://localhost:4000/auth/register
 Content-Type: application/json
 
 {
-    "Username": "yossi10",       
+    "Username": "bar1",       
     "Password":"5566", 
     "Sex":"undefind",
     "Age":28, 
