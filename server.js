@@ -43,4 +43,7 @@ app.use('/offer',offerRouter)
 const authRouter = require('./routes/auth_routes')
 app.use('/auth',authRouter)
 
+const userrouter = require('./routes/user_routes')
+app.use('/users',userrouter)
+
 module.exports = app

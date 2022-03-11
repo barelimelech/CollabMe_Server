@@ -9,11 +9,10 @@ GET http://localhost:4000/
 
 
 GET http://localhost:4000/offer
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjdlOWEzNDA0YzExZWE4YTEyOTNkNyIsImlhdCI6MTY0NjgyNjg0NCwiZXhwIjoxNjQ2ODMwNDQ0fQ.C2KNTcqIDPkM47kXCL0IUCFUt4H0_y_dseKbO3dw_IE
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI0YjcyNDgzZGNlMWE4Y2JlYjM1MyIsImlhdCI6MTY0NzAwNjcyNywiZXhwIjoxNjQ3MDEwMzI3fQ.juiJzD_ipSCGscORW7nTtVLzEGQVoEYXU4XRFNAjlbs
 ###
 
-
-GET http://localhost:4000/offer/620d3347abfb42d96325fcc5
+GET http://localhost:4000/offer/6228bd95db9e1be2ea60bc69
 
 ###
 
@@ -41,7 +40,7 @@ POST http://localhost:4000/auth/register
 Content-Type: application/json
 
 {
-    "Username": "bar1",       
+    "Username": "bar3",       
     "Password":"5566", 
     "Email": "email@email.email",
     "Sex":"undefind",
@@ -61,7 +60,7 @@ POST http://localhost:4000/auth/login
 Content-Type: application/json
 
 {
-    "Username" : "yossi10",
+    "Username" : "bar3",
     "Password" : "5566"
 }
 
@@ -71,5 +70,10 @@ Content-Type: application/json
 POST http://localhost:4000/auth/logout
 Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjhkZDRmNjg5ZDU0ZjgyNWIxOWUyNiIsImlhdCI6MTY0Njg0NTI5MH0.XOijRz4KasAgAaPx7HS1pCvIpR7tFo16hezjN3OjXB8
 
+###
 GET  http://localhost:4000/auth/refreshToken
 Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjhkYmFmM2QxYjdjM2E2NTA4YjRiOCIsImlhdCI6MTY0Njg0NDg1Mn0.gJCd-Uqf5UstpylX6Ni3xkcNGzC-5rJnPKD_6bvuw28
+
+###
+GET http://localhost:4000/users/getUser/amit2212
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI0YjcyNDgzZGNlMWE4Y2JlYjM1MyIsImlhdCI6MTY0NzAwNjcyNywiZXhwIjoxNjQ3MDEwMzI3fQ.juiJzD_ipSCGscORW7nTtVLzEGQVoEYXU4XRFNAjlbs
