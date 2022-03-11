@@ -25,6 +25,7 @@ afterAll(done=>{
 
 
 describe("Token refresh test ",()=>{
+    
     test('offer get',async ()=>{
         const response = await request(app).get('/offer/getOfferById/' + offerID).set({ authorization: 'JWT ' + accessToken })
         expect(response.statusCode).toEqual(200)
@@ -135,6 +136,11 @@ describe("Token refresh test ",()=>{
         expect(offer2.Profession).toEqual(profession)
         expect(offer2.User).toEqual(user)
         expect(offer2.IntrestedVerify).toEqual(intrestedVerfiy)   
+    })
+
+    test('test deleteOffer',async ()=>{
+        const response = await request(app).post('/offer/deleteOffer/' + offerID).set({ authorization: 'JWT ' + accessToken })
+        expect(response.statusCode).toEqual(200)
     })
     
 });

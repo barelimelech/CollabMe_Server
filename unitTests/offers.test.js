@@ -68,10 +68,5 @@ describe('Testing Offer API',()=>{
         accsessOriginal=response.body.accessToken;
     })
 
-    /* test('test deleteOffer',async ()=>{
-        const response = await request(app).post('/offer/deleteOffer/' + offerID).set({ authorization: 'JWT ' + accessToken })
-        expect(response.statusCode).toEqual(200)
-
-    })*/
     
 })
