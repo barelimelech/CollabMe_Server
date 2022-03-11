@@ -27,7 +27,6 @@ const getOfferById = async (req, res) => {
 const addNewOffer = (req, res) => {
     console.log('addNewOffer ' + req.body.message)
     const description = req.body.Description;
-     
     const headLine =req.body.HeadLine;
     const price = req.body.Price;
     const coupon =  req.body.Coupon;
@@ -38,7 +37,6 @@ const addNewOffer = (req, res) => {
      //const users =  req.body.Users;
      const intrestedVerify =  req.body.IntrestedVerify;
     
-
     const offer = Offer({
         Description:description,
         HeadLine:headLine ,
@@ -64,8 +62,25 @@ const addNewOffer = (req, res) => {
     })
 }
 
+const deleteOffer = async(req, res) => {
+
+        offerTodelete = await Offer.findById(req.params.id)
+        Offer.deleteOne({
+            _id: offerTodelete.id
+            }, function (err) {
+            if (err) {
+              console.log(err);
+              return res.send(err.message);
+            }
+            res.send('removed successfuly');
+            });
+
+}
+
+
 module.exports = {
     getOffers,
     getOfferById,
-    addNewOffer
+    addNewOffer,
+    deleteOffer
 }
