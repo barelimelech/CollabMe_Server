@@ -77,10 +77,32 @@ const deleteOffer = async(req, res) => {
 
 }
 
+const editOffer = async(req, res) => {
+
+    var updatedPost = {
+        Description:req.body.Description,
+        HeadLine:req.body.HeadLine ,
+        Price:req.body.Price,
+        Coupon:req.body.Coupon,
+        IdOffer :req.body.IdOffer,
+        Status: req.body.Status,
+        Profession: req.body.Profession,
+        User:req.body.User,
+        //Users: users,
+        IntrestedVerify:req.body.IntrestedVerify
+    };
+
+    Offer.update({
+         _id: req.params.id
+         }, updatedPost, function(err, affected){
+        res.send(200, updatedPost);
+    });
+}
 
 module.exports = {
     getOffers,
     getOfferById,
     addNewOffer,
-    deleteOffer
+    deleteOffer,
+    editOffer
 }

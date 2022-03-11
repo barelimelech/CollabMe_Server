@@ -3,8 +3,6 @@
 
 GET http://localhost:4000/
 
-
-
 ###
 
 
@@ -16,14 +14,31 @@ Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI0YjcyND
 GET http://localhost:4000/offer/622b5522f934195e96103593
 
 ###
-
-
-POST http://localhost:4000/offer
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI1NGQ2ZjkzNDE5NWU5NjEwMzU4YyIsImlhdCI6MTY0NzAwNjk5NCwiZXhwIjoxNjQ3MDEwNTk0fQ.RqhWurWu6pt_sM2yHo95JUgYHqROQkR-7Kwo9aTkeOg
+POST  http://localhost:4000/offer/editOffer/622b69c403b68fe10748fd49
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI2ODZhYmQ4ZWQ5MmFiN2M4YjE5ZSIsImlhdCI6MTY0NzAxMzE5MiwiZXhwIjoxNjQ3MDE2NzkyfQ.DjqLuCC7zqX4NyDG6lsf4zszym0Wh2zaBYTetzGhu74
 Content-Type: application/json
 
 {
-        "Description":"hi",   
+        "Description":"hi111111",   
+        "HeadLine":"hello",
+        "Price" :10,
+        "Coupon":"free dinner",
+        "IdOffer" :1,
+        "Status":"now",
+        "Profession": ["sport"],  
+        "User":"62277413fe8636f7c2c9aff2",      
+        "IntrestedVerify":false
+}
+###
+
+
+
+POST http://localhost:4000/offer
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI2ODZhYmQ4ZWQ5MmFiN2M4YjE5ZSIsImlhdCI6MTY0NzAxMjI2OCwiZXhwIjoxNjQ3MDE1ODY4fQ.kRx2D1sGvCiKZkscWbLm7EgGCi1qXSdXTXEtMJ91PEE
+Content-Type: application/json
+
+{
+        "Description":"hi2",   
         "HeadLine":"hello",
         "Price" :10,
         "Coupon":"free dinner",

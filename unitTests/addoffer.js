@@ -5,8 +5,9 @@ const { response } = require('../server')
 const User = require('../models/user_model')
 
 var refreshToken1;
-const username = 'yossi10'
+const username = 'liem'
 const pwd = '5566'
+const offerID = '622b69c403b68fe10748fd49'
 
 beforeAll(done=>{
     User.remove({'Username' : username}, (err)=>{
@@ -92,4 +93,44 @@ describe("Token refresh test ",()=>{
         expect(offer2.IntrestedVerify).toEqual(intrestedVerfiy)   
     })
 
+    test('edit offer',async ()=>{
+        const response = await request(app).post('/offers/editOffer/' + offerID').set({ authorization: 'JWT ' + accessToken })
+        .send({
+            "Description":description,   
+            "HeadLine":headline,
+            "Price" :price,
+            "Coupon":cupon,
+            "IdOffer" :idOffer,
+            "Status":status,
+            "Profession": profession,  
+            "User":user,      
+            "IntrestedVerify":intrestedVerfiy
+        })
+        expect(response.statusCode).toEqual(200)
+        const newOffer = response.body
+        expect(newOffer.Description).toEqual(description)
+        expect(newOffer.HeadLine).toEqual(headline)
+        expect(newOffer.Price).toEqual(price)
+        expect(newOffer.Coupon).toEqual(cupon)
+        expect(newOffer.IdOffer).toEqual(idOffer)
+        expect(newOffer.Status).toEqual(status)
+        expect(newOffer.Profession).toEqual(profession)
+        expect(newOffer.User).toEqual(user)
+        expect(newOffer.IntrestedVerify).toEqual(intrestedVerfiy)        
+        
+        const response2 = await request(app).get('/offers/editOffer/' + newOffer._id)
+        .set({ authorization: 'JWT ' + accessToken })
+        expect(response2.statusCode).toEqual(200)
+        const offer2 = response2.body
+        expect(offer2.Description).toEqual(description)
+        expect(offer2.HeadLine).toEqual(headline)
+        expect(offer2.Price).toEqual(price)
+        expect(offer2.Coupon).toEqual(cupon)
+        expect(offer2.IdOffer).toEqual(idOffer)
+        expect(offer2.Status).toEqual(status)
+        expect(offer2.Profession).toEqual(profession)
+        expect(offer2.User).toEqual(user)
+        expect(offer2.IntrestedVerify).toEqual(intrestedVerfiy)   
+    })
+    
 });

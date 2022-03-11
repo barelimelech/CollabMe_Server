@@ -72,7 +72,6 @@ router.get('/', authenticate, Offer.getOffers)
 *             schema:
 *               $ref: '#/components/schemas/Offer'
 */
-//router.get('/:id', authenticate, Offer.getOfferById)
 
 /**
 * @swagger
@@ -94,9 +93,14 @@ router.get('/', authenticate, Offer.getOffers)
 *             schema:
 *               $ref: '#/components/schemas/Offer'
 */
+
+// router.get('/:id', authenticate, Offer.getOfferById)
+
 router.post('/', authenticate, Offer.addNewOffer)
 
-router.get('/:id', authenticate, Offer.deleteOffer)
+//router.get('/:id', authenticate, Offer.deleteOffer)
+
+router.post('/editOffer/:id', authenticate, Offer.editOffer)
 
 
 module.exports = router

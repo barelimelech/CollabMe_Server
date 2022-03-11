@@ -5,7 +5,7 @@ const { response } = require('../server')
 const User = require('../models/user_model')
 const { users } = require('../controllers/users')
 
-const username = 'yossi11'
+const username = 'liem'
 const pwd = '5566'
 let NewPassword;
 const proffesions = ["Art","Sport"];
