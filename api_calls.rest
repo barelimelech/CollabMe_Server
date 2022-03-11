@@ -9,7 +9,7 @@ GET http://localhost:4000/
 
 
 GET http://localhost:4000/offer
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjdlOWEzNDA0YzExZWE4YTEyOTNkNyIsImlhdCI6MTY0NjgyNjg0NCwiZXhwIjoxNjQ2ODMwNDQ0fQ.C2KNTcqIDPkM47kXCL0IUCFUt4H0_y_dseKbO3dw_IE
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI0YjcyNDgzZGNlMWE4Y2JlYjM1MyIsImlhdCI6MTY0NzAwNjcyNywiZXhwIjoxNjQ3MDEwMzI3fQ.juiJzD_ipSCGscORW7nTtVLzEGQVoEYXU4XRFNAjlbs
 ###
 
 
@@ -78,3 +78,11 @@ GET http://localhost:4000/offer/622b5bc167452bd62e2e8454
 Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI1NGQ2ZjkzNDE5NWU5NjEwMzU4YyIsImlhdCI6MTY0NzAwODg4NiwiZXhwIjoxNjQ3MDEyNDg2fQ.d_Oi-oNs56TsQjwZV7K6niCW-suRXqgKJE4sj4accxA
 
 ###
+
+###
+GET  http://localhost:4000/auth/refreshToken
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjhkYmFmM2QxYjdjM2E2NTA4YjRiOCIsImlhdCI6MTY0Njg0NDg1Mn0.gJCd-Uqf5UstpylX6Ni3xkcNGzC-5rJnPKD_6bvuw28
+
+###
+GET http://localhost:4000/users/getUser/amit2212
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI0YjcyNDgzZGNlMWE4Y2JlYjM1MyIsImlhdCI6MTY0NzAwNjcyNywiZXhwIjoxNjQ3MDEwMzI3fQ.juiJzD_ipSCGscORW7nTtVLzEGQVoEYXU4XRFNAjlbs
