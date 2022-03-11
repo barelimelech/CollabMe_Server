@@ -25,6 +25,10 @@ afterAll(done=>{
 
 
 describe("Token refresh test ",()=>{
+    test('offer get',async ()=>{
+        const response = await request(app).get('/offer/getOfferById/' + offerID).set({ authorization: 'JWT ' + accessToken })
+        expect(response.statusCode).toEqual(200)
+    })
 
     test('test registration',async ()=>{
         const response = await request(app).post('/auth/register').send({
@@ -94,7 +98,7 @@ describe("Token refresh test ",()=>{
     })
 
     test('edit offer',async ()=>{
-        const response = await request(app).post('/offers/editOffer/' + offerID').set({ authorization: 'JWT ' + accessToken })
+        const response = await request(app).post('/offers/editOffer/' + offerID).set({ authorization: 'JWT ' + accessToken })
         .send({
             "Description":description,   
             "HeadLine":headline,

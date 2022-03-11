@@ -11,7 +11,7 @@ Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI0YjcyND
 ###
 
 
-GET http://localhost:4000/offer/622b5522f934195e96103593
+GET http://localhost:4000/offer/getOfferById/622b5522f934195e96103593
 
 ###
 POST  http://localhost:4000/offer/editOffer/622b69c403b68fe10748fd49
@@ -89,7 +89,7 @@ Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjhkZDRmNj
 GET  http://localhost:4000/auth/refreshToken
 Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjhkYmFmM2QxYjdjM2E2NTA4YjRiOCIsImlhdCI6MTY0Njg0NDg1Mn0.gJCd-Uqf5UstpylX6Ni3xkcNGzC-5rJnPKD_6bvuw28
 ###
-GET http://localhost:4000/offer/622b5bc167452bd62e2e8454
+GET http://localhost:4000/offer/deleteOffer/622b5bc167452bd62e2e8454
 Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI1NGQ2ZjkzNDE5NWU5NjEwMzU4YyIsImlhdCI6MTY0NzAwODg4NiwiZXhwIjoxNjQ3MDEyNDg2fQ.d_Oi-oNs56TsQjwZV7K6niCW-suRXqgKJE4sj4accxA
 
 ###

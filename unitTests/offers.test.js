@@ -4,6 +4,8 @@ const mongoosse = require('mongoose')
 const { response } = require('../server')
 const User = require('../models/user_model')
 
+const offerID = '622b69c403b68fe10748fd49'
+
 const username = 'liem'
 const pwd = '5566'
 const description="hi"
@@ -66,18 +68,10 @@ describe('Testing Offer API',()=>{
         accsessOriginal=response.body.accessToken;
     })
 
-    test('test deleteOffer',async ()=>{
-        const response = await request(app).get('/offer').set({ authorization: 'JWT ' + accessToken })
+    /* test('test deleteOffer',async ()=>{
+        const response = await request(app).post('/offer/deleteOffer/' + offerID).set({ authorization: 'JWT ' + accessToken })
         expect(response.statusCode).toEqual(200)
-    })
 
-
-    test('offer get',async ()=>{
-        const response = await request(app).get('/offer').set({ authorization: 'JWT ' + accessToken })
-        expect(response.statusCode).toEqual(200)
-    })
-
-    
-
+    })*/
     
 })

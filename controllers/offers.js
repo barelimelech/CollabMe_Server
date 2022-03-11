@@ -72,7 +72,7 @@ const deleteOffer = async(req, res) => {
               console.log(err);
               return res.send(err.message);
             }
-            res.send('removed successfuly');
+            res.status(200).send();
             });
 
 }
