@@ -6,7 +6,7 @@ GET http://localhost:4000/
 ###
 
 
-GET http://localhost:4000/offer
+GET http://localhost:4000/offer/addNewOffer
 Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI0YjcyNDgzZGNlMWE4Y2JlYjM1MyIsImlhdCI6MTY0NzAwNjcyNywiZXhwIjoxNjQ3MDEwMzI3fQ.juiJzD_ipSCGscORW7nTtVLzEGQVoEYXU4XRFNAjlbs
 ###
 

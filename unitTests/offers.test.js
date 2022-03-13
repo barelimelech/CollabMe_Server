@@ -70,7 +70,7 @@ describe('Testing Offer API',()=>{
     })
 
     test('add new offer',async ()=>{
-        const response = await request(app).post('/offer').set({ authorization: 'JWT ' + accessToken })
+        const response = await request(app).post('/offer/addNewOffer').set({ authorization: 'JWT ' + accessToken })
         .send({
             "Description":description,   
             "HeadLine":headline,

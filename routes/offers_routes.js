@@ -96,7 +96,7 @@ router.get('/', authenticate, Offer.getOffers)
 
  router.get('getOfferById/:id', authenticate, Offer.getOfferById)
 
-router.post('/', authenticate, Offer.addNewOffer)
+router.post('/addNewOffer', authenticate, Offer.addNewOffer)
 
 router.post('/deleteOffer/:id', authenticate, Offer.deleteOffer)
 
