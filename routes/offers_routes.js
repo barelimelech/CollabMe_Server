@@ -94,7 +94,7 @@ router.get('/', authenticate, Offer.getOffers)
 *               $ref: '#/components/schemas/Offer'
 */
 
- router.get('getOfferById/:id', authenticate, Offer.getOfferById)
+router.get('/getOfferById/:id', authenticate, Offer.getOfferById)
 
 router.post('/addNewOffer', authenticate, Offer.addNewOffer)
 

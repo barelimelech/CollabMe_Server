@@ -6,12 +6,13 @@ GET http://localhost:4000/
 ###
 
 
-GET http://localhost:4000/offer/addNewOffer
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI0YjcyNDgzZGNlMWE4Y2JlYjM1MyIsImlhdCI6MTY0NzAwNjcyNywiZXhwIjoxNjQ3MDEwMzI3fQ.juiJzD_ipSCGscORW7nTtVLzEGQVoEYXU4XRFNAjlbs
+GET http://localhost:4000/offer
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmRjZWNmY2RiMTcwNGU1MDJmODg0NiIsImlhdCI6MTY0NzE5MDc5OSwiZXhwIjoxNjQ3MTk0Mzk5fQ.mHn8vufEoQU8R1CET4U7hfGz46o6cl5rmQnsWGfEW_M
 ###
 
 
-GET http://localhost:4000/offer/getOfferById/622b5522f934195e96103593
+GET http://localhost:4000/offer/getOfferById/622e2fed8fba1393eee2da12
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmRjZWNmY2RiMTcwNGU1MDJmODg0NiIsImlhdCI6MTY0NzE5NDQ1NCwiZXhwIjoxNjQ3MTk4MDU0fQ.4WBlTtFyAoiWAOFitnxHLfSDGFb14sVbF7BW5U5wkS0
 
 ###
 POST  http://localhost:4000/offer/editOffer/622b69c403b68fe10748fd49
@@ -19,7 +20,7 @@ Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI2ODZhYm
 Content-Type: application/json
 
 {
-        "Description":"hi111111",   
+        "Description":"1111",   
         "HeadLine":"hello",
         "Price" :10,
         "Coupon":"free dinner",
@@ -33,16 +34,16 @@ Content-Type: application/json
 
 
 
-POST http://localhost:4000/offer
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI2ODZhYmQ4ZWQ5MmFiN2M4YjE5ZSIsImlhdCI6MTY0NzAxMjI2OCwiZXhwIjoxNjQ3MDE1ODY4fQ.kRx2D1sGvCiKZkscWbLm7EgGCi1qXSdXTXEtMJ91PEE
+POST http://localhost:4000/offer/addNewOffer
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmRjZWNmY2RiMTcwNGU1MDJmODg0NiIsImlhdCI6MTY0NzE5MDc5OSwiZXhwIjoxNjQ3MTk0Mzk5fQ.mHn8vufEoQU8R1CET4U7hfGz46o6cl5rmQnsWGfEW_M
 Content-Type: application/json
 
 {
-        "Description":"hi2",   
+        "Description":"hiiiii2000",   
         "HeadLine":"hello",
         "Price" :10,
         "Coupon":"free dinner",
-        "IdOffer" :1,
+        "IdOffer" :100,
         "Status":"now",
         "Profession": ["sport"],  
         "User":"62277413fe8636f7c2c9aff2",      
@@ -76,8 +77,8 @@ POST http://localhost:4000/auth/login
 Content-Type: application/json
 
 {
-    "Username" : "liem",
-    "Password" : "5566"
+    "Username" : "bari",
+    "Password" : "12345"
 }
 
 ###
@@ -99,8 +100,8 @@ GET  http://localhost:4000/auth/refreshToken
 Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjhkYmFmM2QxYjdjM2E2NTA4YjRiOCIsImlhdCI6MTY0Njg0NDg1Mn0.gJCd-Uqf5UstpylX6Ni3xkcNGzC-5rJnPKD_6bvuw28
 
 ###
-GET http://localhost:4000/users/getUser/lola
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI0YjcyNDgzZGNlMWE4Y2JlYjM1MyIsImlhdCI6MTY0NzAwNjcyNywiZXhwIjoxNjQ3MDEwMzI3fQ.juiJzD_ipSCGscORW7nTtVLzEGQVoEYXU4XRFNAjlbs
+GET http://localhost:4000/users/getUser/bari
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmRjZWNmY2RiMTcwNGU1MDJmODg0NiIsImlhdCI6MTY0NzE5MDc5OSwiZXhwIjoxNjQ3MTk0Mzk5fQ.mHn8vufEoQU8R1CET4U7hfGz46o6cl5rmQnsWGfEW_M
 
 
 ###

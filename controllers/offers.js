@@ -13,8 +13,10 @@ const getOffers = async (req, res) => {
 }
 
 const getOfferById = async (req, res) => {
+
     try {
-        offers = await Offer.findById(req.params.id)
+        console.log('get offer ' + req.params.id)
+        const offers = await Offer.findById(req.params.id)
         res.status(200).send(offers)
     } catch (err) {
         res.status(400).send({
