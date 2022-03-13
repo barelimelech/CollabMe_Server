@@ -99,5 +99,25 @@ GET  http://localhost:4000/auth/refreshToken
 Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjhkYmFmM2QxYjdjM2E2NTA4YjRiOCIsImlhdCI6MTY0Njg0NDg1Mn0.gJCd-Uqf5UstpylX6Ni3xkcNGzC-5rJnPKD_6bvuw28
 
 ###
-GET http://localhost:4000/users/getUser/amit2212
+GET http://localhost:4000/users/getUser/lola
 Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI0YjcyNDgzZGNlMWE4Y2JlYjM1MyIsImlhdCI6MTY0NzAwNjcyNywiZXhwIjoxNjQ3MDEwMzI3fQ.juiJzD_ipSCGscORW7nTtVLzEGQVoEYXU4XRFNAjlbs
+
+
+###
+POST  http://localhost:4000/users/editUser/liem
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmRmMWExODdjNGY4YWQyNDJjMTk0NCIsImlhdCI6MTY0NzE3ODE2MSwiZXhwIjoxNjQ3MTgxNzYxfQ.NmnDAWe3JMmQiv__fQ7FIORw2Mb35WqBZYs_ankW7eA
+Content-Type: application/json
+
+{
+    "Username": "liem",       
+    "Password":"5566", 
+    "Email": "email@email.email1",
+    "Sex":"undefind",
+    "Age":288, 
+    "Followers":11,
+    "Profession":["Art","Sport"],
+    "Platform":["instagram","youtube"], 
+    "NumberOfPosts":20,
+    "Company":false,
+    "Influencer":true 
+}

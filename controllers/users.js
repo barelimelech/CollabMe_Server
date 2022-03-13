@@ -23,7 +23,33 @@ const getUserByUserNmae = async (req, res) => {
     }
 }
 
+const editUser = async(req, res) => {
+
+    var updatedUser = {
+        Username:req.body.Username,
+        Password:req.body.Password,
+        Email:req.body.Email,
+        Tokens:req.body.Tokens,
+        Sex :req.body.Sex,
+        Age: req.body.Age,
+        Followers: req.body.Followers,
+        Profession:req.body.Profession,
+        Platform:req.body.Platform,
+        NumberOfPosts:req.body.NumberOfPosts,
+        Company:req.body.Company,
+        Influencer:req.body.Influencer
+
+    };
+
+    User.update({
+         UserName: req.params.Username
+         }, updatedUser, function(err, affected){
+        res.send(200, updatedUser);
+    });
+}
+
 
 module.exports = {
-    getUserByUserNmae
+    getUserByUserNmae,
+    editUser
 }

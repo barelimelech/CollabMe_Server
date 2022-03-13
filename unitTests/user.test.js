@@ -80,4 +80,8 @@ describe('Testing Auth API',()=>{
         expect(user1.Influencer).toEqual(true)    
     })
 
+    
+
+
+
 });
