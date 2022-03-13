@@ -26,8 +26,7 @@ const getOfferById = async (req, res) => {
     }
 }
 
-const addNewOffer = (req, res) => {
-    console.log('addNewOffer ' + req.body.message)
+const addNewOffer = async (req, res) => { 
     const description = req.body.Description;
     const headLine =req.body.HeadLine;
     const price = req.body.Price;
@@ -38,7 +37,7 @@ const addNewOffer = (req, res) => {
      const user =  req.body.User;
      //const users =  req.body.Users;
      const intrestedVerify =  req.body.IntrestedVerify;
-    
+
     const offer = Offer({
         Description:description,
         HeadLine:headLine ,
@@ -47,21 +46,15 @@ const addNewOffer = (req, res) => {
         IdOffer :idOffer,
         Status: status,
         Profession: profession,
-        User:user,
+        //User:user,
         //Users: users,
-        IntrestedVerify:intrestedVerify,
+        IntrestedVerify:intrestedVerify
     })
 
-    offer.save((error, newOffer) => {
-        if (error) {
-            res.status(400).send({
-                'status': 'fail',
-                'error': error.message
-            })
-        } else {
-            res.status(200).send(newOffer)
-        }
-    })
+    const offer2 = await offer.save();
+    res.status(200).send(offer2)
+    
+       
 }
 
 const deleteOffer = async(req, res) => {

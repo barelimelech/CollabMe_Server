@@ -8,31 +8,31 @@ const offerSchema = new mongoose.Schema({
     }, 
     HeadLine: {
         type: String,
-        required: true
+        required: false
     },
     Price: {
-        type: Number,
-        required: true
+        type: String,
+        required: false
     },
     Coupon: {
         type: String,
         required: false
     },
     IdOffer: {
-        type: Number,
-        required: true
+        type: String,
+        required: false
     },
     Status: {
         type: String,
-        required: true
+        required: false
     },
     Profession: {
         type: [String],
         required: false
     },
     User: {
-        type: mongoose.Schema.Types.ObjectId, ref: 'users',
-        required: true
+        type: String,
+        required: false
     },
     // Users: {
     //     type: mongoose.Schema.Types.ObjectId, ref: 'users',
