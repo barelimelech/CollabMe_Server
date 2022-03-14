@@ -49,7 +49,7 @@ const authenticate = require('../common/auth_middleware')
 *               items:
 *                 $ref: '#/components/schemas/Offer'
 */
-router.get('/', authenticate, Offer.getOffers)
+router.get('/getoffers', authenticate, Offer.getOffers)
 
 /**
 * @swagger

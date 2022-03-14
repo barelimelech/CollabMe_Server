@@ -6,8 +6,8 @@ GET http://localhost:4000/
 ###
 
 
-GET http://localhost:4000/offer
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmRjZWNmY2RiMTcwNGU1MDJmODg0NiIsImlhdCI6MTY0NzE5MDc5OSwiZXhwIjoxNjQ3MTk0Mzk5fQ.mHn8vufEoQU8R1CET4U7hfGz46o6cl5rmQnsWGfEW_M
+GET http://localhost:4000/offer/getoffers
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmYzMzliNjIzMGRkYTgwY2RkYjdkNSIsImlhdCI6MTY0NzI2MDU3MywiZXhwIjoxNjQ3MjY0MTczfQ.Qc8pmjK44hJkepiAiIITwV5iw3OLWZqF9Z2jBMkcf2E
 ###
 
 
