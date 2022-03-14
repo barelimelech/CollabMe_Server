@@ -29,18 +29,20 @@ const getOfferById = async (req, res) => {
 const addNewOffer = async (req, res) => { 
     const description = req.body.Description;
     const headLine =req.body.HeadLine;
+    const finishDate = req.body.FinishDate;
     const price = req.body.Price;
     const coupon =  req.body.Coupon;
     const idOffer = req.body.IdOffer;
-     const status =  req.body.Status;
-     const profession =  req.body.Profession;
-     const user =  req.body.User;
-     //const users =  req.body.Users;
-     const intrestedVerify =  req.body.IntrestedVerify;
+    const status =  req.body.Status;
+    const profession =  req.body.Profession;
+    const user =  req.body.User;
+    //const users =  req.body.Users;
+    const intrestedVerify =  req.body.IntrestedVerify;
 
     const offer = Offer({
         Description:description,
-        HeadLine:headLine ,
+        HeadLine:headLine,
+        FinishDate: finishDate,
         Price :price,
         Coupon:coupon,
         IdOffer :idOffer,
@@ -76,7 +78,8 @@ const editOffer = async(req, res) => {
 
     var updatedPost = {
         Description:req.body.Description,
-        HeadLine:req.body.HeadLine ,
+        HeadLine:req.body.HeadLine,
+        FinishDate:req.body.FinishDate,
         Price:req.body.Price,
         Coupon:req.body.Coupon,
         IdOffer :req.body.IdOffer,

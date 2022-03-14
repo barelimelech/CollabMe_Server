@@ -10,6 +10,10 @@ const offerSchema = new mongoose.Schema({
         type: String,
         required: false
     },
+    FinishDate: {
+        type: String,
+        required: false
+    },
     Price: {
         type: String,
         required: false
