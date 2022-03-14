@@ -37,13 +37,11 @@ const getUserById = async (req, res) => {
 
 const editUser = async(req, res) => {
     console.log("youre in");
-    var pass = req.body.Password;
-    const salt = await bcrypt.genSalt(10)
-    const hashPwd = await bcrypt.hash(pass,salt);
-
+    const user = await User.findOne({'Username':req.params.username })
+  
     var updatedUser = {
         Username:req.body.Username,
-        Password:hashPwd,
+        Password:user.Password,
         Email:req.body.Email,
         Tokens:req.body.Tokens,
         Sex :req.body.Sex,
