@@ -62,28 +62,28 @@ describe('Testing edituser API',()=>{
     
     
     test('edit a User',async ()=>{
+        const user = await User.findOne({'Username' : username })
+
         const response3 = await request(app).post('/users/editUser/' + username).set({ authorization: 'JWT ' + accessToken })
         .send({
             'Username' : username,
-            'Password':pwd,
+            'Password':user.Password,
             'Email': 'email@email.email',
             "Sex":"undefind",
-            "Age":28, 
-            "Followers":12,
+            "Age":"28", 
+            "Followers":"12",
              "Profession":["Art","Sport"],
             "Platform":["instagram","youtube"], 
-             "NumberOfPosts":21,
+             "NumberOfPosts":"21",
              "Company":false,
             "Influencer":true 
         })
 
-        const salt = await bcrypt.genSalt(10)
-        const hashPwd = await bcrypt.hash(pwd,salt)
         console.log(response.body);
         expect(response3.statusCode).toEqual(200)
         const theUser = response3.body
         expect(theUser.Username).toEqual(username)
-        expect(theUser.Password).toEqual(hashPwd)
+        expect(theUser.Password).toEqual(user.Password)
         expect(theUser.Email).toEqual("email@email.email")
         expect(theUser.Sex).toEqual("undefind")
         expect(theUser.Age).toEqual("28")

@@ -37,8 +37,7 @@ const getUserById = async (req, res) => {
 
 const editUser = async(req, res) => {
     console.log("youre in");
-    const user = await User.findOne({'Username':req.params.username })
-  
+    const user = await User.findOne({'Username':req.params.username })  
     var updatedUser = {
         Username:req.body.Username,
         Password:user.Password,
@@ -55,11 +54,12 @@ const editUser = async(req, res) => {
 
     };
 
-     await User.update({
+    await User.update({
          UserName: req.params.Username
          }, updatedUser, function(err, affected){
         res.send(200, updatedUser);
-    });
+    }).clone().catch(function(err){ console.log(err)})
+    
 }
 
 
