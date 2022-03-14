@@ -39,15 +39,15 @@ Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmRjZWNmY2
 Content-Type: application/json
 
 {
-        "Description":"hiiiii2000",   
+        "Description":"Helloworld",   
         "HeadLine":"hello",
         "FinishDate":"14.6.22",
-        "Price" :10,
-        "Coupon":"free dinner",
+        "Price" :10000,
+        "Coupon":"100$",
         "IdOffer" :100,
         "Status":"now",
         "Profession": ["sport"],  
-        "User":"62277413fe8636f7c2c9aff2",      
+        "User":"622dcecfcdb1704e502f8846",      
         "IntrestedVerify":false
 }
 
@@ -102,7 +102,12 @@ Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjhkYmFmM2
 
 ###
 GET http://localhost:4000/users/getUser/bari
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmRjZWNmY2RiMTcwNGU1MDJmODg0NiIsImlhdCI6MTY0NzE5MDc5OSwiZXhwIjoxNjQ3MTk0Mzk5fQ.mHn8vufEoQU8R1CET4U7hfGz46o6cl5rmQnsWGfEW_M
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmRjZWNmY2RiMTcwNGU1MDJmODg0NiIsImlhdCI6MTY0NzI0NjYyNywiZXhwIjoxNjQ3MjUwMjI3fQ.fePzDs3Sq-s-RhQ-Feu3XaU_uKpwxALNhrgIEj5oqwo
+
+
+###
+GET http://localhost:4000/users/getUserById/622dcecfcdb1704e502f8846
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmRjZWNmY2RiMTcwNGU1MDJmODg0NiIsImlhdCI6MTY0NzI0NjYyNywiZXhwIjoxNjQ3MjUwMjI3fQ.fePzDs3Sq-s-RhQ-Feu3XaU_uKpwxALNhrgIEj5oqwo
 
 
 ###

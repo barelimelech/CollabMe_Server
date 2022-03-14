@@ -48,7 +48,7 @@ const addNewOffer = async (req, res) => {
         IdOffer :idOffer,
         Status: status,
         Profession: profession,
-        //User:user,
+        User:user,
         //Users: users,
         IntrestedVerify:intrestedVerify
     })

@@ -23,6 +23,18 @@ const getUserByUserNmae = async (req, res) => {
     }
 }
 
+const getUserById = async (req, res) => {
+    try {
+        const user = await User.findOne({'_id' : req.params.id })
+        res.status(200).send(user)
+    } catch (err) {
+        res.status(400).send({
+            'status': 'fail',
+            'error': err.message
+        })
+    }
+}
+
 const editUser = async(req, res) => {
 
     var updatedUser = {
@@ -51,5 +63,6 @@ const editUser = async(req, res) => {
 
 module.exports = {
     getUserByUserNmae,
-    editUser
+    editUser,
+    getUserById
 }
