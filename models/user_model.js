@@ -20,11 +20,11 @@ const userSchema = new mongoose.Schema({
         required: false
     },
     Age: {
-        type: Number,
+        type: String,
         required: false
     },
     Followers: {
-        type: Number,
+        type: String,
         required: false
     },
     Profession :{
@@ -36,7 +36,7 @@ const userSchema = new mongoose.Schema({
         required: false
     },
     NumberOfPosts: {
-        type: Number,
+        type: String,
         required: false
     },
     Company: {

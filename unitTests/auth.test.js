@@ -9,6 +9,7 @@ let refreshToken1;
 const username = 'yossi10'
 const pwd = '5566'
 
+
 beforeAll(done=>{
     User.remove({'Username' : username}, (err)=>{
         done()
@@ -51,6 +52,7 @@ describe('Testing Auth API',()=>{
         expect(response.statusCode).toEqual(200)
         accessToken = response.body.accessToken
         refreshToken1 =  response.body.refreshToken
+        
         console.log(refreshToken);
 
 

@@ -9,6 +9,7 @@ let refreshToken1;
 const username = 'yossi11'
 const pwd = '5566'
 var newPassword;
+const bcrypt = require('bcrypt')
 
 beforeAll(done=>{
     User.remove({'Username' : username}, (err)=>{
@@ -75,18 +76,21 @@ describe('Testing edituser API',()=>{
              "Company":false,
             "Influencer":true 
         })
+
+        const salt = await bcrypt.genSalt(10)
+        const hashPwd = await bcrypt.hash(pwd,salt)
         console.log(response.body);
         expect(response3.statusCode).toEqual(200)
         const theUser = response3.body
         expect(theUser.Username).toEqual(username)
-        expect(theUser.Password).toEqual(pwd)
+        expect(theUser.Password).toEqual(hashPwd)
         expect(theUser.Email).toEqual("email@email.email")
         expect(theUser.Sex).toEqual("undefind")
-        expect(theUser.Age).toEqual(28)
-        expect(theUser.Followers).toEqual(12)
+        expect(theUser.Age).toEqual("28")
+        expect(theUser.Followers).toEqual("12")
         expect(theUser.Profession).toEqual(["Art", "Sport"])
         expect(theUser.Platform).toEqual(["instagram","youtube"])
-        expect(theUser.NumberOfPosts).toEqual(21)       
+        expect(theUser.NumberOfPosts).toEqual("21")       
         expect(theUser.Company).toEqual(false)        
         expect(theUser.Influencer).toEqual(true)           
     })

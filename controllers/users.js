@@ -36,10 +36,14 @@ const getUserById = async (req, res) => {
 }
 
 const editUser = async(req, res) => {
+    console.log("youre in");
+    var pass = req.body.Password;
+    const salt = await bcrypt.genSalt(10)
+    const hashPwd = await bcrypt.hash(pass,salt);
 
     var updatedUser = {
         Username:req.body.Username,
-        Password:req.body.Password,
+        Password:hashPwd,
         Email:req.body.Email,
         Tokens:req.body.Tokens,
         Sex :req.body.Sex,
@@ -53,7 +57,7 @@ const editUser = async(req, res) => {
 
     };
 
-    User.update({
+     await User.update({
          UserName: req.params.Username
          }, updatedUser, function(err, affected){
         res.send(200, updatedUser);

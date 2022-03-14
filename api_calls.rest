@@ -78,8 +78,8 @@ POST http://localhost:4000/auth/login
 Content-Type: application/json
 
 {
-    "Username" : "bari",
-    "Password" : "12345"
+    "Username" : "amit",
+    "Password" : "5566"
 }
 
 ###
@@ -111,20 +111,20 @@ Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmRjZWNmY2
 
 
 ###
-POST  http://localhost:4000/users/editUser/liem
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmRmMWExODdjNGY4YWQyNDJjMTk0NCIsImlhdCI6MTY0NzE3ODE2MSwiZXhwIjoxNjQ3MTgxNzYxfQ.NmnDAWe3JMmQiv__fQ7FIORw2Mb35WqBZYs_ankW7eA
+POST  http://localhost:4000/users/editUser/amit
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmY2MDk1Mzk1ODVjMWMxZWFlZjI0YSIsImlhdCI6MTY0NzI3MzM2OCwiZXhwIjoxNjQ3Mjc2OTY4fQ.zmVtQGFHmz1MWZZ34wlo08Qt1Q_LlD1ho8bAQVpLcQE
 Content-Type: application/json
 
 {
-    "Username": "liem",       
+    "Username": "amit",       
     "Password":"5566", 
     "Email": "email@email.email1",
     "Sex":"undefind",
-    "Age":288, 
-    "Followers":11,
+    "Age":"28845", 
+    "Followers":"11",
     "Profession":["Art","Sport"],
     "Platform":["instagram","youtube"], 
-    "NumberOfPosts":20,
+    "NumberOfPosts":"20",
     "Company":false,
     "Influencer":true 
 }
