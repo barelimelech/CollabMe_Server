@@ -28,7 +28,7 @@ const getUserById = async (req, res) => {
         const user = await User.findOne({'_id' : req.params.id })
         res.status(200).send(user)
     } catch (err) {
-        res.status(400).send({
+        res.status(400).send({  
             'status': 'fail',
             'error': err.message
         })
@@ -62,9 +62,24 @@ const editUser = async(req, res) => {
     
 }
 
+const deleteuser = async(req, res) => {
+    usertodelete = await User.findOne({'Username':req.params.username });
+    User.deleteOne({
+        Username: usertodelete.UserName
+        }, function (err) {
+        if (err) {
+          console.log(err);
+          return res.send(err.message);
+        }
+        res.status(200).send();
+        });
+
+}
+
 
 module.exports = {
     getUserByUserNmae,
     editUser,
-    getUserById
+    getUserById,
+    deleteuser
 }

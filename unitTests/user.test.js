@@ -80,7 +80,10 @@ describe('Testing Auth API',()=>{
         expect(user1.Influencer).toEqual(true)    
     })
 
-    
+    test('test deleteuser',async ()=>{
+        const response = await request(app).post('/users/deleteuser/' + username).set({ authorization: 'JWT ' + accessToken })
+        expect(response.statusCode).toEqual(200)
+    })
 
 
 
