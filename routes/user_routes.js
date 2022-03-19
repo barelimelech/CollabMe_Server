@@ -8,6 +8,7 @@ router.get('/getUser/:username',authenticate,user.getUserByUserNmae);
 router.get('/getUserById/:id',authenticate,user.getUserById);
 router.post('/editUser/:username',authenticate, user.editUser)
 router.post('/deleteuser/:username',authenticate, user.deleteuser)
+router.get('/authenticate',authenticate,user.isconnected);
 
 
 module.exports = router

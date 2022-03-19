@@ -76,6 +76,8 @@ describe('Testing Offer API',()=>{
         expect(response.statusCode).toEqual(200)
     })
 
+
+
     test('add new offer',async ()=>{
         const response = await request(app).post('/offer/addNewOffer').set({ authorization: 'JWT ' + accessToken })
         .send({
@@ -88,11 +90,9 @@ describe('Testing Offer API',()=>{
             "Profession": profession,  
             "User":user,      
             "IntrestedVerify":intrestedVerfiy
-        })
+        });
         expect(response.statusCode).toEqual(200)
-        const newOffer = response.body
-         id = response.body._id;
-
+        const newOffer = response.body    
         expect(newOffer.Description).toEqual(description)
         expect(newOffer.HeadLine).toEqual(headline)
         expect(newOffer.Price).toEqual(price)
@@ -101,12 +101,33 @@ describe('Testing Offer API',()=>{
         expect(newOffer.Status).toEqual(status)
         expect(newOffer.Profession).toEqual(profession)
         expect(newOffer.User).toEqual(user)
-        expect(newOffer.IntrestedVerify).toEqual(intrestedVerfiy)        
+        expect(newOffer.IntrestedVerify).toEqual(intrestedVerfiy)  
+
+        
+              
+        
         
     })
 
+    test('getbyidoffer offer',async ()=>{
+        //get by id    
+        const response2 = await request(app).get('/offer/getOfferById/'+ idOffer)
+        .set({ authorization: 'JWT ' + accessToken })
+        const newOffer1 = response2.body
+        expect(response2.statusCode).toEqual(200)
+        expect(newOffer1.Description).toEqual(description)
+        expect(newOffer1.HeadLine).toEqual(headline)
+        expect(newOffer1.Price).toEqual(price)
+        expect(newOffer1.Coupon).toEqual(cupon)
+        expect(newOffer1.IdOffer).toEqual(idOffer)
+        expect(newOffer1.Status).toEqual(status)
+        expect(newOffer1.Profession).toEqual(profession)
+        expect(newOffer1.User).toEqual(user)
+        expect(newOffer1.IntrestedVerify).toEqual(intrestedVerfiy)  
+    });
+
     test('edit offer',async ()=>{
-        const response = await request(app).post('/offer/editOffer/' + id).set({ authorization: 'JWT ' + accessToken })
+        const response = await request(app).post('/offer/editOffer/' + idOffer).set({ authorization: 'JWT ' + accessToken })
         .send({
             "Description":description,   
             "HeadLine":"hi",
@@ -133,7 +154,7 @@ describe('Testing Offer API',()=>{
     })
 
     test('test deleteOffer',async ()=>{
-        const response = await request(app).post('/offer/deleteOffer/' + id).set({ authorization: 'JWT ' + accessToken })
+        const response = await request(app).post('/offer/deleteOffer/' + idOffer).set({ authorization: 'JWT ' + accessToken })
         expect(response.statusCode).toEqual(200)
     })
 

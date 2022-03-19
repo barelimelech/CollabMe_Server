@@ -76,10 +76,15 @@ const deleteuser = async(req, res) => {
 
 }
 
+const isconnected = async(req, res) => {
+    res.status(200).send(true);
+};
+
 
 module.exports = {
     getUserByUserNmae,
     editUser,
     getUserById,
-    deleteuser
+    deleteuser,
+    isconnected
 }

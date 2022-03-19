@@ -16,7 +16,7 @@ const getOfferById = async (req, res) => {
 
     try {
         console.log('get offer ' + req.params.id)
-        const offers = await Offer.findById(req.params.id)
+        const offers = await Offer.findOne({'IdOffer':req.params.id});
         res.status(200).send(offers)
     } catch (err) {
         res.status(400).send({
@@ -61,9 +61,9 @@ const addNewOffer = async (req, res) => {
 
 const deleteOffer = async(req, res) => {
 
-        offerTodelete = await Offer.findById(req.params.id)
+        offerTodelete = await Offer.findOne({'IdOffer':req.params.id})
         Offer.deleteOne({
-            _id: offerTodelete.id
+            id: offerTodelete.IdOffer
             }, function (err) {
             if (err) {
               console.log(err);
@@ -75,7 +75,6 @@ const deleteOffer = async(req, res) => {
 }
 
 const editOffer = async(req, res) => {
-
     var updatedPost = {
         Description:req.body.Description,
         HeadLine:req.body.HeadLine,
@@ -91,11 +90,14 @@ const editOffer = async(req, res) => {
     };
 
     Offer.update({
-         _id: req.params.id
+        IdOffer: req.params.id
          }, updatedPost, function(err, affected){
         res.send(200, updatedPost);
     });
 }
+
+
+
 
 module.exports = {
     getOffers,
