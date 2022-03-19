@@ -35,7 +35,7 @@ Content-Type: application/json
 
 
 POST http://localhost:4000/offer/addNewOffer
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmRjZWNmY2RiMTcwNGU1MDJmODg0NiIsImlhdCI6MTY0NzI0NDc2OSwiZXhwIjoxNjQ3MjQ4MzY5fQ.jz8GPKAI-soJP8JyXiMS_BCjhxiKoNxMbD1kaQh6OQc
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzVlNzY1OThlMzM5Mzg1NmUxYzlhMyIsImlhdCI6MTY0NzY5OTgyNywiZXhwIjoxNjQ3NzAzNDI3fQ.2o5DvQC0PvXhg2MTMwfQqJhFe4tQPzInn8Q6GLawKfs
 Content-Type: application/json
 
 {
@@ -78,7 +78,7 @@ POST http://localhost:4000/auth/login
 Content-Type: application/json
 
 {
-    "Username" : "amit",
+    "Username" : "bar",
     "Password" : "5566"
 }
 
@@ -128,3 +128,6 @@ Content-Type: application/json
     "Company":false,
     "Influencer":true 
 }
+###
+GET http://localhost:4000/candidates/getCandidates/100
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzVlNzY1OThlMzM5Mzg1NmUxYzlhMyIsImlhdCI6MTY0NzY5OTgyNywiZXhwIjoxNjQ3NzAzNDI3fQ.2o5DvQC0PvXhg2MTMwfQqJhFe4tQPzInn8Q6GLawKfs

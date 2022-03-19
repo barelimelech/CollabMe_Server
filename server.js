@@ -46,4 +46,7 @@ app.use('/auth',authRouter)
 const userrouter = require('./routes/user_routes')
 app.use('/users',userrouter)
 
+const candidates = require('./routes/candidates_routes')
+app.use('/candidates',candidates)
+
 module.exports = app

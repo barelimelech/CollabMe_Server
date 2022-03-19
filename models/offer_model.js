@@ -38,10 +38,10 @@ const offerSchema = new mongoose.Schema({
         type: String,
         required: false
     },
-    // Users: {
-    //     type: mongoose.Schema.Types.ObjectId, ref: 'users',
-    //     required: true
-    // },
+    Users: {
+        type: [String],
+        required: false
+    },
     IntrestedVerify: {
         type: Boolean,
         required: false
