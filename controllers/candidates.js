@@ -9,6 +9,7 @@ const getCandidates = async(req, res) =>{
     for(var i=0; i<offerId.Users.length; i++){
          userArr[i] =  await Users.findOne({'Username':offerId.Users[i]}); 
     }
+        
     res.status(200).send(userArr);
 }
 
