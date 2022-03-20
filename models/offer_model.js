@@ -18,10 +18,7 @@ const offerSchema = new mongoose.Schema({
         type: String,
         required: false
     },
-    Coupon: {
-        type: String,
-        required: false
-    },
+   
     IdOffer: {
         type: String,
         required: false

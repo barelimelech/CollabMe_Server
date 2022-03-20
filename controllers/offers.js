@@ -31,7 +31,6 @@ const addNewOffer = async (req, res) => {
     const headLine =req.body.HeadLine;
     const finishDate = req.body.FinishDate;
     const price = req.body.Price;
-    const coupon =  req.body.Coupon;
     const idOffer = req.body.IdOffer;
     const status =  req.body.Status;
     const profession =  req.body.Profession;
@@ -44,7 +43,6 @@ const addNewOffer = async (req, res) => {
         HeadLine:headLine,
         FinishDate: finishDate,
         Price :price,
-        Coupon:coupon,
         IdOffer :idOffer,
         Status: status,
         Profession: profession,
@@ -80,7 +78,6 @@ const editOffer = async(req, res) => {
         HeadLine:req.body.HeadLine,
         FinishDate:req.body.FinishDate,
         Price:req.body.Price,
-        Coupon:req.body.Coupon,
         IdOffer :req.body.IdOffer,
         Status: req.body.Status,
         Profession: req.body.Profession,
