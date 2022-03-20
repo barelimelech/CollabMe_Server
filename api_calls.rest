@@ -131,3 +131,7 @@ Content-Type: application/json
 ###
 GET http://localhost:4000/candidates/getCandidates/100
 Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzVlYTk1ZGQ0YjcyYWFkYzc1NTJlZiIsImlhdCI6MTY0NzcwMDYzMSwiZXhwIjoxNjQ3NzA0MjMxfQ.TnuSorNbSNYBNXLkAmJJKe4LBhZx5y2cPazJAc3Z5kg
+
+###
+GET http://localhost:4000/auth/getUserByUserNameInSignIn/amit
+Content-Type: application/json
