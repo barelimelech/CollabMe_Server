@@ -36,7 +36,7 @@ const addNewOffer = async (req, res) => {
     const status =  req.body.Status;
     const profession =  req.body.Profession;
     const user =  req.body.User;
-    //const users =  req.body.Users;
+    const users =  req.body.Users;
     const intrestedVerify =  req.body.IntrestedVerify;
 
     const offer = Offer({
@@ -49,7 +49,7 @@ const addNewOffer = async (req, res) => {
         Status: status,
         Profession: profession,
         User:user,
-        //Users: users,
+        Users: users,
         IntrestedVerify:intrestedVerify
     })
 
@@ -85,7 +85,7 @@ const editOffer = async(req, res) => {
         Status: req.body.Status,
         Profession: req.body.Profession,
         User:req.body.User,
-        //Users: users,
+        Users: req.body.Users,
         IntrestedVerify:req.body.IntrestedVerify
     };
 
