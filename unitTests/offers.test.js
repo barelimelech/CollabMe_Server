@@ -3,15 +3,14 @@ const request = require('supertest')
 const mongoosse = require('mongoose')
 const { response } = require('../server')
 const User = require('../models/user_model')
-
-
+const Offers = require('../models/offer_model')
 
 const username = 'liem'
 const pwd = '5566'
 const description="hi"
-const headline = "hello"
+const headline = "now"
 const price = "10"
-const idOffer = "777"
+const idOffer = "10"
 const status = "now"
 const profession = ["sport","art"];
 let user = "62277413fe8636f7c2c9aff2"
@@ -23,6 +22,8 @@ beforeAll(done=>{
     User.remove({'Username' : username}, (err)=>{
         done()
     })
+
+   
 })
 
 afterAll(done=>{
@@ -30,8 +31,10 @@ afterAll(done=>{
         mongoosse.connection.close()
         done()
     })
+    Offers.remove({'IdOffer':idOffer}, (err)=>{
+        done()
+    })
 })
-
 
 describe('Testing Offer API',()=>{
     let accessToken = ''
@@ -147,6 +150,7 @@ describe('Testing Offer API',()=>{
                
     })
 
+    
     test('test deleteOffer',async ()=>{
         const response = await request(app).post('/offer/deleteOffer/' + idOffer).set({ authorization: 'JWT ' + accessToken })
         expect(response.statusCode).toEqual(200)
