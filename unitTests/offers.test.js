@@ -11,8 +11,7 @@ const pwd = '5566'
 const description="hi"
 const headline = "hello"
 const price = "10"
-const cupon = "free dinner"
-const idOffer = "4"
+const idOffer = "777"
 const status = "now"
 const profession = ["sport","art"];
 let user = "62277413fe8636f7c2c9aff2"
@@ -84,7 +83,6 @@ describe('Testing Offer API',()=>{
             "Description":description,   
             "HeadLine":headline,
             "Price" :price,
-            "Coupon":cupon,
             "IdOffer" :idOffer,
             "Status":status,
             "Profession": profession,  
@@ -96,7 +94,6 @@ describe('Testing Offer API',()=>{
         expect(newOffer.Description).toEqual(description)
         expect(newOffer.HeadLine).toEqual(headline)
         expect(newOffer.Price).toEqual(price)
-        expect(newOffer.Coupon).toEqual(cupon)
         expect(newOffer.IdOffer).toEqual(idOffer)
         expect(newOffer.Status).toEqual(status)
         expect(newOffer.Profession).toEqual(profession)
@@ -118,7 +115,6 @@ describe('Testing Offer API',()=>{
         expect(newOffer1.Description).toEqual(description)
         expect(newOffer1.HeadLine).toEqual(headline)
         expect(newOffer1.Price).toEqual(price)
-        expect(newOffer1.Coupon).toEqual(cupon)
         expect(newOffer1.IdOffer).toEqual(idOffer)
         expect(newOffer1.Status).toEqual(status)
         expect(newOffer1.Profession).toEqual(profession)
@@ -132,7 +128,6 @@ describe('Testing Offer API',()=>{
             "Description":description,   
             "HeadLine":"hi",
             "Price" :"30",
-            "Coupon":cupon,
             "IdOffer" :idOffer,
             "Status":status,
             "Profession": profession,  
@@ -144,7 +139,6 @@ describe('Testing Offer API',()=>{
         expect(newOffer.Description).toEqual(description)
         expect(newOffer.HeadLine).toEqual("hi")
         expect(newOffer.Price).toEqual("30")
-        expect(newOffer.Coupon).toEqual(cupon)
         expect(newOffer.IdOffer).toEqual(idOffer)
         expect(newOffer.Status).toEqual(status)
         expect(newOffer.Profession).toEqual(profession)

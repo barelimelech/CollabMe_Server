@@ -10,7 +10,6 @@ const pwd = '5566'
 const description="hi"
 const headline = "hello"
 const price = "10"
-const cupon = "free dinner"
 const idOffer = "1"
 const status = "now"
 const profession = ["sport","art"];
@@ -74,7 +73,6 @@ describe('Testing Offer API',()=>{
             "Description":description,   
             "HeadLine":headline,
             "Price" :price,
-            "Coupon":cupon,
             "IdOffer" :idOffer,
             "Status":status,
             "Profession": profession,  
@@ -86,7 +84,6 @@ describe('Testing Offer API',()=>{
         expect(newOffer.Description).toEqual(description)
         expect(newOffer.HeadLine).toEqual(headline)
         expect(newOffer.Price).toEqual(price)
-        expect(newOffer.Coupon).toEqual(cupon)
         expect(newOffer.IdOffer).toEqual(idOffer)
         expect(newOffer.Status).toEqual(status)
         expect(newOffer.Profession).toEqual(profession)
