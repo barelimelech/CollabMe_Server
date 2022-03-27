@@ -49,4 +49,7 @@ app.use('/users',userrouter)
 const candidates = require('./routes/candidates_routes')
 app.use('/candidates',candidates)
 
+const search = require('./routes/search_routes')
+app.use('/search',search)
+
 module.exports = app
