@@ -35,19 +35,19 @@ Content-Type: application/json
 
 
 POST http://localhost:4000/offer/addNewOffer
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzVlYTk1ZGQ0YjcyYWFkYzc1NTJlZiIsImlhdCI6MTY0NzcwMDYzMSwiZXhwIjoxNjQ3NzA0MjMxfQ.TnuSorNbSNYBNXLkAmJJKe4LBhZx5y2cPazJAc3Z5kg
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2JhNTMxNjFhNTAwM2Y1MGU3ODllMSIsImlhdCI6MTY0ODMzMzkxNSwiZXhwIjoxNjQ4MzM3NTE1fQ.iZd88ti0BAZSUmjbNdo8b902Amr92ctNN2qC9MhiZ94
 Content-Type: application/json
 
 {
-        "Description":"Helloworld",   
-        "HeadLine":"hello",
+        "Description":"hi nice to meet you",   
+        "HeadLine":"koko",
         "FinishDate":"14.6.22",
         "Price" :10000,
-        "Coupon":"100$",
+        "Coupon":"1$",
         "IdOffer" :100,
         "Status":"now",
         "Profession": ["sport"],  
-        "User":"622dcecfcdb1704e502f8846",      
+        "User":"loljjji",      
         "IntrestedVerify":false
 }
 
@@ -134,4 +134,8 @@ Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzVlYTk1ZG
 
 ###
 GET http://localhost:4000/auth/getUserByUserNameInSignIn/amit
-Content-Type: application/json
+Content-Type: application/
+###
+
+GET http://localhost:4000/search/getOfferFromFreeSearch/10000
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2JhNTMxNjFhNTAwM2Y1MGU3ODllMSIsImlhdCI6MTY0ODMzNzI1NCwiZXhwIjoxNjQ4MzQwODU0fQ.u5-h4Jr2Xkce-Id4m5WBVRm7AiTlFW3fUFKRZdd2q0Y

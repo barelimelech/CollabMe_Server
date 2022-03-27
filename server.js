@@ -12,9 +12,9 @@ if (process.env.NODE_ENV == "development") {
         definition: {
             openapi: "3.0.0",
             info: {
-                title: "Node Demo API",
+                title: "Node API Description",
                 version: "1.0.0",
-                description: "A simple Express Library API",
+                description: "Explanatin about API",
             },
             servers: [{url: "http://localhost:" + process.env.PORT,},],
         },
@@ -48,5 +48,8 @@ app.use('/users',userrouter)
 
 const candidates = require('./routes/candidates_routes')
 app.use('/candidates',candidates)
+
+const search = require('./routes/search_routes')
+app.use('/search',search)
 
 module.exports = app
