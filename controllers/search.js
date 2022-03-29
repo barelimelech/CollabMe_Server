@@ -5,6 +5,7 @@ const getOfferFromFreeSearch = async (req, res) => {
     var num1 = req.params.freesearch;
 
     try {
+        
         const offers1 = await Offer.find({'User':req.params.freesearch});
         const offers2 = await Offer.find({'Description':req.params.freesearch});
         const offers3 = await Offer.find({'HeadLine':req.params.freesearch});
@@ -12,11 +13,11 @@ const getOfferFromFreeSearch = async (req, res) => {
         const offers5 = await Offer.find({'Profession':req.params.freesearch});
         const offers6 = await Offer.find({'FinishDate': num1.toString()});
 
-        const offers = [];
+        const offers = [], offers0 = [];
         offers[0] = offers1; offers[1] = offers2; offers[2] = offers3;offers[4] = offers4;offers[5]=offers5;
         var result =  offers.filter(e => e.length);
 
-        res.status(200).send(result)
+        res.status(200).send(result.flat());
     } catch (err) {
         res.status(400).send({
             'status': 'fail',
@@ -24,6 +25,14 @@ const getOfferFromFreeSearch = async (req, res) => {
         })
     }
 }
+/*
+        var result;
+        Offer.createIndex({Description: 'text', HeadLine: 'text', FinishDate: 'text',
+        Price: 'text', Profession: 'text', User: 'text' })
+        result = await Offer.find( { $text: { $search: num1.toString() } } )
+
+        res.status(200).send(result)
+*/
 
 module.exports = {
     getOfferFromFreeSearch

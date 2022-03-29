@@ -35,14 +35,14 @@ Content-Type: application/json
 
 
 POST http://localhost:4000/offer/addNewOffer
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2JhNTMxNjFhNTAwM2Y1MGU3ODllMSIsImlhdCI6MTY0ODMzMzkxNSwiZXhwIjoxNjQ4MzM3NTE1fQ.iZd88ti0BAZSUmjbNdo8b902Amr92ctNN2qC9MhiZ94
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2JhNTMxNjFhNTAwM2Y1MGU3ODllMSIsImlhdCI6MTY0ODUwNTQzNywiZXhwIjoxNjQ4NTEyNjM3fQ.Cj16QVBxEYFJKsLm0IUNPxfTtx9JYwPacw6d4MCSJ-I
 Content-Type: application/json
 
 {
-        "Description":"hi nice to meet you",   
-        "HeadLine":"koko",
+        "Description":"koko",   
+        "HeadLine":"yoyo",
         "FinishDate":"14.6.22",
-        "Price" :10000,
+        "Price" :10,
         "Coupon":"1$",
         "IdOffer" :100,
         "Status":"now",
@@ -98,7 +98,7 @@ Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI1NGQ2Zj
 
 ###
 GET  http://localhost:4000/auth/refreshToken
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjhkYmFmM2QxYjdjM2E2NTA4YjRiOCIsImlhdCI6MTY0Njg0NDg1Mn0.gJCd-Uqf5UstpylX6Ni3xkcNGzC-5rJnPKD_6bvuw28
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2JhNTMxNjFhNTAwM2Y1MGU3ODllMSIsImlhdCI6MTY0ODQyMTA3MiwiZXhwIjoxNjQ4NDIxMTUyfQ.SqpgQon4h8jJlBIjDrUvzwyFLCvpbzn_-BZfqpmbc_o
 
 ###
 GET http://localhost:4000/users/getUser/bari
@@ -137,5 +137,5 @@ GET http://localhost:4000/auth/getUserByUserNameInSignIn/amit
 Content-Type: application/
 ###
 
-GET http://localhost:4000/search/getOfferFromFreeSearch/10000
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2JhNTMxNjFhNTAwM2Y1MGU3ODllMSIsImlhdCI6MTY0ODMzNzI1NCwiZXhwIjoxNjQ4MzQwODU0fQ.u5-h4Jr2Xkce-Id4m5WBVRm7AiTlFW3fUFKRZdd2q0Y
+GET http://localhost:4000/search/getOfferFromFreeSearch/koko
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2JhNTMxNjFhNTAwM2Y1MGU3ODllMSIsImlhdCI6MTY0ODUwNTQzNywiZXhwIjoxNjQ4NTEyNjM3fQ.Cj16QVBxEYFJKsLm0IUNPxfTtx9JYwPacw6d4MCSJ-I
