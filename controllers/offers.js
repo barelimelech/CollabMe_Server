@@ -5,19 +5,22 @@ const getOffers = async (req, res) => {
         offers = await Offer.find()
         res.status(200).send(offers)
     } catch (err) {
-        res.status(400).send({
-            'status': 'fail',
-            'error': err.message
-        })
+       
     }
 }
 
 const getOfferById = async (req, res) => {
-
-    try {
-        console.log('get offer ' + req.params.id)
+    try {       
         const offers = await Offer.findOne({'IdOffer':req.params.id});
-        res.status(200).send(offers)
+        if(offers==null){
+            res.status(400).send({
+                'status': 'fail',
+                'error': err.message
+            })
+
+        }else{
+            res.status(200).send(offers)
+        }
     } catch (err) {
         res.status(400).send({
             'status': 'fail',
@@ -64,7 +67,6 @@ const deleteOffer = async(req, res) => {
             id: offerTodelete.IdOffer
             }, function (err) {
             if (err) {
-              console.log(err);
               return res.send(err.message);
             }
             res.status(200).send();

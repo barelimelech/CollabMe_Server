@@ -14,6 +14,7 @@ const idOffer = "1"
 const status = "now"
 const profession = ["sport","art"];
 let user = "62277413fe8636f7c2c9aff2"
+let users = ["amit"]
 const intrestedVerfiy= false       
 
 beforeAll(done=>{
@@ -48,7 +49,7 @@ describe('Testing Offer API',()=>{
             "Platform":["instagram","youtube"], 
              "NumberOfPosts":20,
              "Company":false,
-            "Influencer":true 
+             "Influencer":true 
 
         })
         expect(response.statusCode).toEqual(200)
@@ -76,7 +77,8 @@ describe('Testing Offer API',()=>{
             "IdOffer" :idOffer,
             "Status":status,
             "Profession": profession,  
-            "User":user,      
+            "User":user,  
+            "Users":users,    
             "IntrestedVerify":intrestedVerfiy
         });
         expect(response.statusCode).toEqual(200)
@@ -88,15 +90,34 @@ describe('Testing Offer API',()=>{
         expect(newOffer.Status).toEqual(status)
         expect(newOffer.Profession).toEqual(profession)
         expect(newOffer.User).toEqual(user)
-        expect(newOffer.IntrestedVerify).toEqual(intrestedVerfiy)    
-              
-        
+        expect(newOffer.Users).toEqual(users)
+        expect(newOffer.IntrestedVerify).toEqual(intrestedVerfiy)      
         
     })
+    test('test registration',async ()=>{
+        const response = await request(app).post('/auth/register').send({
+            'Username' : "amit",
+            'Password':pwd,
+            'Email': "email@email.email",
+            "Sex":"undefind",
+            "Tokens":[],
+            "Age":28, 
+            "Followers":10,
+             "Profession":["Art","Sport"],
+            "Platform":["instagram","youtube"], 
+             "NumberOfPosts":20,
+             "Company":false,
+             "Influencer":true 
+
+        })
+        expect(response.statusCode).toEqual(200)
+        userId = response.body._id
+    })
+
 
     test("get candidates",async()=>{
-        console.log(idOffer);
         const response = await request(app).get('/candidates/getCandidates/' + idOffer).set({ authorization: 'JWT ' + accessToken })
+        expect(response.body[0].Username).toEqual(users[0])
         expect(response.statusCode).toEqual(200)
         
     });

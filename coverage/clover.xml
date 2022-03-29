@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1648566170193" clover="3.2.0">
-  <project timestamp="1648566170193" name="All files">
-    <metrics statements="289" coveredstatements="244" conditionals="46" coveredconditionals="30" methods="33" coveredmethods="24" elements="368" coveredelements="298" complexity="0" loc="289" ncloc="289" packages="5" files="17" classes="17"/>
+<coverage generated="1648569670461" clover="3.2.0">
+  <project timestamp="1648569670461" name="All files">
+    <metrics statements="288" coveredstatements="247" conditionals="48" coveredconditionals="32" methods="33" coveredmethods="24" elements="369" coveredelements="303" complexity="0" loc="288" ncloc="288" packages="5" files="17" classes="17"/>
     <package name="CollabMe_Server">
       <metrics statements="33" coveredstatements="28" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
       <file name="server.js" path="C:\Users\amitb\CollabMe_Server\server.js">
@@ -47,18 +47,18 @@
         <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="4" methods="2" coveredmethods="2"/>
         <line num="2" count="6" type="stmt"/>
         <line num="4" count="6" type="stmt"/>
-        <line num="5" count="12" type="stmt"/>
-        <line num="6" count="12" type="cond" truecount="2" falsecount="0"/>
-        <line num="7" count="12" type="cond" truecount="1" falsecount="1"/>
-        <line num="9" count="12" type="stmt"/>
-        <line num="10" count="12" type="cond" truecount="1" falsecount="1"/>
-        <line num="11" count="12" type="stmt"/>
-        <line num="12" count="12" type="stmt"/>
+        <line num="5" count="13" type="stmt"/>
+        <line num="6" count="13" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="13" type="cond" truecount="1" falsecount="1"/>
+        <line num="9" count="13" type="stmt"/>
+        <line num="10" count="13" type="cond" truecount="1" falsecount="1"/>
+        <line num="11" count="13" type="stmt"/>
+        <line num="12" count="13" type="stmt"/>
         <line num="16" count="6" type="stmt"/>
       </file>
     </package>
     <package name="CollabMe_Server.controllers">
-      <metrics statements="184" coveredstatements="147" conditionals="38" coveredconditionals="25" methods="26" coveredmethods="21"/>
+      <metrics statements="183" coveredstatements="150" conditionals="40" coveredconditionals="27" methods="26" coveredmethods="21"/>
       <file name="auth.js" path="C:\Users\amitb\CollabMe_Server\controllers\auth.js">
         <metrics statements="89" coveredstatements="75" conditionals="32" coveredconditionals="21" methods="8" coveredmethods="7"/>
         <line num="1" count="6" type="stmt"/>
@@ -68,27 +68,27 @@
         <line num="6" count="6" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="13" count="6" type="stmt"/>
-        <line num="14" count="7" type="stmt"/>
-        <line num="15" count="7" type="stmt"/>
-        <line num="16" count="7" type="stmt"/>
-        <line num="17" count="7" type="stmt"/>
-        <line num="18" count="7" type="stmt"/>
-        <line num="19" count="7" type="stmt"/>
-        <line num="20" count="7" type="stmt"/>
-        <line num="21" count="7" type="stmt"/>
-        <line num="22" count="7" type="stmt"/>
-        <line num="23" count="7" type="stmt"/>
-        <line num="24" count="7" type="stmt"/>
-        <line num="25" count="7" type="stmt"/>
-        <line num="27" count="7" type="stmt"/>
-        <line num="28" count="7" type="stmt"/>
-        <line num="29" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="15" count="8" type="stmt"/>
+        <line num="16" count="8" type="stmt"/>
+        <line num="17" count="8" type="stmt"/>
+        <line num="18" count="8" type="stmt"/>
+        <line num="19" count="8" type="stmt"/>
+        <line num="20" count="8" type="stmt"/>
+        <line num="21" count="8" type="stmt"/>
+        <line num="22" count="8" type="stmt"/>
+        <line num="23" count="8" type="stmt"/>
+        <line num="24" count="8" type="stmt"/>
+        <line num="25" count="8" type="stmt"/>
+        <line num="27" count="8" type="stmt"/>
+        <line num="28" count="8" type="stmt"/>
+        <line num="29" count="8" type="cond" truecount="2" falsecount="0"/>
         <line num="30" count="1" type="stmt"/>
-        <line num="35" count="6" type="stmt"/>
-        <line num="36" count="6" type="stmt"/>
-        <line num="38" count="6" type="stmt"/>
-        <line num="52" count="6" type="stmt"/>
-        <line num="53" count="6" type="stmt"/>
+        <line num="35" count="7" type="stmt"/>
+        <line num="36" count="7" type="stmt"/>
+        <line num="38" count="7" type="stmt"/>
+        <line num="52" count="7" type="stmt"/>
+        <line num="53" count="7" type="stmt"/>
         <line num="56" count="0" type="stmt"/>
         <line num="64" count="6" type="stmt"/>
         <line num="65" count="7" type="stmt"/>
@@ -152,7 +152,7 @@
         <line num="169" count="6" type="stmt"/>
       </file>
       <file name="candidates.js" path="C:\Users\amitb\CollabMe_Server\controllers\candidates.js">
-        <metrics statements="10" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="6" type="stmt"/>
         <line num="2" count="6" type="stmt"/>
         <line num="3" count="6" type="stmt"/>
@@ -160,9 +160,9 @@
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="16" count="6" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="15" count="6" type="stmt"/>
       </file>
       <file name="images.js" path="C:\Users\amitb\CollabMe_Server\controllers\images.js">
         <metrics statements="5" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
@@ -173,23 +173,20 @@
         <line num="8" count="6" type="stmt"/>
       </file>
       <file name="offers.js" path="C:\Users\amitb\CollabMe_Server\controllers\offers.js">
-        <metrics statements="38" coveredstatements="34" conditionals="2" coveredconditionals="1" methods="7" coveredmethods="7"/>
+        <metrics statements="37" coveredstatements="36" conditionals="4" coveredconditionals="3" methods="7" coveredmethods="7"/>
         <line num="1" count="6" type="stmt"/>
         <line num="3" count="6" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="15" count="6" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="29" count="6" type="stmt"/>
-        <line num="30" count="2" type="stmt"/>
-        <line num="31" count="2" type="stmt"/>
-        <line num="32" count="2" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="32" count="6" type="stmt"/>
         <line num="33" count="2" type="stmt"/>
         <line num="34" count="2" type="stmt"/>
         <line num="35" count="2" type="stmt"/>
@@ -197,21 +194,23 @@
         <line num="37" count="2" type="stmt"/>
         <line num="38" count="2" type="stmt"/>
         <line num="39" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
         <line num="41" count="2" type="stmt"/>
-        <line num="54" count="2" type="stmt"/>
-        <line num="55" count="2" type="stmt"/>
-        <line num="60" count="6" type="stmt"/>
-        <line num="62" count="1" type="stmt"/>
-        <line num="63" count="1" type="stmt"/>
-        <line num="66" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="67" count="0" type="stmt"/>
-        <line num="68" count="0" type="stmt"/>
-        <line num="70" count="1" type="stmt"/>
-        <line num="75" count="6" type="stmt"/>
-        <line num="76" count="1" type="stmt"/>
-        <line num="89" count="1" type="stmt"/>
-        <line num="92" count="1" type="stmt"/>
-        <line num="99" count="6" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="44" count="2" type="stmt"/>
+        <line num="57" count="2" type="stmt"/>
+        <line num="58" count="2" type="stmt"/>
+        <line num="63" count="6" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="69" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="77" count="6" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="91" count="1" type="stmt"/>
+        <line num="94" count="1" type="stmt"/>
+        <line num="101" count="6" type="stmt"/>
       </file>
       <file name="search.js" path="C:\Users\amitb\CollabMe_Server\controllers\search.js">
         <metrics statements="17" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
@@ -220,18 +219,18 @@
         <line num="4" count="0" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="28" count="6" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="37" count="6" type="stmt"/>
       </file>
       <file name="users.js" path="C:\Users\amitb\CollabMe_Server\controllers\users.js">
         <metrics statements="25" coveredstatements="24" conditionals="4" coveredconditionals="3" methods="7" coveredmethods="6"/>
@@ -269,7 +268,7 @@
         <line num="1" count="6" type="stmt"/>
         <line num="2" count="6" type="stmt"/>
         <line num="4" count="6" type="stmt"/>
-        <line num="50" count="6" type="stmt"/>
+        <line num="51" count="6" type="stmt"/>
       </file>
       <file name="user_model.js" path="C:\Users\amitb\CollabMe_Server\models\user_model.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>

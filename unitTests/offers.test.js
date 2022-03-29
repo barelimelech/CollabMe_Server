@@ -78,6 +78,11 @@ describe('Testing Offer API',()=>{
         expect(response.statusCode).toEqual(200)
     })
 
+    test('offers get id wrong',async ()=>{
+        const response = await request(app).get('/offer/getOfferById/'+4).set({ authorization: 'JWT ' + accessToken })
+        expect(response.statusCode).toEqual(400)
+    })
+
 
 
     test('add new offer',async ()=>{
