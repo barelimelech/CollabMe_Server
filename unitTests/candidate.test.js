@@ -101,6 +101,13 @@ describe('Testing Offer API',()=>{
         
     });
 
+    test('test isconnected',async ()=>{
+        const response = await request(app).get('/users/authenticate').set({ authorization: 'JWT ' + accessToken })
+        expect(response.statusCode).toEqual(200)
+        expect(response.body).toEqual(true)
+    })
+
+
 
 
 });

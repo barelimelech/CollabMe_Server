@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken')
 const sendError = (res,code,msg)=>{
     return res.status(code).send({
         'status': 'fail',
-        'error': msg
+        'error': "not write fix it "
     })
 }
 
@@ -53,9 +53,9 @@ const register = async (req, res) => {
         res.status(200).send(newUser)
 
     }catch(err){
-        res.status(400).send({
+        return res.status(400).send({
             'status': 'fail',
-            'error': err.message
+            'error': 'user exists'
         })
     }
 }

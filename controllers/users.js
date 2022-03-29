@@ -2,18 +2,15 @@ const User = require('../models/user_model')
 const bcrypt = require('bcrypt')
 const { use } = require('../routes')
 
-
-const sendError = (res,code,msg)=>{
-    return res.status(code).send({
-        'status': 'fail',
-        'error': msg
-    })
-}
-
 const getUserByUserNmae = async (req, res) => {
-    try {
-        
+    try {        
         const user = await User.findOne({'Username' : req.params.username })
+        if(user==null){
+            res.status(400).send({
+                'status': 'fail',
+                'error': err.message
+            })
+        }
         res.status(200).send(user)
     } catch (err) {
         res.status(400).send({
@@ -23,20 +20,7 @@ const getUserByUserNmae = async (req, res) => {
     }
 }
 
-const getUserById = async (req, res) => {
-    try {
-        const user = await User.findOne({'_id' : req.params.id })
-        res.status(200).send(user)
-    } catch (err) {
-        res.status(400).send({  
-            'status': 'fail',
-            'error': err.message
-        })
-    }
-}
-
 const editUser = async(req, res) => {
-    console.log("youre in");
     const user = await User.findOne({'Username':req.params.username })  
     var updatedUser = {
         Username:req.body.Username,
@@ -58,21 +42,27 @@ const editUser = async(req, res) => {
          UserName: req.params.Username
          }, updatedUser, function(err, affected){
         res.send(200, updatedUser);
-    }).clone().catch(function(err){ console.log(err)})
+    }).clone().catch(function(err){ })
     
 }
 
 const deleteuser = async(req, res) => {
+    try{
     usertodelete = await User.findOne({'Username':req.params.username });
     User.deleteOne({
         Username: usertodelete.UserName
         }, function (err) {
         if (err) {
-          console.log(err);
-          return res.send(err.message);
+          res.status(404).send({
+            'status': 'fail',
+            'error': err.message
+            });
         }
         res.status(200).send();
         });
+    }catch(err){
+
+    }
 
 }
 
@@ -84,7 +74,7 @@ const isconnected = async(req, res) => {
 module.exports = {
     getUserByUserNmae,
     editUser,
-    getUserById,
+    
     deleteuser,
     isconnected
 }

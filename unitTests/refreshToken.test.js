@@ -25,7 +25,6 @@ afterAll(done=>{
 
 
 describe("Token refresh test ",()=>{
-
     test('test registration',async ()=>{
         const response = await request(app).post('/auth/register').send({
             'Username' : username,
@@ -66,7 +65,14 @@ describe("Token refresh test ",()=>{
         expect (response.statusCode).toEqual(200);
         newAccessToken = response.body.accessToken 
         newRefreshToken = response.body.refreshToken
-        expect (newAccessToken).not.toEqual(null);
+        expect(newAccessToken).not.toEqual(null);
         expect(newRefreshToken).not.toEqual(null);
+        var tokens =response.Tokens;
+        if(tokens===undefined){
+            expect(response.Tokens).toEqual(undefined);
+        }    
+        else if (!response.Tokens.includes(newAccessToken)) {
+            expect(response.Tokens).toEqual(undefined);
+        }
     }); 
 });

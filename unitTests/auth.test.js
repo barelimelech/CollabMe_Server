@@ -52,10 +52,9 @@ describe('Testing Auth API',()=>{
         expect(response.statusCode).toEqual(200)
         accessToken = response.body.accessToken
         refreshToken1 =  response.body.refreshToken
-        
-        console.log(refreshToken);
-
-
+        if (response.Tokens == null){ 
+            expect(response.Tokens).toEqual(undefined);
+        }     
        
     })         
     test('test logout',async ()=>{
@@ -65,8 +64,40 @@ describe('Testing Auth API',()=>{
             newRefreshToken = response.body.refreshToken
             expect (newAccessToken).not.toEqual(null);
             expect(newRefreshToken).not.toEqual(null);
-    })    
+    }) 
+    
+    test('login wrong', async () => {
+        expect.assertions(1);
+        const response2 = await request(app).post('/auth/login').send({
+            'Username' : "hi",
+            'Password':pwd
+        });
+        expect(response2.status).toEqual(400);
+      
+    });  
+    
+    
+    test('test registration wrong',async ()=>{
+        const response = await request(app).post('/auth/register').send({
+            'Username' : username,
+            'Password':pwd,
+            'Email': 'email@email.email',
+            "Sex":"undefind",
+            "Age":28, 
+            "Followers":10,
+             "Profession":["Art","Sport"],
+            "Platform":["instagram","youtube"], 
+             "NumberOfPosts":20,
+             "Company":false,
+            "Influencer":true 
 
+        })
+        expect(response.statusCode).toEqual(400)
+    })
+
+    
+
+    
     
 
 

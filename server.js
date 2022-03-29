@@ -24,8 +24,11 @@ if (process.env.NODE_ENV == "development") {
     app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs));
  }
 
+// Include the node file module  
+
 app.use(bodyParser.urlencoded({extended:true, limit: '1m'}))
 app.use(bodyParser.json())
+//app.use('/upload', express.static('upload'));
 
 mongoose.connect(process.env.DATABASE_URL,{useNewUrlParser : true})
 const db = mongoose.connection
@@ -51,5 +54,11 @@ app.use('/candidates',candidates)
 
 const search = require('./routes/search_routes')
 app.use('/search',search)
+
+const images1 = require('./routes/images_route')
+app.use('/image',images1)
+
+
+
 
 module.exports = app

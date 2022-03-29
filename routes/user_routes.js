@@ -112,7 +112,6 @@ router.get('/getUser/:username',authenticate,user.getUserByUserNmae);
 *             schema:
 *               $ref: '#/components/schemas/Offer'
 */
-router.get('/getUserById/:id',authenticate,user.getUserById);
 
 /**
 * @swagger

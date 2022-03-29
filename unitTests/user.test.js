@@ -13,6 +13,9 @@ const Platform = ["instagram","youtube"];
 let refreshToken1;
 
 
+
+
+
 beforeAll(done=>{
     User.remove({'Username' : username}, (err)=>{
         done()
@@ -49,6 +52,8 @@ describe('Testing Auth API',()=>{
         
     })
 
+    
+
     test('test login',async ()=>{
         const response = await request(app).post('/auth/login').send({
             'Username' : username,
@@ -61,11 +66,14 @@ describe('Testing Auth API',()=>{
 
 
        
-    })    
+    })   
+    
+    
 
-    test('get user',async ()=>{                  
+    test('get userbyusername',async ()=>{                  
         const response2 = await request(app).get('/users/getUser/' + username).set({ authorization: 'JWT ' + accessToken });
         expect(response2.statusCode).toEqual(200)
+                
         const user1 = response2.body
         expect(user1.Username).toEqual(username)
         expect(user1.Password).toEqual(NewPassword)
@@ -77,14 +85,28 @@ describe('Testing Auth API',()=>{
         expect(user1.Platform).toEqual(Platform)
         expect(user1.NumberOfPosts).toEqual("20") 
         expect(user1.Company).toEqual(false)  
-        expect(user1.Influencer).toEqual(true)    
+        expect(user1.Influencer).toEqual(true)
+           
     })
 
+    test('getuserbyusername', async () => {
+        expect.assertions(1);
+        const response2 = await request(app).get('/users/getUser/' +1).set({ authorization: 'JWT ' + accessToken });
+        expect(response2.statusCode).toEqual(400);
+      }); 
+    
+
+       
     test('test deleteuser',async ()=>{
         const response = await request(app).post('/users/deleteuser/' + username).set({ authorization: 'JWT ' + accessToken })
         expect(response.statusCode).toEqual(200)
     })
 
+    test('delete user wrong', async () => {
+        expect.assertions(1);
+        const response2 = await request(app).get('/users/deleteuser/' +1).set({ authorization: 'JWT ' + accessToken });
+        expect(response2.statusCode).toEqual(404);
+      });    
 
 
 });
