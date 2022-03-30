@@ -26,6 +26,21 @@ const getOfferFromFreeSearch = async (req, res) => {
     }
 }
 /*
+const getOfferFromDescription = async (req, res) => {
+    var description = req.params.description;
+
+    try {
+        const offers1 = await Offer.find({'Description':description});
+
+        res.status(200).send(offers1);
+    } catch (err) {
+        res.status(400).send({
+            'status': 'fail',
+            'error': err.message
+        })
+    }
+}*/
+/*
         var result;
         Offer.createIndex({Description: 'text', HeadLine: 'text', FinishDate: 'text',
         Price: 'text', Profession: 'text', User: 'text' })
@@ -34,6 +49,47 @@ const getOfferFromFreeSearch = async (req, res) => {
         res.status(200).send(result)
 */
 
-module.exports = {
-    getOfferFromFreeSearch
+const getOfferFromSpecificSearch = async (req, res) => {
+    console.log('youre in offer from specific search ');
+    var description = req.params.description;
+    var headline = req.params.headline;
+    var fromdate = req.params.fromdate;
+    var todate = req.params.todate;
+    var fromprice = req.params.fromprice;
+    var toprice = req.params.toprice;
+    var professions = req.params.professions;
+    var user = req.params.user;
+
+    try {
+        let result = await Object.values(Offer).filter(e => 
+        
+                (((e.Description == description)&&e.Description!="")&&
+                ((e.HeadLine == headline)&&e.HeadLine!="")&&
+                ((e.User == user)&&e.User!="")&&
+                ((e.Profession == professions)&&e.Profession!="")&&
+                ((e.Price <= toprice)&&(e.Price >= fromprice)&&e.Price!="")&&
+                ((e.FinishDate <= todate)&&(e.FinishDate >= fromdate)&&e.FinishDate!=""))
+        );
+
+
+        res.status(200).send(result);
+    } catch (err) {
+        res.status(400).send({
+            'status': 'fail',
+            'error': err.message
+        })
+    }
 }
+
+
+module.exports = {
+    getOfferFromFreeSearch,
+    getOfferFromSpecificSearch
+   // getOfferFromDescription
+}
+
+//    getOfferFromSpecificSearch,
+/*
+    var headline = req.params.headline;
+
+*/
