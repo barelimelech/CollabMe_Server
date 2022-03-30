@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1648569670461" clover="3.2.0">
-  <project timestamp="1648569670461" name="All files">
+<coverage generated="1648638583407" clover="3.2.0">
+  <project timestamp="1648638583407" name="All files">
     <metrics statements="288" coveredstatements="247" conditionals="48" coveredconditionals="32" methods="33" coveredmethods="24" elements="369" coveredelements="303" complexity="0" loc="288" ncloc="288" packages="5" files="17" classes="17"/>
     <package name="CollabMe_Server">
       <metrics statements="33" coveredstatements="28" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
