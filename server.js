@@ -28,7 +28,11 @@ if (process.env.NODE_ENV == "development") {
 
 app.use(bodyParser.urlencoded({extended:true, limit: '1m'}))
 app.use(bodyParser.json())
-//app.use('/upload', express.static('upload'));
+
+
+
+
+
 
 mongoose.connect(process.env.DATABASE_URL,{useNewUrlParser : true})
 const db = mongoose.connection
