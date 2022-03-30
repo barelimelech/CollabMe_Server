@@ -68,7 +68,7 @@ const getOfferFromSpecificSearch = async (req, res) => {
             result = await Offer.find({'Description':description});
             flag=true;
             console.log("hello1");
-            console.log(result);
+            
         }
         //
         if (headline!==("null")){
@@ -77,7 +77,7 @@ const getOfferFromSpecificSearch = async (req, res) => {
             if(flag==true){
                 result = await result.filter((d => d.HeadLine === headline));
                 console.log("hello2");
-                console.log(result);
+                
 
                 flag=true;
             }else{
@@ -92,7 +92,7 @@ const getOfferFromSpecificSearch = async (req, res) => {
             if(flag==true){
                 result = await result.filter((d => d.User === user));
                 console.log("hello3");
-                console.log(result);
+                
                 flag=true;
             }else{
                 result = await Offer.find({'User':user}); 
@@ -101,11 +101,13 @@ const getOfferFromSpecificSearch = async (req, res) => {
         //
         if (professions!=="null"){
             flag=true;
-
-            if(flag==true){
-                result = await result.filter((d => JSON.parse(d.Profession)[0] === professions));
-                console.log("hello4");
+            if(flag==true){ 
                 console.log(professions);
+                var proffesions3 = JSON.stringify(professions);
+                var profeesions2 =JSON.parse(proffesions3);                                     
+                result =result.filter(d =>d.Profession==profeesions2);    
+                console.log(result);              
+                console.log("hello4");              
 
                 flag=true;
             }else{
