@@ -139,3 +139,7 @@ Content-Type: application/
 
 GET http://localhost:4000/search/getOfferFromFreeSearch/koko
 Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2JhNTMxNjFhNTAwM2Y1MGU3ODllMSIsImlhdCI6MTY0ODUwNTQzNywiZXhwIjoxNjQ4NTEyNjM3fQ.Cj16QVBxEYFJKsLm0IUNPxfTtx9JYwPacw6d4MCSJ-I
+
+###
+GET http://localhost:4000/search/getOfferFromSpecificSearch/koko/momo/null/null/null/null/sport/yossi
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2JhNTMxNjFhNTAwM2Y1MGU3ODllMSIsImlhdCI6MTY0ODY2Mjc3MSwiZXhwIjoxNjQ4NjY5OTcxfQ.0uBjcbr0VAiYX3dOkLvDXJHx8MPOLrgP01SyxNquqNg

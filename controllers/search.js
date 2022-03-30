@@ -26,6 +26,21 @@ const getOfferFromFreeSearch = async (req, res) => {
     }
 }
 /*
+const getOfferFromDescription = async (req, res) => {
+    var description = req.params.description;
+
+    try {
+        const offers1 = await Offer.find({'Description':description});
+
+        res.status(200).send(offers1);
+    } catch (err) {
+        res.status(400).send({
+            'status': 'fail',
+            'error': err.message
+        })
+    }
+}*/
+/*
         var result;
         Offer.createIndex({Description: 'text', HeadLine: 'text', FinishDate: 'text',
         Price: 'text', Profession: 'text', User: 'text' })
@@ -34,6 +49,115 @@ const getOfferFromFreeSearch = async (req, res) => {
         res.status(200).send(result)
 */
 
-module.exports = {
-    getOfferFromFreeSearch
+const getOfferFromSpecificSearch = async (req, res) => {
+    console.log('youre in offer from specific search ');
+    var description = req.params.description;
+    var headline = req.params.headline;
+    var fromdate = req.params.fromdate;
+    var todate = req.params.todate;
+    var fromprice = req.params.fromprice;
+    var toprice = req.params.toprice;
+    var professions =req.params.professions;
+    var user = req.params.user;
+
+    try {
+        var result = [];
+        var flag=false;
+
+        if (description!==("null")){
+            result = await Offer.find({'Description':description});
+            flag=true;
+            console.log("hello1");
+            console.log(result);
+        }
+        //
+        if (headline!==("null")){
+            flag=true;
+
+            if(flag==true){
+                result = await result.filter((d => d.HeadLine === headline));
+                console.log("hello2");
+                console.log(result);
+
+                flag=true;
+            }else{
+                result = await Offer.find({'HeadLine':headline}); 
+            }
+            
+        }
+        //
+        if (user!==("null")){
+            flag=true;
+
+            if(flag==true){
+                result = await result.filter((d => d.User === user));
+                console.log("hello3");
+                console.log(result);
+                flag=true;
+            }else{
+                result = await Offer.find({'User':user}); 
+            }
+        }
+        //
+        if (professions!=="null"){
+            flag=true;
+
+            if(flag==true){
+                result = await result.filter((d => JSON.parse(d.Profession)[0] === professions));
+                console.log("hello4");
+                console.log(professions);
+
+                flag=true;
+            }else{
+                result = await Offer.find({'Profession':professions}); 
+            }
+        }
+        //
+        if (fromdate!==("null")&&todate!==("null")){
+            flag=true;
+
+            if(flag==true){
+                result = await result.filter((d => (d.FinishDate > fromdate-1 && d.FinishDate < todate+1)));
+                console.log("hello5");
+                console.log(result);
+                flag=true;
+            }else{
+                result = await Offer.find({'FinishDate':{$gt : fromdate-1, $lt : todate+1}}); 
+                console.log("hello5");
+                console.log(result);
+            }
+        }
+        //
+        if (fromprice!=="null"&&toprice!=="null"){
+
+            flag=true;
+
+            if(flag==true){
+                result = await result.filter((d => (d.Price > fromprice-1 && d.Price < toprice+1)));
+                console.log("hello6");
+                console.log(result);
+                flag=true;
+            }else{
+                result = await Offer.find({'Price':{$gt : fromprice-1, $lt : toprice+1}}); 
+                console.log("hello5");
+                console.log(result);
+            }
+        }
+
+        res.status(200).send(result);
+    } catch (err) {
+        res.status(400).send({
+            'status': 'fail',
+            'error': err.message
+        })
+    }
 }
+
+
+module.exports = {
+    getOfferFromFreeSearch,
+    getOfferFromSpecificSearch
+   // getOfferFromDescription
+}
+
+//    getOfferFromSpecificSearch,
