@@ -25,29 +25,6 @@ const getOfferFromFreeSearch = async (req, res) => {
         })
     }
 }
-/*
-const getOfferFromDescription = async (req, res) => {
-    var description = req.params.description;
-
-    try {
-        const offers1 = await Offer.find({'Description':description});
-
-        res.status(200).send(offers1);
-    } catch (err) {
-        res.status(400).send({
-            'status': 'fail',
-            'error': err.message
-        })
-    }
-}*/
-/*
-        var result;
-        Offer.createIndex({Description: 'text', HeadLine: 'text', FinishDate: 'text',
-        Price: 'text', Profession: 'text', User: 'text' })
-        result = await Offer.find( { $text: { $search: num1.toString() } } )
-
-        res.status(200).send(result)
-*/
 
 const getOfferFromSpecificSearch = async (req, res) => {
     console.log('youre in offer from specific search ');
@@ -71,6 +48,30 @@ const getOfferFromSpecificSearch = async (req, res) => {
             
         }
         //
+        if (user!==("null")){
+            if(flag==true){
+                result = await result.filter((d => d.User === user));
+                console.log("hello3");
+            }else{
+                result = await Offer.find({'User':user}); 
+                flag=true;
+            }
+        }
+        //
+                if (fromprice!=="null"&&toprice!=="null"){
+
+            if(flag==true){
+                result = await result.filter((d => (d.Price > fromprice-1 && d.Price < toprice+1)));
+                console.log("hello6");
+                flag=true;
+            }else{
+                result = await Offer.find({'Price':{$gt : fromprice-1, $lt : toprice+1}}); 
+                console.log("hello5");
+                flag=true;
+
+            }
+        }
+        //
         if (headline!==("null")){
             if(flag==true){
                 result = await result.filter((d => d.HeadLine === headline));
@@ -82,15 +83,6 @@ const getOfferFromSpecificSearch = async (req, res) => {
             
         }
         //
-        if (user!==("null")){
-            if(flag==true){
-                result = await result.filter((d => d.User === user));
-                console.log("hello3");
-            }else{
-                result = await Offer.find({'User':user}); 
-                flag=true;
-            }
-        }
         /*
         if (professions!=="null"){
             flag=true;
@@ -109,30 +101,25 @@ const getOfferFromSpecificSearch = async (req, res) => {
         }
         */
         if (fromdate!==("null")&&todate!==("null")){
+
             if(flag==true){
-                result = await result.filter((d => (d.FinishDate > fromdate-1 && d.FinishDate < todate+1)));
+                result = await result.filter((d => parseInt(d.FinishDate) <= parseInt(todate)));
+                console.log(result);
+
+                result = await result.filter((d => parseInt(d.FinishDate) >= parseInt(fromdate)));
+                console.log(result);
+
                 console.log("hello5");
             }else{
-                result = await Offer.find({'FinishDate':{$gt : fromdate-1, $lt : todate+1}}); 
+                result = await Offer.find({'FinishDate':{
+                    $gt : fromdate-1, $lt : todate+1
+                }}); 
                 console.log("hello5");
                 flag=true;
 
             }
         }
         //
-        if (fromprice!=="null"&&toprice!=="null"){
-
-            if(flag==true){
-                result = await result.filter((d => (d.Price > fromprice-1 && d.Price < toprice+1)));
-                console.log("hello6");
-                flag=true;
-            }else{
-                result = await Offer.find({'Price':{$gt : fromprice-1, $lt : toprice+1}}); 
-                console.log("hello5");
-                flag=true;
-
-            }
-        }
 
         res.status(200).send(result);
     } catch (err) {
@@ -147,7 +134,4 @@ const getOfferFromSpecificSearch = async (req, res) => {
 module.exports = {
     getOfferFromFreeSearch,
     getOfferFromSpecificSearch
-   // getOfferFromDescription
 }
-
-//    getOfferFromSpecificSearch,
