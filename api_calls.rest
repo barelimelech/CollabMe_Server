@@ -35,13 +35,13 @@ Content-Type: application/json
 
 
 POST http://localhost:4000/offer/addNewOffer
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDRhOGY3ZDhmMTA2MDRjYTgyNzYyZSIsImlhdCI6MTY0ODY2Njg3MiwiZXhwIjoxNjQ4NjcwNDcyfQ.W-KnpMoD1AwG2K0hMHSHAcnCHfDqsNR3Z7YeRqDrXRQ
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDVhMjMyMTU0MmMwZTUwNjFmY2ZmMCIsImlhdCI6MTY0ODczMDY3OCwiZXhwIjoxNjQ4NzM0Mjc4fQ.qrYmrj6Abv6jwxLgYfY2PP_cnWKpu2-Q4gHAOMdF9vs
 Content-Type: application/json
 
 {
         "Description":"koko",   
         "HeadLine":"yoyo",
-        "FinishDate":"14.6.22",
+        "FinishDate":"14062022",
         "Price" :10,
         "Coupon":"1$",
         "IdOffer" :100,
@@ -141,5 +141,5 @@ GET http://localhost:4000/search/getOfferFromFreeSearch/koko
 Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2JhNTMxNjFhNTAwM2Y1MGU3ODllMSIsImlhdCI6MTY0ODUwNTQzNywiZXhwIjoxNjQ4NTEyNjM3fQ.Cj16QVBxEYFJKsLm0IUNPxfTtx9JYwPacw6d4MCSJ-I
 
 ###
-GET http://localhost:4000/search/getOfferFromSpecificSearch/null/null/14061996/14061996/null/null/null
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2JhNTMxNjFhNTAwM2Y1MGU3ODllMSIsImlhdCI6MTY0ODcyMDAwMiwiZXhwIjoxNjQ4NzIzNjAyfQ.Y85ElRDRJ5_Tbf7I9DfUwh9GsJ9LTayCw35an85qrOs
+GET http://localhost:4000/search/getOfferFromSpecificSearch/null/null/14062022/14062022/null/null/null
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDVhMjMyMTU0MmMwZTUwNjFmY2ZmMCIsImlhdCI6MTY0ODczMDY3OCwiZXhwIjoxNjQ4NzM0Mjc4fQ.qrYmrj6Abv6jwxLgYfY2PP_cnWKpu2-Q4gHAOMdF9vs

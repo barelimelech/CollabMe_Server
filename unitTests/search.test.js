@@ -7,17 +7,21 @@ const Offers = require('../models/offer_model')
 
 const username = 'liem'
 const pwd = '5566'
-const description="hi"
+const description="a"
 const headline = "now"
-const price = "10"
-const idOffer = "10"
+const fromprice = "10"
+const idOffer = "12"
 const status = "now"
+const fromdate = "16082022";
+const todate = "16082022";
+const toprice="10";
 const profession = ["sport","art"];
-const finishdate = "14062022";
+const price = "10";
 let user = "62277413fe8636f7c2c9aff2"
 const intrestedVerfiy= false
+const freesearch = "a";
+const finishdate = "16082022";
 let id ;
-            
 
 beforeAll(done=>{
     User.remove({'Username' : username}, (err)=>{
@@ -74,17 +78,6 @@ describe('Testing Offer API',()=>{
         
     })
 
-    test('offers get',async ()=>{
-        const response = await request(app).get('/offer/getoffers').set({ authorization: 'JWT ' + accessToken })
-        expect(response.statusCode).toEqual(200)
-    })
-
-    test('offers get id wrong',async ()=>{
-        const response = await request(app).get('/offer/getOfferById/'+4).set({ authorization: 'JWT ' + accessToken })
-        expect(response.statusCode).toEqual(400)
-    })
-
-
 
     test('add new offer',async ()=>{
         const response = await request(app).post('/offer/addNewOffer').set({ authorization: 'JWT ' + accessToken })
@@ -112,54 +105,30 @@ describe('Testing Offer API',()=>{
         expect(newOffer.IntrestedVerify).toEqual(intrestedVerfiy)  
     })
 
-    test('getbyidoffer offer',async ()=>{
-        //get by id    
-        const response2 = await request(app).get('/offer/getOfferById/'+ idOffer)
-        .set({ authorization: 'JWT ' + accessToken })
+    test('test getOfferFromSpecificSearch', async () =>{
+        const response3 = await request(app).get('/search/getOfferFromSpecificSearch/'+description+'/'+headline+'/'+fromdate+'/'+todate+'/'+fromprice+'/'+toprice+'/'+username)
+        .set({authorization: 'JWT ' + accessToken })
+        const newOffer2 = response3.body
+        expect(response3.statusCode).toEqual(200)
+        console.log(newOffer2)
+        expect(newOffer2[0].Description).toEqual(description)
+        expect(newOffer2[0].HeadLine).toEqual(headline)
+        expect(newOffer2[0].Price).toEqual(price)
+        expect(newOffer2[0].FinishDate).toEqual(todate)
+        expect(newOffer2[0].User).toEqual(user)
+    })
+
+    test('test getOfferFromFreeSearch', async () =>{
+        const response2 = await request(app).get('/search/getOfferFromFreeSearch/'+freesearch)
+        .set({authorization: 'JWT ' + accessToken })
         const newOffer1 = response2.body
         expect(response2.statusCode).toEqual(200)
-        expect(newOffer1.Description).toEqual(description)
-        expect(newOffer1.HeadLine).toEqual(headline)
-        expect(newOffer1.Price).toEqual(price)
-        expect(newOffer1.IdOffer).toEqual(idOffer)
-        expect(newOffer1.Status).toEqual(status)
-        expect(newOffer1.Profession).toEqual(profession)
-        expect(newOffer1.User).toEqual(user)
-        expect(newOffer1.IntrestedVerify).toEqual(intrestedVerfiy)  
-    });
-
-    test('edit offer',async ()=>{
-        const response = await request(app).post('/offer/editOffer/' + idOffer).set({ authorization: 'JWT ' + accessToken })
-        .send({
-            "Description":description,   
-            "HeadLine":"hi",
-            "Price" :"30",
-            "IdOffer" :idOffer,
-            "Status":status,
-            "Profession": profession,  
-            "User":user,      
-            "IntrestedVerify":intrestedVerfiy
-        })
-        expect(response.statusCode).toEqual(200)
-        const newOffer = response.body
-        expect(newOffer.Description).toEqual(description)
-        expect(newOffer.HeadLine).toEqual("hi")
-        expect(newOffer.Price).toEqual("30")
-        expect(newOffer.IdOffer).toEqual(idOffer)
-        expect(newOffer.Status).toEqual(status)
-        expect(newOffer.Profession).toEqual(profession)
-        expect(newOffer.User).toEqual(user)
-        expect(newOffer.IntrestedVerify).toEqual(intrestedVerfiy)        
-               
+        expect(newOffer1[0].Description).toEqual(freesearch)
+        expect(newOffer1[0].HeadLine).toEqual(headline)
+        expect(newOffer1[0].FinishDate).toEqual(finishdate)
+        expect(newOffer1[0].Price).toEqual(price)
+        expect(newOffer1[0].Status).toEqual(status)
+        expect(newOffer1[0].User).toEqual(user)
     })
 
-    
-    test('test deleteOffer',async ()=>{
-        const response = await request(app).post('/offer/deleteOffer/' + idOffer).set({ authorization: 'JWT ' + accessToken })
-        expect(response.statusCode).toEqual(200)
-    })
-
-    
-
-    
-})
+});
