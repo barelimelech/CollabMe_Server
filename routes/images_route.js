@@ -5,6 +5,7 @@ var multer, storage, path, crypto;
 multer = require('multer')
 path = require('path');
 crypto = require('crypto');
+router.use('/uploads', express.static('uploads'));
 storage = multer.diskStorage({
   destination: './uploads/',
   filename: function(req, file, cb) {
@@ -23,11 +24,8 @@ router.post(
   multer({
     storage: storage
   }).single('upload'), function(req, res) {
-    console.log(req.file);
-    console.log(req.body);
-    res.redirect("/uploads/" + req.file.filename);
-    console.log(req.file.filename);
-    return res.status(200).end();
+    res.redirect(200,"/uploads/" + req.file.filename);
+    res.status(200).send();
   });
 
  
