@@ -57,7 +57,7 @@ const getOfferFromSpecificSearch = async (req, res) => {
     var todate = req.params.todate;
     var fromprice = req.params.fromprice;
     var toprice = req.params.toprice;
-    var professions =req.params.professions;
+    //var professions =req.params.professions;
     var user = req.params.user;
 
     try {
@@ -72,33 +72,26 @@ const getOfferFromSpecificSearch = async (req, res) => {
         }
         //
         if (headline!==("null")){
-            flag=true;
-
             if(flag==true){
                 result = await result.filter((d => d.HeadLine === headline));
                 console.log("hello2");
-                
-
-                flag=true;
             }else{
                 result = await Offer.find({'HeadLine':headline}); 
+                flag=true;
             }
             
         }
         //
         if (user!==("null")){
-            flag=true;
-
             if(flag==true){
                 result = await result.filter((d => d.User === user));
                 console.log("hello3");
-                
-                flag=true;
             }else{
                 result = await Offer.find({'User':user}); 
+                flag=true;
             }
         }
-        //
+        /*
         if (professions!=="null"){
             flag=true;
             if(flag==true){ 
@@ -114,35 +107,30 @@ const getOfferFromSpecificSearch = async (req, res) => {
                 result = await Offer.find({'Profession':professions}); 
             }
         }
-        //
+        */
         if (fromdate!==("null")&&todate!==("null")){
-            flag=true;
-
             if(flag==true){
                 result = await result.filter((d => (d.FinishDate > fromdate-1 && d.FinishDate < todate+1)));
                 console.log("hello5");
-                console.log(result);
-                flag=true;
             }else{
                 result = await Offer.find({'FinishDate':{$gt : fromdate-1, $lt : todate+1}}); 
                 console.log("hello5");
-                console.log(result);
+                flag=true;
+
             }
         }
         //
         if (fromprice!=="null"&&toprice!=="null"){
 
-            flag=true;
-
             if(flag==true){
                 result = await result.filter((d => (d.Price > fromprice-1 && d.Price < toprice+1)));
                 console.log("hello6");
-                console.log(result);
                 flag=true;
             }else{
                 result = await Offer.find({'Price':{$gt : fromprice-1, $lt : toprice+1}}); 
                 console.log("hello5");
-                console.log(result);
+                flag=true;
+
             }
         }
 
