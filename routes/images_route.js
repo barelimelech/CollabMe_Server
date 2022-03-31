@@ -8,7 +8,6 @@ path = require('path');
 crypto = require('crypto');
 var fs = require('fs');
 
-
 router.use('/uploads', express.static('uploads'));
 storage = multer.diskStorage({
   destination: './uploads/',
