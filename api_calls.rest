@@ -79,7 +79,7 @@ Content-Type: application/json
 
 {
     "Username" : "bar",
-    "Password" : "5566"
+    "Password" : "12345"
 }
 
 ###
@@ -143,3 +143,8 @@ Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDViMmJmNT
 ###
 GET http://localhost:4000/search/getOfferFromSpecificSearch/null/null/14062022/14062022/null/null/null
 Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDViMmJmNTE2NzRlZTNjOTdmMGYxZSIsImlhdCI6MTY0ODczNDkxNCwiZXhwIjoxNjQ4NzM4NTE0fQ.D5DsLz0Z1pnouLbpnkaIdxHZtxJ_sOqYVXSL9xX7mVg
+
+
+###
+GET http://localhost:4000/users/getUser/getUserByEmail/bar@gmail.com
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzlhMjBmMmM4NDczMzQ4YWQ2ZGJlMyIsImlhdCI6MTY0ODc0MTA2MywiZXhwIjoxNjQ4NzQ0NjYzfQ.eCKStiZPK9DrnJp6c9D-IbC7o-yA1iJtAZJX7D0Ixbs

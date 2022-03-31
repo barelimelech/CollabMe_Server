@@ -10,7 +10,8 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     Email: {
-        type: String
+        type: String,
+        required: true
     },
     Tokens: {
         type: [String]
