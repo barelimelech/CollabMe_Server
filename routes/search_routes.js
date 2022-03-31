@@ -33,7 +33,6 @@ const authenticate = require('../common/auth_middleware')
 *               $ref: '#/components/schemas/Offer'
 */
 router.get('/getOfferFromFreeSearch/:freesearch', authenticate, Offer.getOfferFromFreeSearch);
-//router.get('/getOfferFromDescription/:description', authenticate, Offer.getOfferFromDescription);
 
 
 /**

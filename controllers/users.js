@@ -20,6 +20,24 @@ const getUserByUserNmae = async (req, res) => {
     }
 }
 
+const getUserByEmail = async (req, res) => {
+    try {        
+        const user = await User.findOne({'Email' : req.params.email})
+        if(user==null){
+            res.status(400).send({
+                'status': 'fail',
+                'error': err.message
+            })
+        }
+        res.status(200).send(user)
+    } catch (err) {
+        res.status(400).send({
+            'status': 'fail',
+            'error': err.message
+        })
+    }
+}
+
 const editUser = async(req, res) => {
     const user = await User.findOne({'Username':req.params.username })  
     var updatedUser = {
@@ -34,7 +52,8 @@ const editUser = async(req, res) => {
         Platform:req.body.Platform,
         NumberOfPosts:req.body.NumberOfPosts,
         Company:req.body.Company,
-        Influencer:req.body.Influencer
+        Influencer:req.body.Influencer,
+        Image:req.body.Image
 
     };
 
@@ -74,7 +93,7 @@ const isconnected = async(req, res) => {
 module.exports = {
     getUserByUserNmae,
     editUser,
-    
+    getUserByEmail,
     deleteuser,
     isconnected
 }

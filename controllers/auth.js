@@ -23,6 +23,8 @@ const register = async (req, res) => {
     const numOfPosts = req.body.NumberOfPosts
     const company = req.body.Company
     const influencer= req.body.Influencer
+    const image = req.body.Image;
+ 
 
     try{
         const exists = await User.findOne({'Username' : username})
@@ -47,7 +49,8 @@ const register = async (req, res) => {
             "Platform":platform, 
             "NumberOfPosts":numOfPosts,
             "Company":company,
-            "Influencer":influencer 
+            "Influencer":influencer,
+            "Image":image
         })
         newUser = await user.save();
         res.status(200).send(newUser)

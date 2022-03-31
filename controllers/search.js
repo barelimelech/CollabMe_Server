@@ -1,7 +1,7 @@
 const Offer = require('../models/offer_model')
 
 const getOfferFromFreeSearch = async (req, res) => {
-    console.log('youre in offer from free search ');
+
     var num1 = req.params.freesearch;
 
     try {
@@ -44,14 +44,14 @@ const getOfferFromSpecificSearch = async (req, res) => {
         if (description!==("null")){
             result = await Offer.find({'Description':description});
             flag=true;
-            console.log("hello1");
+          //  console.log("hello1");
             
         }
         //
         if (user!==("null")){
             if(flag==true){
                 result = await result.filter((d => d.User === user));
-                console.log("hello3");
+              //  console.log("hello3");
             }else{
                 result = await Offer.find({'User':user}); 
                 flag=true;
@@ -62,11 +62,11 @@ const getOfferFromSpecificSearch = async (req, res) => {
 
             if(flag==true){
                 result = await result.filter((d => (d.Price > fromprice-1 && d.Price < toprice+1)));
-                console.log("hello6");
+                //console.log("hello6");
                 flag=true;
             }else{
                 result = await Offer.find({'Price':{$gt : fromprice-1, $lt : toprice+1}}); 
-                console.log("hello5");
+               // console.log("hello5");
                 flag=true;
 
             }
@@ -75,7 +75,7 @@ const getOfferFromSpecificSearch = async (req, res) => {
         if (headline!==("null")){
             if(flag==true){
                 result = await result.filter((d => d.HeadLine === headline));
-                console.log("hello2");
+               // console.log("hello2");
             }else{
                 result = await Offer.find({'HeadLine':headline}); 
                 flag=true;
@@ -104,17 +104,17 @@ const getOfferFromSpecificSearch = async (req, res) => {
 
             if(flag==true){
                 result = await result.filter((d => parseInt(d.FinishDate) <= parseInt(todate)));
-                console.log(result);
+              //  console.log(result);
 
                 result = await result.filter((d => parseInt(d.FinishDate) >= parseInt(fromdate)));
-                console.log(result);
+               // console.log(result);
 
-                console.log("hello5");
+              //  console.log("hello5");
             }else{
                 result = await Offer.find({'FinishDate':{
                     $gt : fromdate-1, $lt : todate+1
                 }}); 
-                console.log("hello5");
+               // console.log("hello5");
                 flag=true;
 
             }
