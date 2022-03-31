@@ -46,6 +46,10 @@ const userSchema = new mongoose.Schema({
     Influencer: {
         type: Boolean,
         required: false
+    },
+    Image: {
+        type: String,
+        required: false
     }
 
     

@@ -34,7 +34,8 @@ const editUser = async(req, res) => {
         Platform:req.body.Platform,
         NumberOfPosts:req.body.NumberOfPosts,
         Company:req.body.Company,
-        Influencer:req.body.Influencer
+        Influencer:req.body.Influencer,
+        Image:req.body.Image
 
     };
 
