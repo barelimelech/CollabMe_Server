@@ -3,6 +3,8 @@ const router = express.Router()
 
 const Offer = require('../controllers/offers')
 const authenticate = require('../common/auth_middleware')
+const offer_model = require('../models/offer_model')
+const swaggerJSDoc = require('swagger-jsdoc')
 
 /**
 * @swagger
@@ -62,7 +64,7 @@ const authenticate = require('../common/auth_middleware')
 
 /**
 * @swagger
-* /Offer:
+* /offers/getoffers:
 *   get:
 *     summary: get all offers
 *     tags: [Offer Api]
@@ -76,34 +78,68 @@ const authenticate = require('../common/auth_middleware')
 *               items:
 *                 $ref: '#/components/schemas/Offer'
 */
+
+
+
 router.get('/getoffers', authenticate, Offer.getOffers)
 
-/**
-* @swagger
-* /offer/{id}:
-*   get:
-*     summary: get offer by id
-*     tags: [Offer Api]
-*     parameters:
-*       - in: path
-*         name: id
-*         schema:
-*           type: string
-*         required: true
-*         description: The offer id
-*     responses:
-*       200:
-*         description: The offer 
-*         content:
-*           application/json:
-*             schema:
-*               $ref: '#/components/schemas/Offer'
+// /**
+// * @swagger
+// * /offers/getOfferById/{id}:
+// *   get:
+// *     summary: get offer by id
+// *     tags: [Offer Api]
+// *     parameters:
+// *       - in: path
+// *         name: id
+// *         schema:
+// *           type: string
+// *         required: true
+// *         description: The offer 
+// *     responses:
+// *       200:
+// *         description: The offer 
+// *         content:
+// *           application/json:
+// *             schema:
+// *               $ref: '#/components/schemas/Offer'
+// */
+
+ /**
+ * @swagger
+ * /offers/getOfferById/{id}:
+ *   get:
+ *     summary: get offer
+ *     tags: [Offer Api]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *     description: 
+ *     responses:
+ *       200:
+ *         description: A single user.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 data:
+ *                   type: object
+ *                   properties:
+ *                     id:
+ *                       type: string
+ *                       description: The user ID.
+ *                       example: 0
+ *                     name:
+ *                       type: string
+ *                       description: The user's name.
+ *                       example: Leanne Graham
 */
 router.get('/getOfferById/:id', authenticate, Offer.getOfferById)
 
 /**
 * @swagger
-* /offer:
+* /offers/addNewOffer:
 *   post:
 *     summary: add new offer
 *     tags: [Offer Api]
@@ -123,12 +159,13 @@ router.get('/getOfferById/:id', authenticate, Offer.getOfferById)
 */
 
 
+
 router.post('/addNewOffer', authenticate, Offer.addNewOffer)
 
 /**
 * @swagger
-* /offer/{id}:
-*   delete:
+* /offers/deleteOffer/{id}:
+*   post:
 *     summary: delete offer by id
 *     tags: [Offer Api]
 *     parameters:
@@ -148,8 +185,8 @@ router.post('/deleteOffer/:id', authenticate, Offer.deleteOffer)
 
 /**
 * @swagger
-* /offer/{id}:
-*   put:
+* /offers/editOffer/{id}:
+*   post:
 *     summary: edit the offer
 *     tags: [Offer Api]
 *     parameters:

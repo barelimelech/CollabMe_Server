@@ -70,7 +70,7 @@ const authenticate = require('../common/auth_middleware')
 
 /**
 * @swagger
-* /user/{username}:
+* /users/getUser/{username}:
 *   get:
 *     summary: get the user by user name
 *     tags: [User Api]
@@ -87,36 +87,36 @@ const authenticate = require('../common/auth_middleware')
 *         content:
 *           application/json:
 *             schema:
-*               $ref: '#/components/schemas/Offer'
+*               $ref: '#/components/schemas/User'
 */
 router.get('/getUser/:username',authenticate,user.getUserByUserNmae);
 
-/**
-* @swagger
-* /user/{id}:
-*   get:
-*     summary: get the user by id
-*     tags: [User Api]
-*     parameters:
-*       - in: path
-*         name: user id
-*         schema:
-*           type: string
-*         required: true
-*         description: The user id
-*     responses:
-*       200:
-*         description: The user exist 
-*         content:
-*           application/json:
-*             schema:
-*               $ref: '#/components/schemas/Offer'
-*/
+// /**
+// * @swagger
+// * /users/{id}:
+// *   get:
+// *     summary: get the user by id
+// *     tags: [User Api]
+// *     parameters:
+// *       - in: path
+// *         name: user id
+// *         schema:
+// *           type: string
+// *         required: true
+// *         description: The user id
+// *     responses:
+// *       200:
+// *         description: The user exist 
+// *         content:
+// *           application/json:
+// *             schema:
+// *               $ref: '#/components/schemas/User'
+// */
 
 /**
 * @swagger
-* /user/{username}:
-*   put:
+* /users/editUser/{username}:
+*   post:
 *     summary: edit user 
 *     tags: [User Api]
 *     parameters:
@@ -127,7 +127,7 @@ router.get('/getUser/:username',authenticate,user.getUserByUserNmae);
 *       content:
 *         application/json:
 *           schema:
-*             $ref: '#/components/schemas/Offer'
+*             $ref: '#/components/schemas/User'
 *     responses:
 *       200:
 *         description: User was updated
@@ -136,8 +136,8 @@ router.post('/editUser/:username',authenticate, user.editUser)
 
 /**
 * @swagger
-* /user/{username}:
-*   delete:
+* /users/deleteuser/{username}:
+*   post:
 *     summary: delete user 
 *     tags: [User Api]
 *     parameters:
@@ -148,7 +148,7 @@ router.post('/editUser/:username',authenticate, user.editUser)
 *       content:
 *         application/json:
 *           schema:
-*             $ref: '#/components/schemas/Offer'
+*             $ref: '#/components/schemas/User'
 *     responses:
 *       200:
 *         description: User was deleted
@@ -157,7 +157,7 @@ router.post('/deleteuser/:username',authenticate, user.deleteuser)
 
 /**
 * @swagger
-* /user/{username}:
+* /users/authenticate/{username}:
 *   get:
 *     summary: check if user is connected
 *     tags: [User Api]
@@ -169,7 +169,7 @@ router.post('/deleteuser/:username',authenticate, user.deleteuser)
 *       content:
 *         application/json:
 *           schema:
-*             $ref: '#/components/schemas/Offer'
+*             $ref: '#/components/schemas/User'
 *     responses:
 *       200:
 *         description: User is connected
