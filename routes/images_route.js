@@ -23,17 +23,11 @@ storage = multer.diskStorage({
 });
 var upload = multer({ storage: storage })
 
-router.post(
-  "/upload/:username",
-  multer({
-    storage: storage
-  }).single('upload'), function(req, res) {
-    console.log(req.file);
-    console.log(req.params.username); 
-    res.redirect(200,"/uploads/" + req.file.filename);
-    res.status(200).send("/uploads/" + req.file.filename);
-  });
-
+router.post("/upload", upload.single("upload"), async (req, res) => {
+  if (req.file === undefined) return res.send("you must select a file.");
+  const imgUrl = `http://localhost:8080/file/${req.file.filename}`;
+  res.status(200).send(imgUrl);
+});
 
   /*
   router.get('/uploads/:upload', function (req, res){

@@ -24,6 +24,7 @@ const register = async (req, res) => {
     const company = req.body.Company
     const influencer= req.body.Influencer
     const image = req.body.Image;
+ 
 
     try{
         const exists = await User.findOne({'Username' : username})
