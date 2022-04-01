@@ -37,6 +37,9 @@ const getOfferFromSpecificSearch = async (req, res) => {
     //var professions =req.params.professions;
     var user = req.params.user;
 
+
+  //  console.log(professions.length);
+
     try {
         var result = [];
         var flag=false;
@@ -44,21 +47,26 @@ const getOfferFromSpecificSearch = async (req, res) => {
         if (description!==("null")){
             result = await Offer.find({'Description':description});
             flag=true;
-          //  console.log("hello1");
+            console.log("hello1");
+            console.log(result);
             
         }
         //
         if (user!==("null")){
             if(flag==true){
                 result = await result.filter((d => d.User === user));
-              //  console.log("hello3");
+                console.log("hello3");
             }else{
                 result = await Offer.find({'User':user}); 
                 flag=true;
             }
+            console.log(result);
+
         }
         //
-                if (fromprice!=="null"&&toprice!=="null"){
+            if (fromprice!=="null"&&toprice!=="null"){
+                console.log(toprice);
+                console.log(fromprice);
 
             if(flag==true){
                 result = await result.filter((d => (d.Price > fromprice-1 && d.Price < toprice+1)));
@@ -70,6 +78,8 @@ const getOfferFromSpecificSearch = async (req, res) => {
                 flag=true;
 
             }
+            console.log(result);
+
         }
         //
         if (headline!==("null")){
@@ -80,26 +90,28 @@ const getOfferFromSpecificSearch = async (req, res) => {
                 result = await Offer.find({'HeadLine':headline}); 
                 flag=true;
             }
-            
+            console.log(result);
+
         }
         //
         /*
-        if (professions!=="null"){
-            flag=true;
+        if (professions.length!=0){
+            
             if(flag==true){ 
-                console.log(professions);
-                var proffesions3 = JSON.stringify(professions);
-                var profeesions2 =JSON.parse(proffesions3);                                     
-                result =result.filter(d =>d.Profession==profeesions2);    
-                console.log(result);              
-                console.log("hello4");              
+                                   
+                result =result.filter(d =>JSON.stringify(d.Profession)==JSON.stringify(professions));    
+              
+               console.log("hello4");              
 
                 flag=true;
             }else{
                 result = await Offer.find({'Profession':professions}); 
+                flag=true;
             }
-        }
-        */
+            console.log(result);
+
+        }*/
+        
         if (fromdate!==("null")&&todate!==("null")){
 
             if(flag==true){
@@ -118,6 +130,8 @@ const getOfferFromSpecificSearch = async (req, res) => {
                 flag=true;
 
             }
+            console.log(result);
+
         }
         //
 
