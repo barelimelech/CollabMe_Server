@@ -24,20 +24,21 @@ var upload = multer({ storage: storage })
 
 router.post("/upload", upload.single("upload"), async (req, res) => {
   if (req.file === undefined) return res.send("you must select a file.");
-  const imgUrl = `http://localhost:8080/file/${req.file.filename}`;
-  res.status(200).send(imgUrl);
+  const imgUrl = 'http://'+process.env.urlConnectionStorage.toString()+'/file/'+req.file.filename.toString();
+   res.status(200).send(imgUrl);
 });
 
-  /*
-  router.get('/uploads/:upload', function (req, res){
-    file = req.params.upload;
-    console.log(req.params.upload);
-    var img = fs.readFileSync(__dirname + "/uploads/" + file);
-    res.writeHead(200, {'Content-Type': 'image/png' });
-    res.end(img, 'binary');
+router.get("/file/:filename", async (req, res) => {
+  try {
+      const file = await gfs.files.findOne({ filename: req.params.filename });
+      const readStream = gfs.createReadStream(file.filename);
+      readStream.pipe(res);
+  } catch (error) {
+      res.send("not found");
+  }
+});
+
   
-  });
-  */
   
 
  

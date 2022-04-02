@@ -35,19 +35,20 @@ Content-Type: application/json
 
 
 POST http://localhost:4000/offer/addNewOffer
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDViMmJmNTE2NzRlZTNjOTdmMGYxZSIsImlhdCI6MTY0ODczNDkxNCwiZXhwIjoxNjQ4NzM4NTE0fQ.D5DsLz0Z1pnouLbpnkaIdxHZtxJ_sOqYVXSL9xX7mVg
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDgyMzNlYjlkZGM4YjFkMTI5MWE2MiIsImlhdCI6MTY0ODg5NTM5OSwiZXhwIjoxNjQ4ODk4OTk5fQ.ruChrFF_B6VAUGK9gyzoVmJbmy1MNtgFlXBXBoThKVk
 Content-Type: application/json
 
 {
-        "Description":"koko",   
+        "Description":"koko122",   
         "HeadLine":"yoyo",
         "FinishDate":"14062022",
         "Price" :10,
         "Coupon":"1$",
-        "IdOffer" :100,
+        "IdOffer" :200,
         "Status":"now",
         "Profession": ["sport","toto"],  
-        "User":"yossi",      
+        "User":"yossi",
+        "Users":["koko","mona"],      
         "IntrestedVerify":false
 }
 
@@ -79,7 +80,7 @@ Content-Type: application/json
 
 {
     "Username" : "bar",
-    "Password" : "12345"
+    "Password" : "5566"
 }
 
 ###
@@ -129,8 +130,8 @@ Content-Type: application/json
     "Influencer":true 
 }
 ###
-GET http://localhost:4000/candidates/getCandidates/100
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzVlYTk1ZGQ0YjcyYWFkYzc1NTJlZiIsImlhdCI6MTY0NzcwMDYzMSwiZXhwIjoxNjQ3NzA0MjMxfQ.TnuSorNbSNYBNXLkAmJJKe4LBhZx5y2cPazJAc3Z5kg
+GET http://localhost:4000/candidates/getCandidates/200
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDgyMzNlYjlkZGM4YjFkMTI5MWE2MiIsImlhdCI6MTY0ODg5NTM5OSwiZXhwIjoxNjQ4ODk4OTk5fQ.ruChrFF_B6VAUGK9gyzoVmJbmy1MNtgFlXBXBoThKVk
 
 ###
 GET http://localhost:4000/auth/getUserByUserNameInSignIn/amit
