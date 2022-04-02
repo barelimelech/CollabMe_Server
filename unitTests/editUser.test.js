@@ -40,7 +40,6 @@ describe('Testing edituser API',()=>{
              "NumberOfPosts":20,
              "Company":false,
             "Influencer":true 
-
         })
         expect(response.statusCode).toEqual(200)
     })
