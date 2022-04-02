@@ -34,9 +34,6 @@ const authenticate = require('../common/auth_middleware')
 */
 router.get('/getOfferFromFreeSearch/:freesearch', authenticate, Offer.getOfferFromFreeSearch);
 
-<<<<<<< HEAD
-router.get('/getOfferFromSpecificSearch/:description/:headline/:fromdate/:todate/:fromprice/:toprice/:user', authenticate, Offer.getOfferFromSpecificSearch);
-=======
 
 /**
 * @swagger
@@ -63,6 +60,5 @@ router.get('/getOfferFromSpecificSearch/:description/:headline/:fromdate/:todate
 
 module.exports = router
 
->>>>>>> 06076bfc6b21546134b49f1b83c42ac903502358
 
 module.exports = router
