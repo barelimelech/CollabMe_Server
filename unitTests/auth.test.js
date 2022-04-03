@@ -10,6 +10,7 @@ const username = 'yossi10'
 const pwd = '5566'
 
 
+
 beforeAll(done=>{
     User.remove({'Username' : username}, (err)=>{
         done()
@@ -75,9 +76,51 @@ describe('Testing Auth API',()=>{
         expect(response2.status).toEqual(400);
       
     });  
+
+    test('login wrong user null', async () => {
+        expect.assertions(1);
+        const response2 = await request(app).post('/auth/login').send({
+            'Username' : null,
+            'Password':null
+        });
+        expect(response2.status).toEqual(400);
+      
+    });  
+
+    test('login wrong user null', async () => {
+        expect.assertions(1);
+        const response2 = await request(app).post('/auth/login').send({
+            'Username' : username,
+            'Password':12345
+        });
+        expect(response2.status).toEqual(400);
+      
+    }); 
+
+
+    test('login wrong user reject', async () => {
+        expect.assertions(1);
+        const response2 = await request(app).post('/auth/login').send({
+            'Username' : "lolo",
+            'Password':pwd
+        });
+        expect(response2.status).toEqual(400);
+      
+    });  
+
+    test('login wrong user reject', async () => {
+        expect.assertions(1);
+        const response2 = await request(app).post('/auth/login').send({
+            'Username' : newRefreshToken,
+            'Password':User.$where
+        });
+        expect(response2.status).toEqual(400);
+      
+    });  
     
     
-    test('test registration wrong',async ()=>{
+    
+    test('test registration wrong user excit',async ()=>{
         const response = await request(app).post('/auth/register').send({
             'Username' : username,
             'Password':pwd,
@@ -95,10 +138,25 @@ describe('Testing Auth API',()=>{
         expect(response.statusCode).toEqual(400)
     })
 
-    
+    test('wrong test registration',async ()=>{
+        const response = await request(app).post('/auth/register').send({
+            'Username' : null,
+            'Password':null,
+            'Email': null,
+            "Sex":null,
+            "Age":null, 
+            "Followers":null,
+             "Profession":null,
+            "Platform":null, 
+             "NumberOfPosts":null,
+             "Company":null,
+            "Influencer":null 
 
-    
-    
+        })
+        expect(response.statusCode).toEqual(400)
+    })
+
+   
 
 
    

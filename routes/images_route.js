@@ -24,7 +24,7 @@ var upload = multer({ storage: storage })
 
 router.post("/upload", upload.single("upload"), async (req, res) => {
   if (req.file === undefined) return res.send("you must select a file.");
-  const imgUrl =req.file.path;
+  const imgUrl = req.file.path;
    res.status(200).send(imgUrl);
 });
 
@@ -32,8 +32,7 @@ router.get("/file/:filename", async (req, res) => {
   fs.readFile(req.params.filename, function(err, data) {
     if (err) throw err; // Fail if the file can't be read.
       res.writeHead(200, {'Content-Type': 'image/jpeg'});
-      console.log(res);
-      res.end(data); // Send the file data to the browser.
+      res.end(data); // Send the file data to the browser.  
   });
 });
 
