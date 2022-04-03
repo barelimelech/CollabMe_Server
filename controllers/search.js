@@ -28,14 +28,14 @@ const getOfferFromFreeSearch = async (req, res) => {
 
 const getOfferFromSpecificSearch = async (req, res) => {
     console.log('youre in offer from specific search ');
-    var description = req.params.description;
-    var headline = req.params.headline;
-    var fromdate = req.params.fromdate;
-    var todate = req.params.todate;
-    var fromprice = req.params.fromprice;
-    var toprice = req.params.toprice;
-    //var professions =req.params.professions;
-    var user = req.params.user;
+    var description = req.body.description;
+    var headline = req.body.headline;
+    var fromdate = req.body.fromdate;
+    var todate = req.body.todate;
+    var fromprice = req.body.fromprice;
+    var toprice = req.body.toprice;
+    var professions =req.body.professions;
+    var user = req.body.user;
 
 
   //  console.log(professions.length);
@@ -94,8 +94,8 @@ const getOfferFromSpecificSearch = async (req, res) => {
 
         }
         //
-        /*
-        if (professions.length!=0){
+        console.log(professions);
+        if (professions!=="null"){
             
             if(flag==true){ 
                                    
@@ -110,7 +110,7 @@ const getOfferFromSpecificSearch = async (req, res) => {
             }
             console.log(result);
 
-        }*/
+        }
         
         if (fromdate!==("null")&&todate!==("null")){
 
