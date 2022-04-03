@@ -35,11 +35,7 @@ Content-Type: application/json
 
 
 POST http://localhost:4000/offer/addNewOffer
-<<<<<<< HEAD
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDgyMzNlYjlkZGM4YjFkMTI5MWE2MiIsImlhdCI6MTY0ODg5NTM5OSwiZXhwIjoxNjQ4ODk4OTk5fQ.ruChrFF_B6VAUGK9gyzoVmJbmy1MNtgFlXBXBoThKVk
-=======
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDYyNTY0OTA4YmVhNjc3ZmE0MGE2MSIsImlhdCI6MTY0ODc2NDQ1NCwiZXhwIjoxNjQ4NzY4MDU0fQ.qx5UfgmrcHpOBqTcYt8FAjS4DUP-lYeLy6iDJtxEVh4
->>>>>>> a962e25485951597683ce5619c1ef338d7792073
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDhjMjZiN2Y4MWE4N2I4ZWU5ZGUzYiIsImlhdCI6MTY0ODkzNTgwMCwiZXhwIjoxNjQ4OTM5NDAwfQ.b7uvAbDyhyrebkcNuebj6BOCNGWYcphAJC9kVnSrRIk
 Content-Type: application/json
 
 {
@@ -48,7 +44,7 @@ Content-Type: application/json
         "FinishDate":"14062022",
         "Price" :10,
         "Coupon":"1$",
-        "IdOffer" :200,
+        "IdOffer" :"100",
         "Status":"now",
         "Profession": ["sport","toto"],  
         "User":"yossi",
@@ -134,8 +130,8 @@ Content-Type: application/json
     "Influencer":true 
 }
 ###
-GET http://localhost:4000/candidates/getCandidates/200
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDgyMzNlYjlkZGM4YjFkMTI5MWE2MiIsImlhdCI6MTY0ODg5NTM5OSwiZXhwIjoxNjQ4ODk4OTk5fQ.ruChrFF_B6VAUGK9gyzoVmJbmy1MNtgFlXBXBoThKVk
+GET http://localhost:4000/candidates/getCandidates/963f4a79-c01d-4868-830b-5ee56dc67a21
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDhjNDMzMzI1YzlhOGNmYjk3NDlhNiIsImlhdCI6MTY0ODkzNTk5MiwiZXhwIjoxNjQ4OTM5NTkyfQ.zkej4MVmTrkIv0m-y9D4qIJZe3KW8IJQqYLeKpNhkqg
 
 ###
 GET http://localhost:4000/auth/getUserByUserNameInSignIn/amit
