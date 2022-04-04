@@ -42,7 +42,7 @@ db.once('open',()=>{console.log('db connected!')})
 const port = process.env.PORT
 
 const indexRouter = require('./routes/index')
-app.use('/',indexRouter)
+app.use('/index',indexRouter)
 
 const offerRouter = require('./routes/offers_routes')
 app.use('/offer',offerRouter)
