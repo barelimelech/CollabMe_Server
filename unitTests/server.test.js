@@ -1,6 +1,6 @@
-//const express = require('express')
-//const app = express()
-/*
+const express = require('express')
+const app = express()
+
 describe('Testing swagger API',()=>{
 
     test('test swagger',async ()=>{
@@ -12,4 +12,3 @@ describe('Testing swagger API',()=>{
         
     })
 })
-*/
