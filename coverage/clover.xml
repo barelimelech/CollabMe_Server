@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1649029603013" clover="3.2.0">
-  <project timestamp="1649029603013" name="All files">
-    <metrics statements="354" coveredstatements="304" conditionals="84" coveredconditionals="53" methods="43" coveredmethods="28" elements="481" coveredelements="385" complexity="0" loc="354" ncloc="354" packages="5" files="16" classes="16"/>
-    <package name="menachi-simple_rest_backend-c6610ccfe45a">
-<coverage generated="1649062301300" clover="3.2.0">
-  <project timestamp="1649062301300" name="All files">
-    <metrics statements="369" coveredstatements="307" conditionals="84" coveredconditionals="46" methods="43" coveredmethods="29" elements="496" coveredelements="382" complexity="0" loc="369" ncloc="369" packages="5" files="16" classes="16"/>
+<coverage generated="1649105095245" clover="3.2.0">
+  <project timestamp="1649105095245" name="All files">
+    <metrics statements="355" coveredstatements="325" conditionals="86" coveredconditionals="61" methods="43" coveredmethods="31" elements="484" coveredelements="417" complexity="0" loc="355" ncloc="355" packages="5" files="16" classes="16"/>
     <package name="CollabMe_Server">
       <metrics statements="33" coveredstatements="28" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
       <file name="server.js" path="C:\Users\amitb\CollabMe_Server\server.js">
@@ -49,61 +45,22 @@
       <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="4" methods="2" coveredmethods="2"/>
       <file name="auth_middleware.js" path="C:\Users\amitb\CollabMe_Server\common\auth_middleware.js">
         <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="4" methods="2" coveredmethods="2"/>
-        <line num="2" count="7" type="stmt"/>
-        <line num="4" count="7" type="stmt"/>
-        <line num="5" count="18" type="stmt"/>
-        <line num="6" count="18" type="cond" truecount="2" falsecount="0"/>
-        <line num="7" count="18" type="cond" truecount="1" falsecount="1"/>
-        <line num="9" count="18" type="stmt"/>
-        <line num="10" count="18" type="cond" truecount="1" falsecount="1"/>
-        <line num="11" count="18" type="stmt"/>
-        <line num="12" count="18" type="stmt"/>
-        <line num="16" count="7" type="stmt"/>
-      </file>
-    </package>
-    <package name="menachi-simple_rest_backend-c6610ccfe45a.controllers">
-      <metrics statements="230" coveredstatements="198" conditionals="70" coveredconditionals="48" methods="33" coveredmethods="25"/>
-      <file name="auth.js" path="C:\Users\liemm\Downloads\menachi-simple_rest_backend-c6610ccfe45a\menachi-simple_rest_backend-c6610ccfe45a\controllers\auth.js">
-        <metrics statements="90" coveredstatements="76" conditionals="32" coveredconditionals="21" methods="8" coveredmethods="7"/>
-        <line num="1" count="7" type="stmt"/>
-        <line num="2" count="7" type="stmt"/>
-        <line num="3" count="7" type="stmt"/>
-        <line num="4" count="7" type="stmt"/>
-        <line num="6" count="7" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="13" count="7" type="stmt"/>
-        <line num="14" count="9" type="stmt"/>
-        <line num="15" count="9" type="stmt"/>
-        <line num="16" count="9" type="stmt"/>
-        <line num="17" count="9" type="stmt"/>
-        <line num="18" count="9" type="stmt"/>
-        <line num="19" count="9" type="stmt"/>
-        <line num="20" count="9" type="stmt"/>
-        <line num="21" count="9" type="stmt"/>
-        <line num="22" count="9" type="stmt"/>
-        <line num="23" count="9" type="stmt"/>
-        <line num="24" count="9" type="stmt"/>
-        <line num="25" count="9" type="stmt"/>
-        <line num="26" count="9" type="stmt"/>
-        <line num="29" count="9" type="stmt"/>
-        <line num="30" count="9" type="stmt"/>
-        <line num="31" count="9" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="8" type="stmt"/>
         <line num="4" count="8" type="stmt"/>
-        <line num="5" count="16" type="stmt"/>
-        <line num="6" count="16" type="cond" truecount="2" falsecount="0"/>
-        <line num="7" count="16" type="cond" truecount="1" falsecount="1"/>
-        <line num="9" count="16" type="stmt"/>
-        <line num="10" count="16" type="cond" truecount="1" falsecount="1"/>
-        <line num="11" count="16" type="stmt"/>
-        <line num="12" count="16" type="stmt"/>
+        <line num="5" count="20" type="stmt"/>
+        <line num="6" count="20" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="20" type="cond" truecount="1" falsecount="1"/>
+        <line num="9" count="20" type="stmt"/>
+        <line num="10" count="20" type="cond" truecount="1" falsecount="1"/>
+        <line num="11" count="20" type="stmt"/>
+        <line num="12" count="20" type="stmt"/>
         <line num="16" count="8" type="stmt"/>
       </file>
     </package>
     <package name="CollabMe_Server.controllers">
-      <metrics statements="246" coveredstatements="200" conditionals="70" coveredconditionals="41" methods="33" coveredmethods="25"/>
+      <metrics statements="232" coveredstatements="218" conditionals="72" coveredconditionals="56" methods="33" coveredmethods="27"/>
       <file name="auth.js" path="C:\Users\amitb\CollabMe_Server\controllers\auth.js">
-        <metrics statements="90" coveredstatements="84" conditionals="32" coveredconditionals="25" methods="8" coveredmethods="7"/>
+        <metrics statements="92" coveredstatements="90" conditionals="34" coveredconditionals="27" methods="8" coveredmethods="8"/>
         <line num="1" count="8" type="stmt"/>
         <line num="2" count="8" type="stmt"/>
         <line num="3" count="8" type="stmt"/>
@@ -189,11 +146,13 @@
         <line num="152" count="1" type="stmt"/>
         <line num="154" count="0" type="stmt"/>
         <line num="159" count="8" type="stmt"/>
-        <line num="160" count="0" type="stmt"/>
-        <line num="162" count="0" type="stmt"/>
-        <line num="163" count="0" type="stmt"/>
-        <line num="165" count="0" type="stmt"/>
-        <line num="172" count="8" type="stmt"/>
+        <line num="160" count="2" type="stmt"/>
+        <line num="162" count="2" type="stmt"/>
+        <line num="163" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="164" count="1" type="stmt"/>
+        <line num="166" count="1" type="stmt"/>
+        <line num="172" count="1" type="stmt"/>
+        <line num="179" count="8" type="stmt"/>
       </file>
       <file name="candidates.js" path="C:\Users\amitb\CollabMe_Server\controllers\candidates.js">
         <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -248,12 +207,8 @@
         <line num="94" count="1" type="stmt"/>
         <line num="101" count="8" type="stmt"/>
       </file>
-      <file name="search.js" path="C:\Users\liemm\Downloads\menachi-simple_rest_backend-c6610ccfe45a\menachi-simple_rest_backend-c6610ccfe45a\controllers\search.js">
-        <metrics statements="61" coveredstatements="51" conditionals="28" coveredconditionals="21" methods="9" coveredmethods="4"/>
-        <line num="1" count="7" type="stmt"/>
-        <line num="3" count="7" type="stmt"/>
       <file name="search.js" path="C:\Users\amitb\CollabMe_Server\controllers\search.js">
-        <metrics statements="77" coveredstatements="45" conditionals="28" coveredconditionals="10" methods="9" coveredmethods="4"/>
+        <metrics statements="61" coveredstatements="51" conditionals="28" coveredconditionals="21" methods="9" coveredmethods="4"/>
         <line num="1" count="8" type="stmt"/>
         <line num="3" count="8" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
@@ -269,7 +224,7 @@
         <line num="18" count="5" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
-        <line num="29" count="7" type="stmt"/>
+        <line num="29" count="8" type="stmt"/>
         <line num="31" count="3" type="stmt"/>
         <line num="32" count="3" type="stmt"/>
         <line num="33" count="3" type="stmt"/>
@@ -287,28 +242,6 @@
         <line num="55" count="3" type="cond" truecount="2" falsecount="0"/>
         <line num="56" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="57" count="1" type="stmt"/>
-        <line num="29" count="8" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
-        <line num="37" count="1" type="stmt"/>
-        <line num="38" count="1" type="stmt"/>
-        <line num="43" count="1" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
-        <line num="45" count="1" type="stmt"/>
-        <line num="47" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="48" count="0" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
-        <line num="51" count="0" type="stmt"/>
-        <line num="55" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="56" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="57" count="0" type="stmt"/>
-        <line num="58" count="0" type="stmt"/>
         <line num="60" count="1" type="stmt"/>
         <line num="61" count="1" type="stmt"/>
         <line num="67" count="3" type="cond" truecount="4" falsecount="0"/>
@@ -339,7 +272,7 @@
         <line num="148" count="8" type="stmt"/>
       </file>
       <file name="users.js" path="C:\Users\amitb\CollabMe_Server\controllers\users.js">
-        <metrics statements="32" coveredstatements="25" conditionals="6" coveredconditionals="3" methods="8" coveredmethods="6"/>
+        <metrics statements="32" coveredstatements="31" conditionals="6" coveredconditionals="5" methods="8" coveredmethods="7"/>
         <line num="1" count="8" type="stmt"/>
         <line num="2" count="8" type="stmt"/>
         <line num="3" count="8" type="stmt"/>
@@ -351,12 +284,12 @@
         <line num="14" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
         <line num="23" count="8" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
         <line num="41" count="8" type="stmt"/>
         <line num="42" count="1" type="stmt"/>
         <line num="43" count="1" type="stmt"/>
