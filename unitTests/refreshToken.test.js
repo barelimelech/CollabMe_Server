@@ -105,8 +105,10 @@ describe("Token refresh test ",()=>{
             newRefreshToken = response.body.refreshToken
             expect (newAccessToken).not.toEqual(null);
             expect(newRefreshToken).not.toEqual(null);
-    }) 
+    })  
     
+
+
     test("Refresh Token wrong ", async () => {        
         const response = await request(app).get("/auth/refreshToken").set({authorization : 'JWT ' + refreshToken1})
         expect (response.statusCode).toEqual(403);
