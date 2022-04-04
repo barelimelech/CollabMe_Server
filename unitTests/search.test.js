@@ -120,14 +120,38 @@ describe('Testing Offer API',()=>{
         });
         expect(response.statusCode).toEqual(200)
         const newOffer = response.body    
-        console.log(newOffer[0]);
-
         expect(newOffer[0].Description).toEqual(description)
         expect(newOffer[0].HeadLine).toEqual(headline)
         expect(newOffer[0].FinishDate).toEqual(finishdate)
         expect(newOffer[0].Price).toEqual(price)
         expect(newOffer[0].Profession).toEqual(profession)
         expect(newOffer[0].User).toEqual(username)
+
+        const response2 = await request(app).post('/search/getOfferFromSpecificSearch').set({ authorization: 'JWT ' + accessToken })
+        .send({
+            "Description":"tossi",
+            "HeadLine":"yossi",
+            "fromprice":"3",
+            "toprice" :"5",
+            "fromdate":"3",
+            "fromdate":"3",
+            "professions":["Sport"],  
+            "user":"yossi"
+        });
+        expect(response2.statusCode).toEqual(200)
+
+        const response3 = await request(app).post('/search/getOfferFromSpecificSearch').set({ authorization: 'JWT ' + accessToken })
+        .send({
+            "Description":"null",
+            "HeadLine":"null",
+            "fromprice":"null",
+            "toprice" :"null",
+            "fromdate":"null",
+            "fromdate":"null",
+            "professions":["Sport"],  
+            "user":"null"
+        });
+        expect(response3.statusCode).toEqual(200)
     })
 
     test('test getOfferFromFreeSearch', async () =>{

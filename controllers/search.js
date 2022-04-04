@@ -27,7 +27,7 @@ const getOfferFromFreeSearch = async (req, res) => {
 }
 
 const getOfferFromSpecificSearch = async (req, res) => {
-    console.log('youre in offer from specific search ');
+   // console.log('youre in offer from specific search ');
     var description = req.body.description;
     var headline = req.body.headline;
     var fromdate = req.body.fromdate;
@@ -47,30 +47,30 @@ const getOfferFromSpecificSearch = async (req, res) => {
         if (description!==("null")){
             result = await Offer.find({'Description':description});
             flag=true;
-            console.log("description in");
-            console.log(result);
+        //    console.log("description in");
+        //    console.log(result);
             
         }
         //
         if (user!==("null")){
             if(flag==true){
                 result = await result.filter((d => d.User === user));
-                console.log("user in");
+         //       console.log("user in");
             }else{
                 result = await Offer.find({'User':user}); 
                 flag=true;
             }
-            console.log(result);
+           // console.log(result);
 
         }
         //
             if (fromprice!=="null"&&toprice!=="null"){
-                console.log(toprice);
-                console.log(fromprice);
+          //      console.log(toprice);
+           //     console.log(fromprice);
 
             if(flag==true){
                 result = await result.filter((d => (d.Price > fromprice-1 && d.Price < toprice+1)));
-                console.log("price in");
+              //  console.log("price in");
                 flag=true;
             }else{
                 result = await Offer.find({'Price':{$gt : fromprice-1, $lt : toprice+1}}); 
@@ -78,37 +78,37 @@ const getOfferFromSpecificSearch = async (req, res) => {
                 flag=true;
 
             }
-            console.log(result);
+           // console.log(result);
 
         }
         //
         if (headline!==("null")){
             if(flag==true){
                 result = await result.filter((d => d.HeadLine === headline));
-                console.log("headline in");
+               // console.log("headline in");
             }else{
                 result = await Offer.find({'HeadLine':headline}); 
                 flag=true;
             }
-            console.log(result);
+            //console.log(result);
 
         }
         //
-        console.log(professions);
+        //console.log(professions);
         if (professions!=="null"){
             
             if(flag==true){ 
                                    
                 result =result.filter(d =>JSON.stringify(d.Profession)==JSON.stringify(professions));    
               
-               console.log("professions in");              
+            //   console.log("professions in");              
 
                 flag=true;
             }else{
                 result = await Offer.find({'Profession':professions}); 
                 flag=true;
             }
-            console.log(result);
+            //console.log(result);
 
         }
         
@@ -121,7 +121,7 @@ const getOfferFromSpecificSearch = async (req, res) => {
                 result = await result.filter((d => parseInt(d.FinishDate) >= parseInt(fromdate)));
                // console.log(result);
 
-               console.log("date in");
+              // console.log("date in");
             }else{
                 result = await Offer.find({'FinishDate':{
                     $gt : fromdate-1, $lt : todate+1
@@ -130,7 +130,7 @@ const getOfferFromSpecificSearch = async (req, res) => {
                 flag=true;
 
             }
-            console.log(result);
+            //console.log(result);
 
         }
         //
