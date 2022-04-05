@@ -23,12 +23,13 @@ storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 
 router.post("/upload", upload.single("upload"), async (req, res) => {
-  if (req.file === undefined) return res.send("you must select a file.");
+  if (req.file === undefined) return res.status(400).send;
   const imgUrl = req.file.path;
    res.status(200).send(imgUrl);
 });
 
 router.get("/file/:filename", async (req, res) => {
+ 
   fs.readFile(req.params.filename, function(err, data) {
     if (err) throw err; // Fail if the file can't be read.
       res.writeHead(200, {'Content-Type': 'image/jpeg'});
