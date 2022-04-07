@@ -19,8 +19,7 @@ const getoffersfromuserinCandidates=async(req, res) =>{
     const offers = await Offer.find()
     let user;  
     let count=0;
-    const offersArr=[];
-    
+    const offersArr=[];    
     for(var i=0; i<offers.length; i++){
        for(var j=0;j<offers[i].Users.length;j++){
         if(offers[i].Users!=[]){ 
@@ -31,13 +30,11 @@ const getoffersfromuserinCandidates=async(req, res) =>{
                   offersArr[count]=offers[i];   
                   count++;
                 
-            }
-            
+            }            
        } 
      
     } 
-   }     
-   
+   }    
     res.status(200).send(offersArr.flat());
 }
 

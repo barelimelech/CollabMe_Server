@@ -14,6 +14,7 @@ const status = "now"
 const profession = ["sport","art"];
 let user = "62277413fe8636f7c2c9aff2"
 let users = ["amit44"]
+let username2 = "amit44";
 const intrestedVerfiy= false       
 
 beforeAll(done=>{
@@ -105,6 +106,7 @@ describe('Testing Offer API',()=>{
             "Age":28, 
             "Followers":10,
              "Profession":["Art","Sport"],
+             "Users":[],
             "Platform":["instagram","youtube"], 
              "NumberOfPosts":20,
              "Company":false,
@@ -132,7 +134,23 @@ describe('Testing Offer API',()=>{
         expect(response.body).toEqual(true)
     })
 
+    test("get offers from candidates", async() => {
+        const response = await request(app).get('/candidates/getoffersofUsers/'+username2).set({ authorization: 'JWT ' + accessToken })
+        .send({  
 
-
+        });        
+        expect(response.statusCode).toEqual(200)
+        const newOffer = response.body[0];    
+        expect(newOffer.Description).toEqual(description)
+        expect(newOffer.HeadLine).toEqual(headline)
+        expect(newOffer.Price).toEqual(price)
+        expect(newOffer.IdOffer).toEqual(idOffer1)
+        expect(newOffer.Status).toEqual(status)
+        expect(newOffer.Profession).toEqual(profession)
+        expect(newOffer.User).toEqual(user)
+        expect(newOffer.Users).toEqual(users)
+        expect(newOffer.IntrestedVerify).toEqual(intrestedVerfiy)  
+        
+    });
 
 });
