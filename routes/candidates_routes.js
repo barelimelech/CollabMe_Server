@@ -27,6 +27,8 @@ const authenticate = require('../common/auth_middleware')
 *               items:
 *                 $ref: '#/components/schemas/User'
 */
-router.get('/getCandidates/:offerId',authenticate,candidates.getCandidates);
+router.get('/getCandidates/:id',authenticate,candidates.getCandidates);
+
+router.get('/getoffersofUsers/:username',authenticate,candidates.getoffersfromuserinCandidates);
 
 module.exports = router

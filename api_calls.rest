@@ -35,19 +35,20 @@ Content-Type: application/json
 
 
 POST http://localhost:4000/offer/addNewOffer
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDYyNTY0OTA4YmVhNjc3ZmE0MGE2MSIsImlhdCI6MTY0ODc2NDQ1NCwiZXhwIjoxNjQ4NzY4MDU0fQ.qx5UfgmrcHpOBqTcYt8FAjS4DUP-lYeLy6iDJtxEVh4
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNGViNjBmYWY0ZTkxMTNjMTVmYTI2MCIsImlhdCI6MTY0OTMyNTU5MiwiZXhwIjoxNjQ5MzI5MTkyfQ.rS4tah8p8sz2rI49iGVh2OASNlOawKlUZG99PvAlHUs
 Content-Type: application/json
 
 {
-        "Description":"koko",   
+        "Description":"koko122",   
         "HeadLine":"yoyo",
         "FinishDate":"14062022",
         "Price" :10,
         "Coupon":"1$",
-        "IdOffer" :100,
+        "IdOffer" :"100",
         "Status":"now",
-        "Profession": ["sport","toto"],  
-        "User":"yossi",      
+        "Profession": ["sport","music"],  
+        "User":"yossi",
+        "Users":["koko","mona"],      
         "IntrestedVerify":false
 }
 
@@ -58,7 +59,7 @@ POST http://localhost:4000/auth/register
 Content-Type: application/json
 
 {
-    "Username": "bar",       
+    "Username": "koko",       
     "Password":"5566", 
     "Email": "email@email.email",
     "Sex":"undefind",
@@ -78,8 +79,8 @@ POST http://localhost:4000/auth/login
 Content-Type: application/json
 
 {
-    "Username" : "bar",
-    "Password" : "12345"
+    "Username" : "koko",
+    "Password" : "5566"
 }
 
 ###
@@ -129,8 +130,8 @@ Content-Type: application/json
     "Influencer":true 
 }
 ###
-GET http://localhost:4000/candidates/getCandidates/100
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzVlYTk1ZGQ0YjcyYWFkYzc1NTJlZiIsImlhdCI6MTY0NzcwMDYzMSwiZXhwIjoxNjQ3NzA0MjMxfQ.TnuSorNbSNYBNXLkAmJJKe4LBhZx5y2cPazJAc3Z5kg
+GET http://localhost:4000/candidates/getCandidates/963f4a79-c01d-4868-830b-5ee56dc67a21
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDhjNDMzMzI1YzlhOGNmYjk3NDlhNiIsImlhdCI6MTY0ODkzNTk5MiwiZXhwIjoxNjQ4OTM5NTkyfQ.zkej4MVmTrkIv0m-y9D4qIJZe3KW8IJQqYLeKpNhkqg
 
 ###
 GET http://localhost:4000/auth/getUserByUserNameInSignIn/amit
@@ -141,10 +142,25 @@ GET http://localhost:4000/search/getOfferFromFreeSearch/koko
 Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDYyNTY0OTA4YmVhNjc3ZmE0MGE2MSIsImlhdCI6MTY0ODc2NDQ1NCwiZXhwIjoxNjQ4NzY4MDU0fQ.qx5UfgmrcHpOBqTcYt8FAjS4DUP-lYeLy6iDJtxEVh4
 
 ###
-GET http://localhost:4000/search/getOfferFromSpecificSearch/null/null/14062022/14062022/null/null/null
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDViMmJmNTE2NzRlZTNjOTdmMGYxZSIsImlhdCI6MTY0ODczNDkxNCwiZXhwIjoxNjQ4NzM4NTE0fQ.D5DsLz0Z1pnouLbpnkaIdxHZtxJ_sOqYVXSL9xX7mVg
+POST http://localhost:4000/search/getOfferFromSpecificSearch
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDYyNTY0OTA4YmVhNjc3ZmE0MGE2MSIsImlhdCI6MTY0ODk5NjAzNywiZXhwIjoxNjQ4OTk5NjM3fQ.QMKNON9hklNmut29QSATnrRSDJGwotAp-gdOj0qCRvE
+Content-Type: application/json
 
+{
+        "description":"null",   
+        "headline":"null",
+        "fromdate":"null",
+        "todate" :"null",
+        "fromprice":"null",
+        "toprice" :"null",
+        "professions": ["Sport","Fashion"],  
+        "user":"yossi"
+}
+###
 
 ###
-GET http://localhost:4000/users/getUser/getUserByEmail/bar@gmail.com
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzlhMjBmMmM4NDczMzQ4YWQ2ZGJlMyIsImlhdCI6MTY0ODc0MTA2MywiZXhwIjoxNjQ4NzQ0NjYzfQ.eCKStiZPK9DrnJp6c9D-IbC7o-yA1iJtAZJX7D0Ixbs
+POST  http://localhost:4000/image/delete/file2.png
+
+###
+GET  http://localhost:4000/candidates/getoffersofUsers/koko
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNGViNjBmYWY0ZTkxMTNjMTVmYTI2MCIsImlhdCI6MTY0OTMyNTU5MiwiZXhwIjoxNjQ5MzI5MTkyfQ.rS4tah8p8sz2rI49iGVh2OASNlOawKlUZG99PvAlHUs

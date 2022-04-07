@@ -1,20 +1,20 @@
-
 const app = require('../server')
 const request = require('supertest')
 const mongoosse = require('mongoose')
 const { response } = require('../server')
 const User = require('../models/user_model')
-
+const Offers = require('../models/offer_model')
 const username = 'liem'
 const pwd = '5566'
 const description="hi"
 const headline = "hello"
 const price = "10"
-const idOffer = "1"
+const idOffer1 = "71"
 const status = "now"
 const profession = ["sport","art"];
 let user = "62277413fe8636f7c2c9aff2"
-let users = ["amit"]
+let users = ["amit44"]
+let username2 = "amit44";
 const intrestedVerfiy= false       
 
 beforeAll(done=>{
@@ -28,14 +28,15 @@ afterAll(done=>{
         mongoosse.connection.close()
         done()
     })
+    Offers.remove({'IdOffer':idOffer1}, (err)=>{
+        done()
+    })
 })
 
 
 describe('Testing Offer API',()=>{
     let accessToken = ''
-    let accsessOriginal='';
-    let userId = ''
-
+    
     test('test registration',async ()=>{
         const response = await request(app).post('/auth/register').send({
             'Username' : username,
@@ -74,7 +75,7 @@ describe('Testing Offer API',()=>{
             "Description":description,   
             "HeadLine":headline,
             "Price" :price,
-            "IdOffer" :idOffer,
+            "IdOffer" :idOffer1,
             "Status":status,
             "Profession": profession,  
             "User":user,  
@@ -86,17 +87,18 @@ describe('Testing Offer API',()=>{
         expect(newOffer.Description).toEqual(description)
         expect(newOffer.HeadLine).toEqual(headline)
         expect(newOffer.Price).toEqual(price)
-        expect(newOffer.IdOffer).toEqual(idOffer)
+        expect(newOffer.IdOffer).toEqual(idOffer1)
         expect(newOffer.Status).toEqual(status)
         expect(newOffer.Profession).toEqual(profession)
         expect(newOffer.User).toEqual(user)
         expect(newOffer.Users).toEqual(users)
-        expect(newOffer.IntrestedVerify).toEqual(intrestedVerfiy)      
+        expect(newOffer.IntrestedVerify).toEqual(intrestedVerfiy)  
+           
         
     })
     test('test registration',async ()=>{
         const response = await request(app).post('/auth/register').send({
-            'Username' : "amit",
+            'Username' : "amit44",
             'Password':pwd,
             'Email': "email@email.email",
             "Sex":"undefind",
@@ -104,6 +106,7 @@ describe('Testing Offer API',()=>{
             "Age":28, 
             "Followers":10,
              "Profession":["Art","Sport"],
+             "Users":[],
             "Platform":["instagram","youtube"], 
              "NumberOfPosts":20,
              "Company":false,
@@ -115,9 +118,12 @@ describe('Testing Offer API',()=>{
     })
 
 
-    test("get candidates",async()=>{
-        const response = await request(app).get('/candidates/getCandidates/' + idOffer).set({ authorization: 'JWT ' + accessToken })
-        expect(response.body[0].Username).toEqual(users[0])
+    test("get candidates", async() => {
+        const response = await request(app).get('/candidates/getCandidates/'+idOffer1).set({ authorization: 'JWT ' + accessToken })
+        .send({            
+        });
+            
+        expect(response.body[0].Username).toEqual(users[0]);
         expect(response.statusCode).toEqual(200)
         
     });
@@ -128,7 +134,23 @@ describe('Testing Offer API',()=>{
         expect(response.body).toEqual(true)
     })
 
+    test("get offers from candidates", async() => {
+        const response = await request(app).get('/candidates/getoffersofUsers/'+username2).set({ authorization: 'JWT ' + accessToken })
+        .send({  
 
-
+        });        
+        expect(response.statusCode).toEqual(200)
+        const newOffer = response.body[0];    
+        expect(newOffer.Description).toEqual(description)
+        expect(newOffer.HeadLine).toEqual(headline)
+        expect(newOffer.Price).toEqual(price)
+        expect(newOffer.IdOffer).toEqual(idOffer1)
+        expect(newOffer.Status).toEqual(status)
+        expect(newOffer.Profession).toEqual(profession)
+        expect(newOffer.User).toEqual(user)
+        expect(newOffer.Users).toEqual(users)
+        expect(newOffer.IntrestedVerify).toEqual(intrestedVerfiy)  
+        
+    });
 
 });

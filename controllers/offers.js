@@ -40,6 +40,8 @@ const addNewOffer = async (req, res) => {
     const user =  req.body.User;
     const users =  req.body.Users;
     const intrestedVerify =  req.body.IntrestedVerify;
+    const image =  req.body.Image;
+    
 
     const offer = Offer({
         Description:description,
@@ -51,7 +53,8 @@ const addNewOffer = async (req, res) => {
         Profession: profession,
         User:user,
         Users: users,
-        IntrestedVerify:intrestedVerify
+        IntrestedVerify:intrestedVerify,
+        Image:image
     })
 
     const offer2 = await offer.save();
@@ -85,7 +88,8 @@ const editOffer = async(req, res) => {
         Profession: req.body.Profession,
         User:req.body.User,
         Users: req.body.Users,
-        IntrestedVerify:req.body.IntrestedVerify
+        IntrestedVerify:req.body.IntrestedVerify,
+        Image:req.body.Image
     };
 
     Offer.update({

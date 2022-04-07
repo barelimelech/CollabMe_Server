@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.15% </span>
+                <span class="strong">48.14% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/19</span>
+                <span class='fraction'>13/27</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>0/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.15% </span>
+                <span class="strong">52% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/19</span>
+                <span class='fraction'>13/25</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -106,13 +106,7 @@
 <a name='L41'></a><a href='#L41'>41</a>
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">7x</span>
+<a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -137,23 +131,17 @@
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -185,28 +173,22 @@ storage = multer.diskStorage({
 });
 var upload = multer({ storage: storage })
 &nbsp;
-router.post(
-  "/upload/:username",
-  multer({
-    storage: storage
-  }).single('upload'), <span class="fstat-no" title="function not covered" >fu</span>nction(req, res) {
-<span class="cstat-no" title="statement not covered" >    console.log(req.file);</span>
-<span class="cstat-no" title="statement not covered" >    console.log(req.params.username); </span>
-<span class="cstat-no" title="statement not covered" >    res.redirect(200,"/uploads/" + req.file.filename);</span>
-//    res.status(200).send("/uploads/" + req.file.filename);
+router.post("/upload", upload.single("upload"), <span class="fstat-no" title="function not covered" >as</span>ync (req, res) =&gt; {
+<span class="cstat-no" title="statement not covered" >  if (req.file === undefined) <span class="cstat-no" title="statement not covered" >return res.send("you must select a file.");</span></span>
+  const imgUrl =<span class="cstat-no" title="statement not covered" >req.file.path;</span>
+<span class="cstat-no" title="statement not covered" >   res.status(200).send(imgUrl);</span>
+});
+&nbsp;
+router.get("/file/:filename", <span class="fstat-no" title="function not covered" >as</span>ync (req, res) =&gt; {
+<span class="cstat-no" title="statement not covered" >  fs.readFile(req.params.filename, <span class="fstat-no" title="function not covered" >fu</span>nction(err, data) {</span>
+<span class="cstat-no" title="statement not covered" >    if (err) <span class="cstat-no" title="statement not covered" >throw err; </span></span>// Fail if the file can't be read.
+<span class="cstat-no" title="statement not covered" >      res.writeHead(200, {'Content-Type': 'image/jpeg'});</span>
+<span class="cstat-no" title="statement not covered" >      console.log(res);</span>
+<span class="cstat-no" title="statement not covered" >      res.end(data); </span>// Send the file data to the browser.
   });
+});
 &nbsp;
-&nbsp;
-  /*
-  router.get('/uploads/:upload', function (req, res){
-    file = req.params.upload;
-    console.log(req.params.upload);
-    var img = fs.readFileSync(__dirname + "/uploads/" + file);
-    res.writeHead(200, {'Content-Type': 'image/png' });
-    res.end(img, 'binary');
   
-  });
-  */
   
 &nbsp;
  
@@ -217,7 +199,7 @@ module.exports = router</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu Mar 31 2022 17:36:30 GMT+0300 (Israel Daylight Time)
+                at Mon Apr 04 2022 02:46:42 GMT+0300 (Israel Daylight Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>

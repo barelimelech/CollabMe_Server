@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/9</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/9</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -243,11 +243,11 @@
 <a name='L178'></a><a href='#L178'>178</a>
 <a name='L179'></a><a href='#L179'>179</a>
 <a name='L180'></a><a href='#L180'>180</a>
-<a name='L181'></a><a href='#L181'>181</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<a name='L181'></a><a href='#L181'>181</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -334,7 +334,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -377,7 +377,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -398,7 +398,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -420,10 +420,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span></td><td class="text"><pre class="prettyprint lang-js">const express = require('express')
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span></td><td class="text"><pre class="prettyprint lang-js">const express = require('express')
 const router = express.Router()
 &nbsp;
 const user = require('../controllers/users')
@@ -495,7 +495,7 @@ const authenticate = require('../common/auth_middleware')
 &nbsp;
 /**
 * @swagger
-* /user/{username}:
+* /users/getUser/{username}:
 *   get:
 *     summary: get the user by user name
 *     tags: [User Api]
@@ -512,36 +512,36 @@ const authenticate = require('../common/auth_middleware')
 *         content:
 *           application/json:
 *             schema:
-*               $ref: '#/components/schemas/Offer'
+*               $ref: '#/components/schemas/User'
 */
 router.get('/getUser/:username',authenticate,user.getUserByUserNmae);
 &nbsp;
-/**
-* @swagger
-* /user/{id}:
-*   get:
-*     summary: get the user by id
-*     tags: [User Api]
-*     parameters:
-*       - in: path
-*         name: user id
-*         schema:
-*           type: string
-*         required: true
-*         description: The user id
-*     responses:
-*       200:
-*         description: The user exist 
-*         content:
-*           application/json:
-*             schema:
-*               $ref: '#/components/schemas/Offer'
-*/
+// /**
+// * @swagger
+// * /users/{id}:
+// *   get:
+// *     summary: get the user by id
+// *     tags: [User Api]
+// *     parameters:
+// *       - in: path
+// *         name: user id
+// *         schema:
+// *           type: string
+// *         required: true
+// *         description: The user id
+// *     responses:
+// *       200:
+// *         description: The user exist 
+// *         content:
+// *           application/json:
+// *             schema:
+// *               $ref: '#/components/schemas/User'
+// */
 &nbsp;
 /**
 * @swagger
-* /user/{username}:
-*   put:
+* /users/editUser/{username}:
+*   post:
 *     summary: edit user 
 *     tags: [User Api]
 *     parameters:
@@ -552,7 +552,7 @@ router.get('/getUser/:username',authenticate,user.getUserByUserNmae);
 *       content:
 *         application/json:
 *           schema:
-*             $ref: '#/components/schemas/Offer'
+*             $ref: '#/components/schemas/User'
 *     responses:
 *       200:
 *         description: User was updated
@@ -561,8 +561,8 @@ router.post('/editUser/:username',authenticate, user.editUser)
 &nbsp;
 /**
 * @swagger
-* /user/{username}:
-*   delete:
+* /users/deleteuser/{username}:
+*   post:
 *     summary: delete user 
 *     tags: [User Api]
 *     parameters:
@@ -573,7 +573,7 @@ router.post('/editUser/:username',authenticate, user.editUser)
 *       content:
 *         application/json:
 *           schema:
-*             $ref: '#/components/schemas/Offer'
+*             $ref: '#/components/schemas/User'
 *     responses:
 *       200:
 *         description: User was deleted
@@ -582,7 +582,7 @@ router.post('/deleteuser/:username',authenticate, user.deleteuser)
 &nbsp;
 /**
 * @swagger
-* /user/{username}:
+* /users/authenticate/{username}:
 *   get:
 *     summary: check if user is connected
 *     tags: [User Api]
@@ -594,7 +594,7 @@ router.post('/deleteuser/:username',authenticate, user.deleteuser)
 *       content:
 *         application/json:
 *           schema:
-*             $ref: '#/components/schemas/Offer'
+*             $ref: '#/components/schemas/User'
 *     responses:
 *       200:
 *         description: User is connected
@@ -602,7 +602,7 @@ router.post('/deleteuser/:username',authenticate, user.deleteuser)
 &nbsp;
 router.get('/authenticate',authenticate,user.isconnected);
 &nbsp;
-&nbsp;
+router.get('/getUser/getUserByEmail/:email',authenticate,user.getUserByEmail);
 module.exports = router</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -610,7 +610,7 @@ module.exports = router</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Wed Mar 30 2022 14:09:43 GMT+0300 (Israel Daylight Time)
+                at Thu Apr 07 2022 16:38:35 GMT+0300 (Israel Daylight Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>

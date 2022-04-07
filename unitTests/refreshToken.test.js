@@ -6,8 +6,9 @@ const User = require('../models/user_model')
 
 
 var refreshToken1;
-const username = 'yossi10'
+const username = 'mona'
 const pwd = '5566'
+var refresh2;
 
 beforeAll(done=>{
     User.remove({'Username' : username}, (err)=>{
@@ -51,7 +52,9 @@ describe("Token refresh test ",()=>{
         expect(response.statusCode).toEqual(200)
         accessToken = response.body.accessToken
         refreshToken1 =  response.body.refreshToken
-    })         
+    })
+    
+   
 
     jest.setTimeout(30000);
     test("timeout access", async()=>{
@@ -75,4 +78,45 @@ describe("Token refresh test ",()=>{
             expect(response.Tokens).toEqual(undefined);
         }
     }); 
+
+
+    test("Refresh Token wrong ", async () => {
+        const response = await request(app).get("/auth/refreshToken").set({authorization : 'JWT ' + null})
+        expect (response.statusCode).toEqual(403);
+        
+    }); 
+    
+
+    test('test login',async ()=>{
+        const response = await request(app).post('/auth/login').send({
+            'Username' : username,
+            'Password':pwd
+        })
+        expect(response.statusCode).toEqual(200)
+        accessToken = response.body.accessToken
+        refresh2 =  response.body.refreshToken
+        
+    })   
+
+    test('test logout',async ()=>{
+        const response = await request(app).post('/auth/logout').set({ authorization: 'JWT ' +refreshToken1 })
+        expect(response.statusCode).toEqual(403)
+         newAccessToken = response.body.accessToken
+            newRefreshToken = response.body.refreshToken
+            expect (newAccessToken).not.toEqual(null);
+            expect(newRefreshToken).not.toEqual(null);
+    })  
+    
+
+
+    test("Refresh Token wrong ", async () => {        
+        const response = await request(app).get("/auth/refreshToken").set({authorization : 'JWT ' + refreshToken1})
+        expect (response.statusCode).toEqual(403);
+        
+    }); 
+
+    
+
+
+
 });

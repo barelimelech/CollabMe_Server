@@ -93,7 +93,7 @@ const login = async (req, res) => {
             'refreshToken' : refreshToken})
 
     }catch(err){
-        return sendError(res,400,err.message)
+        return sendError(res,400,"fall")
     }
 
 }
@@ -160,7 +160,14 @@ const getUserByUserNameInSignIn = async (req, res) => {
     try {
         
         const user = await User.findOne({'Username' : req.params.username })
-        res.status(200).send(user)
+        if(user!=null){
+            res.status(200).send(user)
+        }else{
+            res.status(400).send({
+                'status': 'fail',
+                'error': err.message
+            }) 
+        }
     } catch (err) {
         res.status(400).send({
             'status': 'fail',

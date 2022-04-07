@@ -34,8 +34,6 @@ const authenticate = require('../common/auth_middleware')
 */
 router.get('/getOfferFromFreeSearch/:freesearch', authenticate, Offer.getOfferFromFreeSearch);
 
-//router.get('/getOfferFromSpecificSearch/:description/:headline/:fromdate/:todate/:fromprice/:toprice/:user', authenticate, Offer.getOfferFromSpecificSearch);
-
 
 /**
 * @swagger
@@ -58,9 +56,7 @@ router.get('/getOfferFromFreeSearch/:freesearch', authenticate, Offer.getOfferFr
 *             schema:
 *               $ref: '#/components/schemas/Offer'
 */
- router.get('/getOfferFromSpecificSearch/:description/:headline/:fromdate/:todate/:fromprice/:toprice/:user', authenticate, Offer.getOfferFromSpecificSearch);
-
-module.exports = router
+ router.post('/getOfferFromSpecificSearch', authenticate, Offer.getOfferFromSpecificSearch);
 
 
 module.exports = router

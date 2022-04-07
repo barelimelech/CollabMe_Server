@@ -23,21 +23,35 @@ storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 
 router.post("/upload", upload.single("upload"), async (req, res) => {
-  if (req.file === undefined) return res.send("you must select a file.");
-  const imgUrl = `http://localhost:8080/file/${req.file.filename}`;
-  res.status(200).send(imgUrl);
+  if (req.file === undefined) return res.status(400).send;
+  const imgUrl = req.file.path;
+   res.status(200).send(imgUrl);
 });
 
-  /*
-  router.get('/uploads/:upload', function (req, res){
-    file = req.params.upload;
-    console.log(req.params.upload);
-    var img = fs.readFileSync(__dirname + "/uploads/" + file);
-    res.writeHead(200, {'Content-Type': 'image/png' });
-    res.end(img, 'binary');
-  
+
+
+router.get("/file/:filename", async (req, res) => {
+  fs.readFile(req.params.filename, function(err, data) {
+    if (err) throw err; // Fail if the file can't be read.
+      res.writeHead(200, {'Content-Type': 'image/jpeg'});
+      res.end(data); // Send the file data to the browser.  
   });
-  */
+});
+
+
+/*
+router.post('/delete/:filename', async (req, res) =>{
+  // You aren't doing anything with data so no need for the return value
+  const path = req.params.filename;
+  fs.unlink(path, (err) => {
+    if (err) {
+    console.error(err)
+    return
+    }
+  
+  })
+})
+*/
   
 
  
