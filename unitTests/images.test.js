@@ -47,10 +47,12 @@ describe('Testing edituser API',()=>{
     })
     */
 
+    
     const filename ="file2.png"
     test('should return 200 and get the image', async() => {      
         const res= await request(app).get('/image/file/'+"file2.png")         
          expect(res.status).toEqual(200);
          
      })
+     
 });

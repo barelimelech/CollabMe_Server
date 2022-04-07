@@ -35,11 +35,7 @@ Content-Type: application/json
 
 
 POST http://localhost:4000/offer/addNewOffer
-<<<<<<< HEAD
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDhjMjZiN2Y4MWE4N2I4ZWU5ZGUzYiIsImlhdCI6MTY0ODkzNTgwMCwiZXhwIjoxNjQ4OTM5NDAwfQ.b7uvAbDyhyrebkcNuebj6BOCNGWYcphAJC9kVnSrRIk
-=======
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDYyNTY0OTA4YmVhNjc3ZmE0MGE2MSIsImlhdCI6MTY0ODk5NjAzNywiZXhwIjoxNjQ4OTk5NjM3fQ.QMKNON9hklNmut29QSATnrRSDJGwotAp-gdOj0qCRvE
->>>>>>> 4a8cd082127f106d1eeec1bac7552cfcba59b2d1
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNGViNjBmYWY0ZTkxMTNjMTVmYTI2MCIsImlhdCI6MTY0OTMyNTU5MiwiZXhwIjoxNjQ5MzI5MTkyfQ.rS4tah8p8sz2rI49iGVh2OASNlOawKlUZG99PvAlHUs
 Content-Type: application/json
 
 {
@@ -63,7 +59,7 @@ POST http://localhost:4000/auth/register
 Content-Type: application/json
 
 {
-    "Username": "bar",       
+    "Username": "koko",       
     "Password":"5566", 
     "Email": "email@email.email",
     "Sex":"undefind",
@@ -83,7 +79,7 @@ POST http://localhost:4000/auth/login
 Content-Type: application/json
 
 {
-    "Username" : "bar",
+    "Username" : "koko",
     "Password" : "5566"
 }
 
@@ -161,5 +157,10 @@ Content-Type: application/json
         "user":"yossi"
 }
 ###
-//GET http://localhost:4000/image/file/file2.png
 
+###
+POST  http://localhost:4000/image/delete/file2.png
+
+###
+GET  http://localhost:4000/candidates/getoffersofUsers/koko
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNGViNjBmYWY0ZTkxMTNjMTVmYTI2MCIsImlhdCI6MTY0OTMyNTU5MiwiZXhwIjoxNjQ5MzI5MTkyfQ.rS4tah8p8sz2rI49iGVh2OASNlOawKlUZG99PvAlHUs

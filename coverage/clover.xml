@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1649155647315" clover="3.2.0">
-  <project timestamp="1649155647315" name="All files">
-    <metrics statements="355" coveredstatements="335" conditionals="86" coveredconditionals="64" methods="43" coveredmethods="36" elements="484" coveredelements="435" complexity="0" loc="355" ncloc="355" packages="5" files="16" classes="16"/>
+<coverage generated="1649234093249" clover="3.2.0">
+  <project timestamp="1649234093250" name="All files">
+    <metrics statements="361" coveredstatements="336" conditionals="88" coveredconditionals="64" methods="45" coveredmethods="36" elements="494" coveredelements="436" complexity="0" loc="361" ncloc="361" packages="5" files="16" classes="16"/>
     <package name="CollabMe_Server">
       <metrics statements="33" coveredstatements="28" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
       <file name="server.js" path="C:\Users\amitb\CollabMe_Server\server.js">
@@ -324,7 +324,7 @@
       </file>
     </package>
     <package name="CollabMe_Server.routes">
-      <metrics statements="73" coveredstatements="72" conditionals="6" coveredconditionals="3" methods="6" coveredmethods="6"/>
+      <metrics statements="79" coveredstatements="73" conditionals="8" coveredconditionals="3" methods="8" coveredmethods="6"/>
       <file name="auth_routes.js" path="C:\Users\amitb\CollabMe_Server\routes\auth_routes.js">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="9" type="stmt"/>
@@ -347,7 +347,7 @@
         <line num="32" count="9" type="stmt"/>
       </file>
       <file name="images_route.js" path="C:\Users\amitb\CollabMe_Server\routes\images_route.js">
-        <metrics statements="24" coveredstatements="23" conditionals="6" coveredconditionals="3" methods="5" coveredmethods="5"/>
+        <metrics statements="30" coveredstatements="24" conditionals="8" coveredconditionals="3" methods="7" coveredmethods="5"/>
         <line num="1" count="9" type="stmt"/>
         <line num="2" count="9" type="stmt"/>
         <line num="3" count="9" type="stmt"/>
@@ -366,12 +366,18 @@
         <line num="26" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="27" count="1" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
-        <line num="31" count="9" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
-        <line num="34" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="35" count="1" type="stmt"/>
+        <line num="33" count="9" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="36" count="1" type="stmt"/>
-        <line num="44" count="9" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="42" count="9" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="46" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="60" count="9" type="stmt"/>
       </file>
       <file name="index.js" path="C:\Users\amitb\CollabMe_Server\routes\index.js">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>

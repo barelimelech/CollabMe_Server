@@ -28,8 +28,9 @@ router.post("/upload", upload.single("upload"), async (req, res) => {
    res.status(200).send(imgUrl);
 });
 
+
+
 router.get("/file/:filename", async (req, res) => {
- 
   fs.readFile(req.params.filename, function(err, data) {
     if (err) throw err; // Fail if the file can't be read.
       res.writeHead(200, {'Content-Type': 'image/jpeg'});
@@ -37,7 +38,20 @@ router.get("/file/:filename", async (req, res) => {
   });
 });
 
+
+/*
+router.post('/delete/:filename', async (req, res) =>{
+  // You aren't doing anything with data so no need for the return value
+  const path = req.params.filename;
+  fs.unlink(path, (err) => {
+    if (err) {
+    console.error(err)
+    return
+    }
   
+  })
+})
+*/
   
 
  
