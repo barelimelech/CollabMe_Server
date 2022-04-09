@@ -7,4 +7,7 @@ const offer_model = require('../models/offer_model')
 
 router.post('/addMediaContent', authenticate, Offer.addMediaContent)
 
+router.get('/getMediaContentOfAnOffer/:id', authenticate, Offer.getMediaContentOfAnOffer)
+
+
 module.exports = router

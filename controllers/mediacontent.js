@@ -18,6 +18,21 @@ const addMediaContent = async (req, res) => {
        
 }
 
+const getMediaContentOfAnOffer = async (req, res) => {
+    try {       
+        const offers = await Offer.findOne({'IdOffer':req.params.id});
+
+            res.status(200).send(offers.MediaContent)
+        
+    } catch (err) {
+        res.status(400).send({
+            'status': 'fail',
+            'error': err.message
+        })
+    }
+}
+
 module.exports = {
-    addMediaContent
+    addMediaContent,
+    getMediaContentOfAnOffer
 }
