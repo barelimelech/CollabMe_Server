@@ -46,10 +46,12 @@ const offerSchema = new mongoose.Schema({
     Image: {
         type: String,
         required: false
+    },
+    MediaContent: {
+        type: [String],
+        required: false
     }
     
-
-
 })
 
 

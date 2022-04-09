@@ -24,7 +24,7 @@ Content-Type: application/json
         "HeadLine":"hello",
         "Price" :10,
         "Coupon":"free dinner",
-        "IdOffer" :1,
+        "IdOffer" :100,
         "Status":"now",
         "Profession": ["sport"],  
         "User":"62277413fe8636f7c2c9aff2",      
@@ -35,7 +35,7 @@ Content-Type: application/json
 
 
 POST http://localhost:4000/offer/addNewOffer
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNGViNjBmYWY0ZTkxMTNjMTVmYTI2MCIsImlhdCI6MTY0OTMyNTU5MiwiZXhwIjoxNjQ5MzI5MTkyfQ.rS4tah8p8sz2rI49iGVh2OASNlOawKlUZG99PvAlHUs
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTFjNjE2N2ZmNTExMmRmMjNlYzRkMyIsImlhdCI6MTY0OTUyNjMwMSwiZXhwIjoxNjQ5NTI5OTAxfQ.0s2pcsCHBgbeXLbq0oeJ1qV8sDRBnsblrR6t5AblQR0
 Content-Type: application/json
 
 {
@@ -164,3 +164,12 @@ POST  http://localhost:4000/image/delete/file2.png
 ###
 GET  http://localhost:4000/candidates/getoffersofUsers/koko
 Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNGViNjBmYWY0ZTkxMTNjMTVmYTI2MCIsImlhdCI6MTY0OTMyNTU5MiwiZXhwIjoxNjQ5MzI5MTkyfQ.rS4tah8p8sz2rI49iGVh2OASNlOawKlUZG99PvAlHUs
+###
+POST  http://localhost:4000/mediacontent/addMediaContent
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTFjNjE2N2ZmNTExMmRmMjNlYzRkMyIsImlhdCI6MTY0OTUyNjMwMSwiZXhwIjoxNjQ5NTI5OTAxfQ.0s2pcsCHBgbeXLbq0oeJ1qV8sDRBnsblrR6t5AblQR0
+Content-Type: application/json
+
+{
+    "MediaContent": ["a", "b"],
+    "IdOffer": "100"
+}
