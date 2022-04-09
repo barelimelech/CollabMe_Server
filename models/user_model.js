@@ -51,6 +51,10 @@ const userSchema = new mongoose.Schema({
     Image: {
         type: String,
         required: false
+    },
+    RejectedOffers: {
+        type: [String],
+        required: false
     }
 
     

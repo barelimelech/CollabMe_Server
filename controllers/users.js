@@ -53,7 +53,8 @@ const editUser = async(req, res) => {
         NumberOfPosts:req.body.NumberOfPosts,
         Company:req.body.Company,
         Influencer:req.body.Influencer,
-        Image:req.body.Image
+        Image:req.body.Image,
+        RejectedOffers:req.body.RejectedOffers
 
     };
 

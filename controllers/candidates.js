@@ -23,8 +23,6 @@ const getoffersfromuserinCandidates=async(req, res) =>{
     for(var i=0; i<offers.length; i++){
        for(var j=0;j<offers[i].Users.length;j++){
         if(offers[i].Users!=[]){ 
-            console.log(offers[i].Users[j]) 
-            console.log(req.params.username)  
             if(offers[i].Users[j]==req.params.username){
 
                   offersArr[count]=offers[i];   
