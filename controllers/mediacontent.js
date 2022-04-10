@@ -1,20 +1,31 @@
 const Offer = require('../models/offer_model')
 
 const addMediaContent = async (req, res) => { 
+    console.log("youre in add media content");
     const idOffer = req.body.IdOffer;
     const mediaContent = req.body.MediaContent;
     var toUpdate;
 
-    toUpdate = await Offer.update(
-        {
-            IdOffer:idOffer
-        },{
-            $set: {
-                MediaContent: mediaContent  
-                }
-        });
+    try {       
+        res.status(200).send(toUpdate = await Offer.updateOne(
+            {
+                IdOffer:idOffer
+            },{
+                $set: {
+                    MediaContent: mediaContent  
+                    }
+            }));
 
-        res.send(200, "done adding media!");
+            res.status(200);
+        
+    } catch (err) {
+        res.status(400).send({
+            'status': 'fail',
+            'error': err.message
+        })
+    }
+
+
        
 }
 

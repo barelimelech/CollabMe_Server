@@ -60,7 +60,7 @@ POST http://localhost:4000/auth/register
 Content-Type: application/json
 
 {
-    "Username": "bar",       
+    "Username": "yoss",       
     "Password":"12345", 
     "Email": "email@email.email",
     "Sex":"undefind",
@@ -80,7 +80,7 @@ POST http://localhost:4000/auth/login
 Content-Type: application/json
 
 {
-    "Username" : "bar",
+    "Username" : "yoss",
     "Password" : "12345"
 }
 
@@ -166,11 +166,11 @@ GET  http://localhost:4000/candidates/getoffersofUsers/koko
 Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNGViNjBmYWY0ZTkxMTNjMTVmYTI2MCIsImlhdCI6MTY0OTMyNTU5MiwiZXhwIjoxNjQ5MzI5MTkyfQ.rS4tah8p8sz2rI49iGVh2OASNlOawKlUZG99PvAlHUs
 ###
 POST  http://localhost:4000/mediacontent/addMediaContent
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTFjNjE2N2ZmNTExMmRmMjNlYzRkMyIsImlhdCI6MTY0OTUyNjMwMSwiZXhwIjoxNjQ5NTI5OTAxfQ.0s2pcsCHBgbeXLbq0oeJ1qV8sDRBnsblrR6t5AblQR0
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTMzNzUxYjQxOTgzNzMyNGNmYTI0MyIsImlhdCI6MTY0OTYyMjI3MSwiZXhwIjoxNjQ5NjI1ODcxfQ.ABr2AvKtff1nr_XhClkuYnQw70Fk0KwYU4NZPtqmIxI
 Content-Type: application/json
 
 {
-    "MediaContent": ["a", "b"],
+    "MediaContent": ["sup", "m", "c", "d"],
     "IdOffer": "100"
 }
 ###
