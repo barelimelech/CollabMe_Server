@@ -63,8 +63,8 @@ app.use('/search',search)
 const images1 = require('./routes/images_route')
 app.use('/image',images1)
 
-
+const mediacontent = require('./routes/mediacontent_routes')
+app.use('/mediacontent',mediacontent)
      
-    
 
 module.exports = app

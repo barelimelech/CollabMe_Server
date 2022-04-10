@@ -24,7 +24,7 @@ Content-Type: application/json
         "HeadLine":"hello",
         "Price" :10,
         "Coupon":"free dinner",
-        "IdOffer" :1,
+        "IdOffer" :100,
         "Status":"now",
         "Profession": ["sport"],  
         "User":"62277413fe8636f7c2c9aff2",      
@@ -35,7 +35,7 @@ Content-Type: application/json
 
 
 POST http://localhost:4000/offer/addNewOffer
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNGViNjBmYWY0ZTkxMTNjMTVmYTI2MCIsImlhdCI6MTY0OTMyNTU5MiwiZXhwIjoxNjQ5MzI5MTkyfQ.rS4tah8p8sz2rI49iGVh2OASNlOawKlUZG99PvAlHUs
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTFjNjE2N2ZmNTExMmRmMjNlYzRkMyIsImlhdCI6MTY0OTUyNjMwMSwiZXhwIjoxNjQ5NTI5OTAxfQ.0s2pcsCHBgbeXLbq0oeJ1qV8sDRBnsblrR6t5AblQR0
 Content-Type: application/json
 
 {
@@ -59,8 +59,8 @@ POST http://localhost:4000/auth/register
 Content-Type: application/json
 
 {
-    "Username": "koko",       
-    "Password":"5566", 
+    "Username": "bar",       
+    "Password":"12345", 
     "Email": "email@email.email",
     "Sex":"undefind",
     "Age":28, 
@@ -79,8 +79,8 @@ POST http://localhost:4000/auth/login
 Content-Type: application/json
 
 {
-    "Username" : "koko",
-    "Password" : "5566"
+    "Username" : "bar1",
+    "Password" : "12345"
 }
 
 ###
@@ -112,16 +112,16 @@ Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmRjZWNmY2
 
 
 ###
-POST  http://localhost:4000/users/editUser/amit
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmY2MDk1Mzk1ODVjMWMxZWFlZjI0YSIsImlhdCI6MTY0NzI3MzM2OCwiZXhwIjoxNjQ3Mjc2OTY4fQ.zmVtQGFHmz1MWZZ34wlo08Qt1Q_LlD1ho8bAQVpLcQE
+POST  http://localhost:4000/users/editUser/bar
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTI3ZDFlNjNiZGRlMGVjYjVkZGEwNSIsImlhdCI6MTY0OTU3ODQ0NywiZXhwIjoxNjQ5NTgyMDQ3fQ.3ZdNEy2CI4VSsbSTsiO6XPkL3ZdYY8nOrtu6aDYdwSk
 Content-Type: application/json
 
 {
-    "Username": "amit",       
-    "Password":"5566", 
+    "Username": "bar",       
+    "Password":"12345", 
     "Email": "email@email.email1",
     "Sex":"undefind",
-    "Age":"28845", 
+    "Age":"2433", 
     "Followers":"11",
     "Profession":["Art","Sport"],
     "Platform":["instagram","youtube"], 
@@ -164,3 +164,15 @@ POST  http://localhost:4000/image/delete/file2.png
 ###
 GET  http://localhost:4000/candidates/getoffersofUsers/koko
 Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNGViNjBmYWY0ZTkxMTNjMTVmYTI2MCIsImlhdCI6MTY0OTMyNTU5MiwiZXhwIjoxNjQ5MzI5MTkyfQ.rS4tah8p8sz2rI49iGVh2OASNlOawKlUZG99PvAlHUs
+###
+POST  http://localhost:4000/mediacontent/addMediaContent
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTFjNjE2N2ZmNTExMmRmMjNlYzRkMyIsImlhdCI6MTY0OTUyNjMwMSwiZXhwIjoxNjQ5NTI5OTAxfQ.0s2pcsCHBgbeXLbq0oeJ1qV8sDRBnsblrR6t5AblQR0
+Content-Type: application/json
+
+{
+    "MediaContent": ["a", "b"],
+    "IdOffer": "100"
+}
+###
+GET  http://localhost:4000/mediacontent/getMediaContentOfAnOffer/100
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTFjNjE2N2ZmNTExMmRmMjNlYzRkMyIsImlhdCI6MTY0OTUyODIwNCwiZXhwIjoxNjQ5NTMxODA0fQ._VkoOHcnJhQmTdgF750E_ckI0oyM4nBUXw1ZD7T1Fzw

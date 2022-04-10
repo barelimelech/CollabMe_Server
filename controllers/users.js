@@ -58,11 +58,11 @@ const editUser = async(req, res) => {
 
     };
 
-    await User.update({
+    await User.updateOne({
          UserName: req.params.Username
          }, updatedUser, function(err, affected){
-        res.send(200, updatedUser);
-    }).clone().catch(function(err){ })
+            res.send(200, updatedUser);
+        }).clone().catch(function(err){ })
     
 }
 
