@@ -39,7 +39,7 @@ describe('Testing Auth API',()=>{
             "Platform":["instagram","youtube"], 
              "NumberOfPosts":20,
              "Company":false,
-            "Influencer":true 
+            "Influencer":true
 
         })
         expect(response.statusCode).toEqual(200)
@@ -156,9 +156,7 @@ describe('Testing Auth API',()=>{
         expect(response.statusCode).toEqual(400)
     })
 
-    
-
-   
+      
 
 
    
