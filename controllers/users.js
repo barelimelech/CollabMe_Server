@@ -70,7 +70,7 @@ const deleteuser = async(req, res) => {
     try{
     usertodelete = await User.findOne({'Username':req.params.username });
     User.deleteOne({
-        Username: usertodelete.UserName
+        Username: usertodelete.Username
         }, function (err) {
         if (err) {
           res.status(404).send({
