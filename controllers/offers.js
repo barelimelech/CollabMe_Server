@@ -64,16 +64,22 @@ const addNewOffer = async (req, res) => {
 }
 
 const deleteOffer = async(req, res) => {
-
-        offerTodelete = await Offer.findOne({'IdOffer':req.params.id})
+    try{
+        offerTodelete = await Offer.findOne({'_id':req.params.id})
         Offer.deleteOne({
             id: offerTodelete.IdOffer
             }, function (err) {
             if (err) {
-              return res.send(err.message);
+              res.status(404).send({
+                'status': 'fail',
+                'error': err.message
+                });
             }
             res.status(200).send();
             });
+        }catch(err){
+            return res.send(err.message);
+        }
 
 }
 
@@ -92,7 +98,7 @@ const editOffer = async(req, res) => {
         Image:req.body.Image
     };
 
-    Offer.update({
+    Offer.updateOne({
         IdOffer: req.params.id
          }, updatedPost, function(err, affected){
         res.send(200, updatedPost);

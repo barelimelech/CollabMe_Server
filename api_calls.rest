@@ -11,12 +11,13 @@ Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmYzMzliNj
 ###
 
 
-GET http://localhost:4000/offer/getOfferById/622e2fed8fba1393eee2da12
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmRjZWNmY2RiMTcwNGU1MDJmODg0NiIsImlhdCI6MTY0NzE5NDQ1NCwiZXhwIjoxNjQ3MTk4MDU0fQ.4WBlTtFyAoiWAOFitnxHLfSDGFb14sVbF7BW5U5wkS0
+GET http://localhost:4000/offer/getOfferById/6252b7449bb654ca7f8d9d26
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTJhOTlmMjlmMGVhOGQxYTUwMTUxNyIsImlhdCI6MTY0OTU4NDgxNSwiZXhwIjoxNjQ5NTg4NDE1fQ.PoAeWn1SN8F7voAqdmidXPQFoBx_vu2KXGko1g2TEnw
+
 
 ###
-POST  http://localhost:4000/offer/editOffer/622b69c403b68fe10748fd49
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDYyNTY0OTA4YmVhNjc3ZmE0MGE2MSIsImlhdCI6MTY0ODc2NDI2MywiZXhwIjoxNjQ4NzY3ODYzfQ.oBI23qRK-ZXuDoXXlln1T60OG9wZfXw4OL7i2HGej0c
+POST  http://localhost:4000/offer/editOffer/6252a9b229f0ea8d1a501523
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTJhOTlmMjlmMGVhOGQxYTUwMTUxNyIsImlhdCI6MTY0OTU4NTI2OCwiZXhwIjoxNjQ5NTg4ODY4fQ.8FlBVo2BJLR7qsNgNUHzrGsBMQ0IQafPCIxZMT5Zvrk
 Content-Type: application/json
 
 {
@@ -79,7 +80,7 @@ POST http://localhost:4000/auth/login
 Content-Type: application/json
 
 {
-    "Username" : "bar1",
+    "Username" : "bar",
     "Password" : "12345"
 }
 
@@ -91,11 +92,10 @@ Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjhkZDRmNj
 ###
 GET  http://localhost:4000/auth/refreshToken
 Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjhkYmFmM2QxYjdjM2E2NTA4YjRiOCIsImlhdCI6MTY0Njg0NDg1Mn0.gJCd-Uqf5UstpylX6Ni3xkcNGzC-5rJnPKD_6bvuw28
-###
-GET http://localhost:4000/offer/deleteOffer/622b5bc167452bd62e2e8454
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmI1NGQ2ZjkzNDE5NWU5NjEwMzU4YyIsImlhdCI6MTY0NzAwODg4NiwiZXhwIjoxNjQ3MDEyNDg2fQ.d_Oi-oNs56TsQjwZV7K6niCW-suRXqgKJE4sj4accxA
 
 ###
+POST  http://localhost:4000/offer/deleteOffer/6252b7449bb654ca7f8d9d26
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTJhOTlmMjlmMGVhOGQxYTUwMTUxNyIsImlhdCI6MTY0OTU4NDgxNSwiZXhwIjoxNjQ5NTg4NDE1fQ.PoAeWn1SN8F7voAqdmidXPQFoBx_vu2KXGko1g2TEnw
 
 ###
 GET  http://localhost:4000/auth/refreshToken
