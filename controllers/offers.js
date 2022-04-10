@@ -67,7 +67,7 @@ const deleteOffer = async(req, res) => {
 
         offerTodelete = await Offer.findOne({'IdOffer':req.params.id})
         Offer.deleteOne({
-            id: offerTodelete.IdOffer
+            IdOffer: offerTodelete.IdOffer
             }, function (err) {
             if (err) {
               return res.send(err.message);
