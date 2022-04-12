@@ -31,4 +31,7 @@ router.get('/getCandidates/:id',authenticate,candidates.getCandidates);
 
 router.get('/getoffersofUsers/:username',authenticate,candidates.getoffersfromuserinCandidates);
 
+router.get('/getCandidateFromSearch/:candidatesearch',authenticate,candidates.getCandidateFromSearch);
+
+
 module.exports = router

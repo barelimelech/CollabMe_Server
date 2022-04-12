@@ -3,8 +3,6 @@ const Users = require('../models/user_model')
 const { use } = require('../routes')
 const Offer = require('../models/offer_model')
 
-
-
 const getCandidates = async(req, res) =>{
     offerId = await Candidate.findOne({'IdOffer':req.params.id});
     const userArr = [];    
@@ -36,9 +34,27 @@ const getoffersfromuserinCandidates=async(req, res) =>{
     res.status(200).send(offersArr.flat());
 }
 
+const getCandidateFromSearch = async (req, res) => {
+
+    var candidateName = req.params.candidatesearch;
+
+    try {
+        
+        const offercandidate = await Offer.find({'User':req.params.candidatesearch});
+
+        res.status(200).send(offercandidate);
+    } catch (err) {
+        res.status(400).send({
+            'status': 'fail',
+            'error': err.message
+        })
+    }
+}
+
 
 
 module.exports = {
     getCandidates,
-    getoffersfromuserinCandidates
+    getoffersfromuserinCandidates,
+    getCandidateFromSearch
 }

@@ -181,3 +181,8 @@ Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTFjNjE2N2
 POST  http://localhost:4000/users/deleteuser/gal
 Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTI5NWE4ZWJjMDAzOTViNTBmOGYyNyIsImlhdCI6MTY0OTU4MDQ3MiwiZXhwIjoxNjQ5NTg0MDcyfQ.Libs7WMgGbYaOq50_sf3r0ZcGDOGccjP1lvEJgK5xSw
 Content-Type: application/json
+###
+GET  http://localhost:4000/candidates/getCandidateFromSearch/lolo
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTMzNzUxYjQxOTgzNzMyNGNmYTI0MyIsImlhdCI6MTY0OTgwMjEyNSwiZXhwIjoxNjQ5ODA1NzI1fQ.m9VnewjSrHiRtabP62F0sJ2XJZCfiApGsZV6MARawCg
+
+###
