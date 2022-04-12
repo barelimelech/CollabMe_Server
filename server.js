@@ -65,6 +65,9 @@ app.use('/image',images1)
 
 const mediacontent = require('./routes/mediacontent_routes')
 app.use('/mediacontent',mediacontent)
+
+const payment = require('./routes/payment_routes')
+app.use('/payment',payment)
      
 
 module.exports = app

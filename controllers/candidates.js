@@ -36,6 +36,8 @@ const getoffersfromuserinCandidates=async(req, res) =>{
     res.status(200).send(offersArr.flat());
 }
 
+
+
 module.exports = {
     getCandidates,
     getoffersfromuserinCandidates

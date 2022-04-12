@@ -53,8 +53,9 @@ const addNewOffer = async (req, res) => {
         Profession: profession,
         User:user,
         Users: users,
+        Image:image,
         IntrestedVerify:intrestedVerify,
-        Image:image
+       
     })
 
     const offer2 = await offer.save();
