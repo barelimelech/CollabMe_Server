@@ -35,14 +35,14 @@ const getoffersfromuserinCandidates=async(req, res) =>{
 }
 
 const getCandidateFromSearch = async (req, res) => {
-
+console.log("youre in candidates search");
     var candidateName = req.params.candidatesearch;
 
     try {
         
-        const offercandidate = await Offer.find({'User':req.params.candidatesearch});
+        const candidateFree = await Users.find({'Username':req.params.candidatesearch});
 
-        res.status(200).send(offercandidate);
+        res.status(200).send(candidateFree);
     } catch (err) {
         res.status(400).send({
             'status': 'fail',
