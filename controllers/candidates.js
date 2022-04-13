@@ -42,7 +42,7 @@ console.log("youre in candidates search");
         
         const candidateFree = await Users.find({'Username':req.params.candidatesearch});
 
-        res.status(200).send(candidateFree);
+        res.status(200).send(candidateFree[0]);
     } catch (err) {
         res.status(400).send({
             'status': 'fail',
