@@ -35,7 +35,7 @@ const getoffersfromuserinCandidates=async(req, res) =>{
 }
 
 const getCandidateFromSearch = async (req, res) => {
-console.log("youre in candidates search");
+
     var candidateName = req.params.candidatesearch;
 
     try {
