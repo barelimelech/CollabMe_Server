@@ -23,7 +23,7 @@ const addpayment = async(req, res) => {
        
     })
 
-    const payment1 = await Payment.save();
+    const payment1 = await payment.save();
     res.status(200).send(payment1)
     
 
