@@ -27,7 +27,7 @@ const getOfferFromFreeSearch = async (req, res) => {
 }
 
 const getOfferFromSpecificSearch = async (req, res) => {
-   // console.log('youre in offer from specific search ');
+  //  console.log('youre in offer from specific search ');
     var description = req.body.description;
     var headline = req.body.headline;
     var fromdate = req.body.fromdate;
@@ -78,7 +78,7 @@ const getOfferFromSpecificSearch = async (req, res) => {
                 flag=true;
 
             }
-           // console.log(result);
+         //   console.log(result);
 
         }
         //
@@ -90,25 +90,25 @@ const getOfferFromSpecificSearch = async (req, res) => {
                 result = await Offer.find({'HeadLine':headline}); 
                 flag=true;
             }
-            //console.log(result);
+//            console.log(result);
 
         }
         //
-        //console.log(professions);
-        if (professions!=="null"){
+      //  console.log(professions);
+        if (professions!=="null" && professions!==null && professions!==undefined){
             
             if(flag==true){ 
                                    
                 result =result.filter(d =>JSON.stringify(d.Profession)==JSON.stringify(professions));    
               
-            //   console.log("professions in");              
+              // console.log("professions in");              
 
                 flag=true;
             }else{
                 result = await Offer.find({'Profession':professions}); 
                 flag=true;
             }
-            //console.log(result);
+         //   console.log(result);
 
         }
         

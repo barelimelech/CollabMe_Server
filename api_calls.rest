@@ -142,7 +142,7 @@ Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDYyNTY0OT
 
 ###
 POST http://localhost:4000/search/getOfferFromSpecificSearch
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDYyNTY0OTA4YmVhNjc3ZmE0MGE2MSIsImlhdCI6MTY0ODk5NjAzNywiZXhwIjoxNjQ4OTk5NjM3fQ.QMKNON9hklNmut29QSATnrRSDJGwotAp-gdOj0qCRvE
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTMzNzUxYjQxOTgzNzMyNGNmYTI0MyIsImlhdCI6MTY0OTk0ODUxMywiZXhwIjoxNjQ5OTUyMTEzfQ.vJpRK6Aav4B6aRLseki_U6LlyKUfT8ATfMeOI8TKzVI
 Content-Type: application/json
 
 {
@@ -150,10 +150,10 @@ Content-Type: application/json
         "headline":"null",
         "fromdate":"null",
         "todate" :"null",
-        "fromprice":"null",
-        "toprice" :"null",
-        "professions": ["Sport","Fashion"],  
-        "user":"yossi"
+        "fromprice":"120",
+        "toprice" :"120",
+        "professions": null,  
+        "user":"null"
 }
 ###
 
@@ -183,3 +183,7 @@ Content-Type: application/json
 ###
 GET  http://localhost:4000/candidates/getCandidateFromSearch/b
 Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTMzNzUxYjQxOTgzNzMyNGNmYTI0MyIsImlhdCI6MTY0OTg0Mjg2NywiZXhwIjoxNjQ5ODQ2NDY3fQ.JvvbZ5nkophLfj8LKJl9RHZ58bUW0wZKGHaQu2M8-aY
+###
+GET  http://localhost:4000/candidates/getoffersofUsers/bar
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTMzNzUxYjQxOTgzNzMyNGNmYTI0MyIsImlhdCI6MTY0OTkyNzM0NywiZXhwIjoxNjQ5OTMwOTQ3fQ.b9Tm3j2R7yIdpSXOpKTEC42WuYtUQlVAI4iJD8qiymo
+
