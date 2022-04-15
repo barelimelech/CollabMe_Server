@@ -178,4 +178,8 @@ router.post('/deleteuser/:username',authenticate, user.deleteuser)
 router.get('/authenticate',authenticate,user.isconnected);
 
 router.get('/getUser/getUserByEmail/:email',authenticate,user.getUserByEmail);
+
+router.post('/editUserWithoutAuth/:username', user.editUserPassword)
+
+
 module.exports = router

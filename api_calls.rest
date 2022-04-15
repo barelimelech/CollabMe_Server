@@ -187,3 +187,20 @@ Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTMzNzUxYj
 GET  http://localhost:4000/candidates/getoffersofUsers/bar
 Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTMzNzUxYjQxOTgzNzMyNGNmYTI0MyIsImlhdCI6MTY0OTkyNzM0NywiZXhwIjoxNjQ5OTMwOTQ3fQ.b9Tm3j2R7yIdpSXOpKTEC42WuYtUQlVAI4iJD8qiymo
 
+###
+POST  http://localhost:4000/users/editUserWithoutAuth/bar
+Content-Type: application/json
+
+{
+    "Username": "bar",       
+    "Password":"5566", 
+    "Email": "email@email.email1",
+    "Sex":"undefind",
+    "Age":"2433", 
+    "Followers":"11",
+    "Profession":["Art","Sport"],
+    "Platform":["instagram","youtube"], 
+    "NumberOfPosts":"20",
+    "Company":false,
+    "Influencer":true 
+}

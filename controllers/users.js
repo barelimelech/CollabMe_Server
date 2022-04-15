@@ -39,10 +39,45 @@ const getUserByEmail = async (req, res) => {
 }
 
 const editUser = async(req, res) => {
+
     const user = await User.findOne({'Username':req.params.username })  
     var updatedUser = {
         Username:req.body.Username,
         Password:user.Password,
+        Email:req.body.Email,
+        Tokens:req.body.Tokens,
+        Sex :req.body.Sex,
+        Age: req.body.Age,
+        Followers: req.body.Followers,
+        Profession:req.body.Profession,
+        Platform:req.body.Platform,
+        NumberOfPosts:req.body.NumberOfPosts,
+        Company:req.body.Company,
+        Influencer:req.body.Influencer,
+        Image:req.body.Image,
+        RejectedOffers:req.body.RejectedOffers
+
+    };
+
+    await User.updateOne({
+         UserName: req.params.Username
+         }, updatedUser, function(err, affected){
+            res.send(200, updatedUser);
+        }).clone().catch(function(err){ })
+    
+}
+
+const editUserPassword = async(req, res) => {
+
+    const password = req.body.Password;
+    const user = await User.findOne({'Username':req.params.username })  
+
+    const salt = await bcrypt.genSalt(10)
+    const hashPwd = await bcrypt.hash(password,salt)
+
+    var updatedUser = {
+        Username:req.body.Username,
+        Password:hashPwd,
         Email:req.body.Email,
         Tokens:req.body.Tokens,
         Sex :req.body.Sex,
@@ -96,5 +131,6 @@ module.exports = {
     editUser,
     getUserByEmail,
     deleteuser,
-    isconnected
+    isconnected,
+    editUserPassword
 }
