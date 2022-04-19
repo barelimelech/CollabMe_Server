@@ -7,7 +7,7 @@ const Auth = require('../controllers/auth')
 /**
 * @swagger
 * tags:
-*   name: User Authentication
+*   name: Auth
 *   description: Info User authentication
 */
 

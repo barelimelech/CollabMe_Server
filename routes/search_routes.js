@@ -15,18 +15,20 @@ const authenticate = require('../common/auth_middleware')
 * @swagger
 * /search/getOfferFromFreeSearch/{freesearch}:
 *   get:
-*     summary: get the user by user name
-*     tags: [User Api]
+*     summary: get offer
+*     tags: [Search Api]
 *     parameters:
 *       - in: path
-*         name: user name
+*         name: freesearch
 *         schema:
 *           type: string
 *         required: true
-*         description: The user name
+*         description: The offer
+*     security:
+*       - bearerAuth: []
 *     responses:
 *       200:
-*         description: The user exist 
+*         description: offer exist
 *         content:
 *           application/json:
 *             schema:
@@ -37,20 +39,21 @@ router.get('/getOfferFromFreeSearch/:freesearch', authenticate, Offer.getOfferFr
 
 /**
 * @swagger
-* /search/getOfferFromSpecificSearch/{description,headline,fromdate,todate,fromprice,user}:
-*   get:
-*     summary: get the user by user name
-*     tags: [User Api]
-*     parameters:
-*       - in: path
-*         name: user name
-*         schema:
-*           type: string
-*         required: true
-*         description: The user name
+* /search/getOfferFromSpecificSearch:
+*   post:
+*     summary: add new offer
+*     tags: [Search Api]
+*     requestBody:
+*       required: true
+*       content:
+*         application/json:
+*           schema:
+*             $ref: '#/components/schemas/Offer'
+*     security:
+*       - bearerAuth: []
 *     responses:
 *       200:
-*         description: The user exist 
+*         description: get offer 
 *         content:
 *           application/json:
 *             schema:

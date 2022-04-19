@@ -50,6 +50,12 @@ const swaggerJSDoc = require('swagger-jsdoc')
 *         IntrestedVerify:
 *           type: Boolean
 *           description: whether of not the company in intrested in verification 
+*         Image:
+*           type: String
+*           description: Image offer
+*         MediaContent:
+*           type: [String]
+*           description: whether of not the company in intrested in verification 
 *       example:
 *         Description: 'aa'
 *         HeadLine: 'aa'
@@ -59,6 +65,8 @@ const swaggerJSDoc = require('swagger-jsdoc')
 *         Profession: []
 *         User: 'e@e.com'
 *         IntrestedVerify: 'false'
+*         Image: '4342342342342344'
+*         MediaContent: []
 */
 
 
