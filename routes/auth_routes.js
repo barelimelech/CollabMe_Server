@@ -103,7 +103,7 @@ router.post('/login', Auth.login)
 /**
 * @swagger
 * /auth/register:
-*   get:
+*   post:
 *     summary: register (create new user)
 *     tags: [Auth]
 *     requestBody:
@@ -121,25 +121,6 @@ router.post('/login', Auth.login)
 *               $ref: '#/components/schemas/User'
 */
 
-/**
-// * @swagger
-// * /auth/register:
-// *   get:
-// *     summary: register (create new user)
-// *     tags: [Auth]
-// *     parameters:
-// *      - in: path
-// *         name: user name
-// *         schema:
-// *             $ref: '#/components/schemas/User'
-// *     responses:
-// *       200:
-// *         description: The user exist 
-// *         content:
-// *           application/json:
-// *             schema:
-// *               $ref: '#/components/schemas/User'
-// */
 router.post('/register', Auth.register)
 /**
 * @swagger
