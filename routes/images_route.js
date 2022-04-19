@@ -22,6 +22,8 @@ storage = multer.diskStorage({
 });
 var upload = multer({ storage: storage })
 
+
+
 router.post("/upload", upload.single("upload"), async (req, res) => {
   if (req.file === undefined) return res.status(400).send;
   const imgUrl = req.file.path;
@@ -44,20 +46,6 @@ router.get("/file/:filename", async (req, res) => {
   });
 });
 
-
-/*
-router.post('/delete/:filename', async (req, res) =>{
-  // You aren't doing anything with data so no need for the return value
-  const path = req.params.filename;
-  fs.unlink(path, (err) => {
-    if (err) {
-    console.error(err)
-    return
-    }
-  
-  })
-})
-*/
   
 
  
