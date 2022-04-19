@@ -55,9 +55,9 @@ const authenticate = require('../common/auth_middleware')
 *           type: Boolean
 *           description: whether the user is an influenter
 *       example:
-*         Username: 'e123'
-*         Password: '$2b$10$Mb4YroOB41PRMhJYxJal8uj2LsQf7Ef'
-*         Email: 'eli@eli.com'
+*         Username: 'eli'
+*         Password: '123123'
+*         Email: 'e@e.com'
 *         Tokens: []
 *         Sex: 'Male'
 *         Age: '26'
@@ -81,6 +81,8 @@ const authenticate = require('../common/auth_middleware')
 *           type: string
 *         required: true
 *         description: The user name
+*     security:
+*       - bearerAuth: []
 *     responses:
 *       200:
 *         description: The user exist 
@@ -128,6 +130,8 @@ router.get('/getUser/:username',authenticate,user.getUserByUserNmae);
 *         application/json:
 *           schema:
 *             $ref: '#/components/schemas/User'
+*     security:
+*       - bearerAuth: []
 *     responses:
 *       200:
 *         description: User was updated
@@ -149,31 +153,14 @@ router.post('/editUser/:username',authenticate, user.editUser)
 *         application/json:
 *           schema:
 *             $ref: '#/components/schemas/User'
+*     security:
+*       - bearerAuth: []
 *     responses:
 *       200:
 *         description: User was deleted
 */
 router.post('/deleteuser/:username',authenticate, user.deleteuser)
 
-/**
-* @swagger
-* /users/authenticate/{username}:
-*   get:
-*     summary: check if user is connected
-*     tags: [User Api]
-*     parameters:
-*       - in: path
-*         name: user name
-*     requestBody:
-*       required: true
-*       content:
-*         application/json:
-*           schema:
-*             $ref: '#/components/schemas/User'
-*     responses:
-*       200:
-*         description: User is connected
-*/
 
 router.get('/authenticate',authenticate,user.isconnected);
 
