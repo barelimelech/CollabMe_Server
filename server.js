@@ -17,11 +17,14 @@ if (process.env.NODE_ENV == "development") {
                 version: "1.0.0",
                 description: "Explanatin about API",
             },
+            bearerAuth: {type: 'apiKey', in: 'header', name: 'authorization'},
             servers: [{url: "http://localhost:" + process.env.PORT,},],
+            
         },
         apis: ["./routes/*.js"],
     };
     const specs = swaggerJsDoc(options);
+
     app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs));
  }
 
