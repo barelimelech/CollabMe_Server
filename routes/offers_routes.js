@@ -55,7 +55,7 @@ const swaggerJSDoc = require('swagger-jsdoc')
 *         HeadLine: 'aa'
 *         Price: '11'
 *         IdOffer: '60c463bf-63b5-4a91-b4b4-28a0e3f81572'
-*         Status: 'inprogress'
+*         Status: 'InProgress'
 *         Profession: []
 *         User: 'e@e.com'
 *         IntrestedVerify: 'false'
@@ -64,10 +64,12 @@ const swaggerJSDoc = require('swagger-jsdoc')
 
 /**
 * @swagger
-* /offers/getoffers:
+* /offer/getoffers:
 *   get:
 *     summary: get all offers
 *     tags: [Offer Api]
+*     security:
+*       - bearerAuth: []
 *     responses:
 *       200:
 *         description: The offers list
@@ -83,55 +85,11 @@ const swaggerJSDoc = require('swagger-jsdoc')
 
 router.get('/getoffers', authenticate, Offer.getOffers)
 
-// /**
-// * @swagger
-// * /offers/getOfferById/{id}:
-// *   get:
-// *     summary: get offer by id
-// *     tags: [Offer Api]
-// *     parameters:
-// *       - in: path
-// *         name: id
-// *         schema:
-// *           type: string
-// *         required: true
-// *         description: The offer 
-// *     responses:
-// *       200:
-// *         description: The offer 
-// *         content:
-// *           application/json:
-// *             schema:
-// *               $ref: '#/components/schemas/Offer'
-// */
 
-//  /**
-//  * @swagger
-//  * /offers/getOfferById/{id}:
-//  *   get:
-//  *     summary: get offer
-//  *     tags: [Offer Api]
-//  *     parameters:
-//  *       - in: path
-//  *         name: id
-//  *       - in: header
-// *         name: token
-// *         type: string
-// *         required: true
-// *         description: token
-//  *     security:
-//  *       - bearerAuth: []
-//  *     responses:
-//  *       200:
-//  *         description: A single user.
-// *         content:
-// *           application/json:
-// *             schema:
-// *               $ref: '#/components/schemas/Offer'
-// */
+
 /**
 * @swagger
-* /offers/getOfferById/{id}:
+* /offer/getOfferById/{id}:
 *   get:
 *     summary: get the offer by pffer id
 *     tags: [Offer Api]
@@ -156,7 +114,7 @@ router.get('/getOfferById/:id', authenticate, Offer.getOfferById)
 
 /**
 * @swagger
-* /offers/addNewOffer:
+* /offer/addNewOffer:
 *   post:
 *     summary: add new offer
 *     tags: [Offer Api]
@@ -166,6 +124,8 @@ router.get('/getOfferById/:id', authenticate, Offer.getOfferById)
 *         application/json:
 *           schema:
 *             $ref: '#/components/schemas/Offer'
+*     security:
+*       - bearerAuth: []
 *     responses:
 *       200:
 *         description: Add new Offer 
@@ -181,7 +141,7 @@ router.post('/addNewOffer', authenticate, Offer.addNewOffer)
 
 /**
 * @swagger
-* /offers/deleteOffer/{id}:
+* /offer/deleteOffer/{id}:
 *   post:
 *     summary: delete offer by id
 *     tags: [Offer Api]
@@ -194,6 +154,8 @@ router.post('/addNewOffer', authenticate, Offer.addNewOffer)
 *         application/json:
 *           schema:
 *             $ref: '#/components/schemas/Offer'
+*     security:
+*       - bearerAuth: []
 *     responses:
 *       200:
 *         description: offer was deleted
@@ -202,7 +164,7 @@ router.post('/deleteOffer/:id', authenticate, Offer.deleteOffer)
 
 /**
 * @swagger
-* /offers/editOffer/{id}:
+* /offer/editOffer/{id}:
 *   post:
 *     summary: edit the offer
 *     tags: [Offer Api]
@@ -215,6 +177,8 @@ router.post('/deleteOffer/:id', authenticate, Offer.deleteOffer)
 *         application/json:
 *           schema:
 *             $ref: '#/components/schemas/Offer'
+*     security:
+*       - bearerAuth: []
 *     responses:
 *       200:
 *         description: offer was updated
