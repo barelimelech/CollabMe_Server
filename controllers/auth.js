@@ -11,6 +11,8 @@ const sendError = (res,code,msg)=>{
 }
 
 const register = async (req, res) => {
+    console.log(req.body.username)
+    
     const username = req.body.Username
     const password = req.body.Password
     const email = req.body.Email
@@ -66,8 +68,15 @@ const register = async (req, res) => {
 
 
 const login = async (req, res) => {
+    console.log('in log innnnnnn ')
+
+    console.log(req.body.Username)
+    console.log(req.body.Password)
+
+
     const username = req.body.Username
     const password = req.body.Password
+
     if (username == null || password == null) return sendError(res,400,'wrong username or password')
     
     try{
