@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt')
 const { use } = require('../routes')
 
 const getUserByUserNmae = async (req, res) => {
+    
     try {        
         const user = await User.findOne({'Username' : req.params.username })
         if(user==null){
