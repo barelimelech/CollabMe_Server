@@ -76,7 +76,7 @@ const authenticate = require('../common/auth_middleware')
 *     tags: [User Api]
 *     parameters:
 *       - in: path
-*         name: user name
+*         name: username
 *         schema:
 *           type: string
 *         required: true
@@ -93,27 +93,7 @@ const authenticate = require('../common/auth_middleware')
 */
 router.get('/getUser/:username',authenticate,user.getUserByUserNmae);
 
-// /**
-// * @swagger
-// * /users/{id}:
-// *   get:
-// *     summary: get the user by id
-// *     tags: [User Api]
-// *     parameters:
-// *       - in: path
-// *         name: user id
-// *         schema:
-// *           type: string
-// *         required: true
-// *         description: The user id
-// *     responses:
-// *       200:
-// *         description: The user exist 
-// *         content:
-// *           application/json:
-// *             schema:
-// *               $ref: '#/components/schemas/User'
-// */
+
 
 /**
 * @swagger
@@ -123,7 +103,7 @@ router.get('/getUser/:username',authenticate,user.getUserByUserNmae);
 *     tags: [User Api]
 *     parameters:
 *       - in: path
-*         name: user name
+*         name: username
 *     requestBody:
 *       required: true
 *       content:
@@ -146,7 +126,7 @@ router.post('/editUser/:username',authenticate, user.editUser)
 *     tags: [User Api]
 *     parameters:
 *       - in: path
-*         name: user name
+*         name: username
 *     requestBody:
 *       required: true
 *       content:
@@ -161,11 +141,64 @@ router.post('/editUser/:username',authenticate, user.editUser)
 */
 router.post('/deleteuser/:username',authenticate, user.deleteuser)
 
-
+/**
+* @swagger
+* /users/authenticate:
+*   get:
+*     summary: is connected user 
+*     tags: [User Api]
+*     security:
+*       - bearerAuth: []
+*     responses:
+*       200:
+*         description: User is connected
+*/
 router.get('/authenticate',authenticate,user.isconnected);
-
+/**
+* @swagger
+* /users/getUser/getUserByEmail/{email}:
+*   get:
+*     summary: get the user by user name
+*     tags: [User Api]
+*     parameters:
+*       - in: path
+*         name: email
+*         schema:
+*           type: string
+*         required: true
+*         description: The user acording to email
+*     security:
+*       - bearerAuth: []
+*     responses:
+*       200:
+*         description: The user exist 
+*         content:
+*           application/json:
+*             schema:
+*               $ref: '#/components/schemas/User'
+*/
 router.get('/getUser/getUserByEmail/:email',authenticate,user.getUserByEmail);
-
+/**
+* @swagger
+* /users/editUserWithoutAuth/{username}:
+*   post:
+*     summary: edit user passwored 
+*     tags: [User Api]
+*     parameters:
+*       - in: path
+*         name: username
+*     requestBody:
+*       required: true
+*       content:
+*         application/json:
+*           schema:
+*             $ref: '#/components/schemas/User'
+*     security:
+*       - bearerAuth: []
+*     responses:
+*       200:
+*         description: User was updated from popup
+*/
 router.post('/editUserWithoutAuth/:username', user.editUserPassword)
 
 
