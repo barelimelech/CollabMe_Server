@@ -51,11 +51,11 @@ const swaggerJSDoc = require('swagger-jsdoc')
 *           type: Boolean
 *           description: whether of not the company in intrested in verification 
 *       example:
-*         Description: 'this offer...'
-*         HeadLine: 'Sport Offer'
-*         Price: '20'
-*         IdOffer: '123456'
-*         Status: 'Open'
+*         Description: 'aa'
+*         HeadLine: 'aa'
+*         Price: '11'
+*         IdOffer: '60c463bf-63b5-4a91-b4b4-28a0e3f81572'
+*         Status: 'inprogress'
 *         Profession: []
 *         User: 'e@e.com'
 *         IntrestedVerify: 'false'
@@ -105,35 +105,52 @@ router.get('/getoffers', authenticate, Offer.getOffers)
 // *               $ref: '#/components/schemas/Offer'
 // */
 
- /**
- * @swagger
- * /offers/getOfferById/{id}:
- *   get:
- *     summary: get offer
- *     tags: [Offer Api]
- *     parameters:
- *       - in: path
- *         name: id
- *     description: 
- *     responses:
- *       200:
- *         description: A single user.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 data:
- *                   type: object
- *                   properties:
- *                     id:
- *                       type: string
- *                       description: The user ID.
- *                       example: 0
- *                     name:
- *                       type: string
- *                       description: The user's name.
- *                       example: Leanne Graham
+//  /**
+//  * @swagger
+//  * /offers/getOfferById/{id}:
+//  *   get:
+//  *     summary: get offer
+//  *     tags: [Offer Api]
+//  *     parameters:
+//  *       - in: path
+//  *         name: id
+//  *       - in: header
+// *         name: token
+// *         type: string
+// *         required: true
+// *         description: token
+//  *     security:
+//  *       - bearerAuth: []
+//  *     responses:
+//  *       200:
+//  *         description: A single user.
+// *         content:
+// *           application/json:
+// *             schema:
+// *               $ref: '#/components/schemas/Offer'
+// */
+/**
+* @swagger
+* /offers/getOfferById/{id}:
+*   get:
+*     summary: get the offer by pffer id
+*     tags: [Offer Api]
+*     parameters:
+*       - in: path
+*         name: id
+*         schema:
+*           type: string
+*         required: true
+*         description: The offer
+*     security:
+*       - bearerAuth: []
+*     responses:
+*       200:
+*         description: offer exist
+*         content:
+*           application/json:
+*             schema:
+*               $ref: '#/components/schemas/Offer'
 */
 router.get('/getOfferById/:id', authenticate, Offer.getOfferById)
 
