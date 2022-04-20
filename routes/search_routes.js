@@ -23,12 +23,12 @@ const authenticate = require('../common/auth_middleware')
 *         schema:
 *           type: string
 *         required: true
-*         description: The offer
+*         description: search word
 *     security:
 *       - bearerAuth: []
 *     responses:
 *       200:
-*         description: offer exist
+*         description: found offer
 *         content:
 *           application/json:
 *             schema:

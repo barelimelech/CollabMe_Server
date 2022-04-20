@@ -99,7 +99,7 @@ router.get('/getoffers', authenticate, Offer.getOffers)
 * @swagger
 * /offer/getOfferById/{id}:
 *   get:
-*     summary: get the offer by pffer id
+*     summary: get the offer by offer id
 *     tags: [Offer Api]
 *     parameters:
 *       - in: path

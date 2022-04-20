@@ -127,12 +127,6 @@ router.post('/editUser/:username',authenticate, user.editUser)
 *     parameters:
 *       - in: path
 *         name: username
-*     requestBody:
-*       required: true
-*       content:
-*         application/json:
-*           schema:
-*             $ref: '#/components/schemas/User'
 *     security:
 *       - bearerAuth: []
 *     responses:
@@ -158,7 +152,7 @@ router.get('/authenticate',authenticate,user.isconnected);
 * @swagger
 * /users/getUser/getUserByEmail/{email}:
 *   get:
-*     summary: get the user by user name
+*     summary: get the user by user email
 *     tags: [User Api]
 *     parameters:
 *       - in: path
@@ -166,7 +160,7 @@ router.get('/authenticate',authenticate,user.isconnected);
 *         schema:
 *           type: string
 *         required: true
-*         description: The user acording to email
+*         description: The user
 *     security:
 *       - bearerAuth: []
 *     responses:

@@ -55,7 +55,7 @@ const authenticate = require('../common/auth_middleware')
 * @swagger
 * /payment/addpayment:
 *   post:
-*     summary: edit user 
+*     summary: add payment
 *     tags: [Payment Api]
 *     requestBody:
 *       required: true
@@ -67,7 +67,7 @@ const authenticate = require('../common/auth_middleware')
 *       - bearerAuth: []
 *     responses:
 *       200:
-*         description: User was updated
+*         description: payment was added
 */
 router.post('/addpayment', authenticate, Payment.addpayment)
 
