@@ -43,17 +43,6 @@ const Auth = require('../controllers/auth')
 */
 
 
-// /**
-// * @swagger
-// * components:
-// *   securitySchemes:
-// *     bearerAuth:
-// *       type: http
-// *       scheme: bearer
-// *       bearerFormat: JWT
-// * security:
-// *   - bearerAuth: [] 
-// */
 
 /**
 * @swagger
@@ -114,7 +103,7 @@ router.post('/login', Auth.login)
 *             $ref: '#/components/schemas/User'
 *     responses:
 *       200:
-*         description: The user exist 
+*         description: new user was created
 *         content:
 *           application/json:
 *             schema:
@@ -125,7 +114,7 @@ router.post('/register', Auth.register)
 /**
 * @swagger
 * /auth/logout:
-*   get:
+*   post:
 *     summary: logout user
 *     tags: [Auth]
 *     description: provide refresh token
@@ -140,16 +129,41 @@ router.post('/logout', Auth.logout)
 * @swagger
 * /auth/refreshToken:
 *   get:
-*     summary: get a new access token
+*     summary: get refresh token
 *     tags: [Auth]
 *     description: provide refresh token
 *     security:
 *       - bearerAuth: []
 *     responses:
 *       200:
-*         description: acess and refresh token
+*         description: access and refresh token
 */
 router.get('/refreshToken', Auth.refreshToken)
+
+/**
+* @swagger
+* /auth/getUserByUserNameInSignIn/{username}:
+*   get:
+*     summary: get the by user name in sign in
+*     tags: [Auth]
+*     parameters:
+*       - in: path
+*         name: username
+*         schema:
+*           type: string
+*         required: true
+*         description: The user name
+*     security:
+*       - bearerAuth: []
+*     responses:
+*       200:
+*         description: get the user
+*         content:
+*           application/json:
+*             schema:
+*               $ref: '#/components/schemas/User'
+*/
+
 router.get('/getUserByUserNameInSignIn/:username', Auth.getUserByUserNameInSignIn)
 
 module.exports = router

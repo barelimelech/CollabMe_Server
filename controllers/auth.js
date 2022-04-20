@@ -144,6 +144,7 @@ const refreshToken = async (req, res, next)=> {
 
 const logout = async (req, res, next) => {
     authHeaders = req.headers['authorization']
+    console.log(authHeaders)
     const token = authHeaders && authHeaders.split(' ')[1]
     if(token == null) return res.sendStatus('401')
     jwt.verify(token, process.env.REFRESH_TOKEN_SECRET, async(err, userInfo) => {
