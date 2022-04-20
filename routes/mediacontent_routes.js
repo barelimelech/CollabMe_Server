@@ -50,7 +50,7 @@ router.post('/addMediaContent', authenticate, Offer.addMediaContent)
 *       - bearerAuth: []
 *     responses:
 *       200:
-*         description: offer exist
+*         description: Media content return seccessfully 
 *         content:
 *           application/json:
 *             schema:

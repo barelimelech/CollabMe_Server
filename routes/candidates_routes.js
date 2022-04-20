@@ -15,7 +15,7 @@ const authenticate = require('../common/auth_middleware')
 * @swagger
 * /candidates/getCandidates/{id}:
 *   get:
-*     summary: get the the candidates
+*     summary: get the the candidate by IDOffer field ()
 *     tags: [Candidate Api]
 *     parameters:
 *       - in: path
@@ -23,24 +23,27 @@ const authenticate = require('../common/auth_middleware')
 *         schema:
 *           type: string
 *         required: true
-*         description: The candidate
+*         description: The candidate id
 *     security:
 *       - bearerAuth: []
 *     responses:
 *       200:
-*         description: The user exist 
+*         description: list of candidates
 *         content:
 *           application/json:
 *             schema:
-*               $ref: '#/components/schemas/User'
-*/
+*               type: array
+*               items:
+*                 $ref: '#/components/schemas/User'
+*/           
+
 router.get('/getCandidates/:id',authenticate,candidates.getCandidates);
 
 /**
 * @swagger
 * /candidates/getoffersofUsers/{username}:
 *   get:
-*     summary: get offer of user
+*     summary: get offer of user name
 *     tags: [Candidate Api]
 *     parameters:
 *       - in: path
@@ -53,11 +56,13 @@ router.get('/getCandidates/:id',authenticate,candidates.getCandidates);
 *       - bearerAuth: []
 *     responses:
 *       200:
-*         description: offer exist
+*         description: list of offers
 *         content:
 *           application/json:
 *             schema:
-*               $ref: '#/components/schemas/Offer'
+*               type: array
+*               items:
+*                 $ref: '#/components/schemas/Offer'
 */
 
 router.get('/getoffersofUsers/:username',authenticate,candidates.getoffersfromuserinCandidates);
