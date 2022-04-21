@@ -11,7 +11,6 @@ const sendError = (res,code,msg)=>{
 }
 
 const register = async (req, res) => {
-    console.log(req.body.username)
     
     const username = req.body.Username
     const password = req.body.Password
@@ -68,10 +67,10 @@ const register = async (req, res) => {
 
 
 const login = async (req, res) => {
-    console.log('in log innnnnnn ')
+    // console.log('in log innnnnnn ')
 
-    console.log(req.body.Username)
-    console.log(req.body.Password)
+    // console.log(req.body.Username)
+    // console.log(req.body.Password)
 
 
     const username = req.body.Username
@@ -144,7 +143,7 @@ const refreshToken = async (req, res, next)=> {
 
 const logout = async (req, res, next) => {
     authHeaders = req.headers['authorization']
-    console.log(authHeaders)
+    // console.log(authHeaders)
     const token = authHeaders && authHeaders.split(' ')[1]
     if(token == null) return res.sendStatus('401')
     jwt.verify(token, process.env.REFRESH_TOKEN_SECRET, async(err, userInfo) => {
