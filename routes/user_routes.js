@@ -54,6 +54,12 @@ const authenticate = require('../common/auth_middleware')
 *         Influencer:
 *           type: Boolean
 *           description: whether the user is an influenter
+*         Image:
+*           type: String
+*           description: Image
+*         RejectedOffers:
+*           type: [String]
+*           description: rejected offers
 *       example:
 *         Username: 'eli'
 *         Password: '123123'
@@ -66,6 +72,8 @@ const authenticate = require('../common/auth_middleware')
 *         Platform: []
 *         Company: 'true'
 *         Influencer: 'false'
+*         Image: '4342342342342344'
+*         RejectedOffers: []
 */
 
 /**

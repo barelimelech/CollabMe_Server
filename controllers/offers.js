@@ -10,8 +10,8 @@ const getOffers = async (req, res) => {
 }
 
 const getOfferById = async (req, res) => {
-    console.log(req.params.id)
-    console.log('inside offer get')
+    // console.log(req.params.id)
+    // console.log('inside offer get')
     try {       
         const offers = await Offer.findOne({'IdOffer':req.params.id});
         if(offers==null){
