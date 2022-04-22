@@ -10,6 +10,7 @@ const username = 'yossi11'
 const pwd = '5566'
 var newPassword;
 const bcrypt = require('bcrypt')
+const password = "123456";
 
 beforeAll(done=>{
     User.remove({'Username' : username}, (err)=>{
@@ -94,5 +95,38 @@ describe('Testing edituser API',()=>{
         expect(theUser.Influencer).toEqual(true)           
     })
 
+    test('edit a User passwored',async ()=>{
+        const user = await User.findOne({'Username' : username })
+        const response3 = await request(app).post('/users/editUserWithoutAuth/' + username)
+        .send({
+            'Username' : username,
+            'Password':password,
+            'Email': 'email@email.email',
+            "Sex":"undefind",
+            "Age":"28", 
+            "Followers":"12",
+             "Profession":["Art","Sport"],
+            "Platform":["instagram","youtube"], 
+             "NumberOfPosts":"21",
+             "Company":false,
+            "Influencer":true 
+        })
+
+        console.log(response.body);
+        expect(response3.statusCode).toEqual(200)
+        const theUser = response3.body
+        const match = await bcrypt.compare(password, theUser.Password)
+        expect(theUser.Username).toEqual(username)
+        expect(match).toEqual(true);
+        expect(theUser.Email).toEqual("email@email.email")
+        expect(theUser.Sex).toEqual("undefind")
+        expect(theUser.Age).toEqual("28")
+        expect(theUser.Followers).toEqual("12")
+        expect(theUser.Profession).toEqual(["Art", "Sport"])
+        expect(theUser.Platform).toEqual(["instagram","youtube"])
+        expect(theUser.NumberOfPosts).toEqual("21")       
+        expect(theUser.Company).toEqual(false)        
+        expect(theUser.Influencer).toEqual(true)           
+    })
 
 });

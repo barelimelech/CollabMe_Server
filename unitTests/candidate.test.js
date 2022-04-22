@@ -36,6 +36,7 @@ afterAll(done=>{
 
 describe('Testing Offer API',()=>{
     let accessToken = ''
+    let Password
     
     test('test registration',async ()=>{
         const response = await request(app).post('/auth/register').send({
@@ -152,5 +153,35 @@ describe('Testing Offer API',()=>{
         expect(newOffer.IntrestedVerify).toEqual(intrestedVerfiy)  
         
     });
+
+
+     test("get getCandidateFromSearch", async() => {
+        const response = await request(app).get('/candidates/getCandidateFromSearch/'+"amit44").set({ authorization: 'JWT ' + accessToken })
+        .send({            
+        });         
+        expect(response.statusCode).toEqual(200)
+        const user1 = response.body
+        expect(user1.Username).toEqual("amit44")
+        expect(user1.Email).toEqual("email@email.email")
+        expect(user1.Sex).toEqual("undefind")
+        expect(user1.Age).toEqual("28")
+        expect(user1.Followers).toEqual("10")
+        expect(user1.Profession).toEqual(["Art","Sport"])
+        expect(user1.Platform).toEqual(["instagram","youtube"])
+        expect(user1.NumberOfPosts).toEqual("20") 
+        expect(user1.Company).toEqual(false)  
+        expect(user1.Influencer).toEqual(true)           
+        
+    });
+
+    // test("get getCandidateFromSearch false username", async() => {
+    //     const response = await request(app).get('/candidates/getCandidateFromSearch/'+null).set({ authorization: 'JWT ' + accessToken })
+    //     .send({            
+    //     });         
+    //     expect(response.statusCode).toEqual(400)
+      
+                 
+        
+    // });
 
 });

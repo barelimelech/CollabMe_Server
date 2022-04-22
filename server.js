@@ -3,12 +3,12 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
-
+const swaggerUI = require("swagger-ui-express")
+const swaggerJsDoc = require("swagger-jsdoc")
 
 
 if (process.env.NODE_ENV == "development") {
-    const swaggerUI = require("swagger-ui-express")
-    const swaggerJsDoc = require("swagger-jsdoc")
+   
     const options = {
         definition: {
             openapi: "3.0.0",

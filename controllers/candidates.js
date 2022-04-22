@@ -35,13 +35,9 @@ const getoffersfromuserinCandidates=async(req, res) =>{
 }
 
 const getCandidateFromSearch = async (req, res) => {
-
-    var candidateName = req.params.candidatesearch;
-
-    try {
-        
+    
+    try {        
         const candidateFree = await Users.find({'Username':req.params.candidatesearch});
-
         res.status(200).send(candidateFree[0]);
     } catch (err) {
         res.status(400).send({
