@@ -36,22 +36,20 @@ describe('Testing edituser API',()=>{
     })
 
 
-    /*
-    test('should return 400 in try to add an image', async() => {
-        const multipleFiles=null
-        const res= await request(app).post('/image/upload')
-        .attach('upload', fs.readFileSync(image2),'uploads/file2.png')  
-        .expect(400);     
-        expect(res.status).toEqual(400);
-       
-    })
-    */
-
     
-    const filename ="file2.png"
+   
+    
+    
     test('should return 200 and get the image', async() => {      
         const res= await request(app).get('/image/file/'+"file2.png")         
          expect(res.status).toEqual(200);
+         
+     })
+
+     
+    test('should return 400 and not get the image', async() => {      
+        const res= await request(app).get('/image/file/'+null);         
+         expect(res.status).toEqual(400);
          
      })
      

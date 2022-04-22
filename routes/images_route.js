@@ -32,15 +32,16 @@ router.post("/upload", upload.single("upload"), async (req, res) => {
 
 
 router.get("/file/:filename", async (req, res) => {
-  if(req.params.filename==null){
-    res.status(400);   
+  let nulli = req.params.filename.toString();
+  if(nulli==="null"){
+    res.status(400).send();
   }
   fs.readFile(req.params.filename, function(err, data) {
     try{
       res.writeHead(200, {'Content-Type': 'image/jpeg'});
       res.end(data); // Send the file data to the browser.  
     }catch(err){
-      res.status(400).send("failed");
+      res.status(400).send();
     }
         
   });
