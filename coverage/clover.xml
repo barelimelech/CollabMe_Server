@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1650628349954" clover="3.2.0">
-  <project timestamp="1650628349954" name="All files">
-    <metrics statements="438" coveredstatements="417" conditionals="93" coveredconditionals="70" methods="51" coveredmethods="43" elements="582" coveredelements="530" complexity="0" loc="438" ncloc="438" packages="5" files="21" classes="21"/>
+<coverage generated="1650633449606" clover="3.2.0">
+  <project timestamp="1650633449606" name="All files">
+    <metrics statements="438" coveredstatements="423" conditionals="93" coveredconditionals="76" methods="51" coveredmethods="48" elements="582" coveredelements="547" complexity="0" loc="438" ncloc="438" packages="5" files="21" classes="21"/>
     <package name="CollabMe_Server">
       <metrics statements="37" coveredstatements="34" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
       <file name="server.js" path="C:\Users\amitb\CollabMe_Server\server.js">
@@ -51,18 +51,18 @@
         <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="4" methods="2" coveredmethods="2"/>
         <line num="2" count="11" type="stmt"/>
         <line num="4" count="11" type="stmt"/>
-        <line num="5" count="26" type="stmt"/>
-        <line num="7" count="26" type="cond" truecount="2" falsecount="0"/>
-        <line num="8" count="26" type="cond" truecount="1" falsecount="1"/>
-        <line num="10" count="26" type="stmt"/>
-        <line num="11" count="26" type="cond" truecount="1" falsecount="1"/>
-        <line num="12" count="26" type="stmt"/>
-        <line num="13" count="26" type="stmt"/>
+        <line num="5" count="29" type="stmt"/>
+        <line num="7" count="29" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="29" type="cond" truecount="1" falsecount="1"/>
+        <line num="10" count="29" type="stmt"/>
+        <line num="11" count="29" type="cond" truecount="1" falsecount="1"/>
+        <line num="12" count="29" type="stmt"/>
+        <line num="13" count="29" type="stmt"/>
         <line num="17" count="11" type="stmt"/>
       </file>
     </package>
     <package name="CollabMe_Server.controllers">
-      <metrics statements="286" coveredstatements="269" conditionals="79" coveredconditionals="61" methods="41" coveredmethods="34"/>
+      <metrics statements="286" coveredstatements="275" conditionals="79" coveredconditionals="67" methods="41" coveredmethods="39"/>
       <file name="auth.js" path="C:\Users\amitb\CollabMe_Server\controllers\auth.js">
         <metrics statements="93" coveredstatements="91" conditionals="34" coveredconditionals="27" methods="8" coveredmethods="8"/>
         <line num="1" count="11" type="stmt"/>
@@ -176,7 +176,7 @@
         <line num="19" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
+        <line num="22" count="14" type="stmt"/>
         <line num="23" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="24" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="26" count="1" type="stmt"/>
@@ -264,7 +264,7 @@
         <line num="32" count="11" type="stmt"/>
       </file>
       <file name="search.js" path="C:\Users\amitb\CollabMe_Server\controllers\search.js">
-        <metrics statements="61" coveredstatements="51" conditionals="31" coveredconditionals="24" methods="9" coveredmethods="4"/>
+        <metrics statements="61" coveredstatements="57" conditionals="31" coveredconditionals="30" methods="9" coveredmethods="9"/>
         <line num="1" count="11" type="stmt"/>
         <line num="3" count="11" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
@@ -281,49 +281,49 @@
         <line num="20" count="1" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="29" count="11" type="stmt"/>
-        <line num="31" count="3" type="stmt"/>
-        <line num="32" count="3" type="stmt"/>
-        <line num="33" count="3" type="stmt"/>
-        <line num="34" count="3" type="stmt"/>
-        <line num="35" count="3" type="stmt"/>
-        <line num="36" count="3" type="stmt"/>
-        <line num="37" count="3" type="stmt"/>
-        <line num="38" count="3" type="stmt"/>
-        <line num="43" count="3" type="stmt"/>
-        <line num="44" count="3" type="stmt"/>
-        <line num="45" count="3" type="stmt"/>
-        <line num="47" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="6" type="stmt"/>
+        <line num="32" count="6" type="stmt"/>
+        <line num="33" count="6" type="stmt"/>
+        <line num="34" count="6" type="stmt"/>
+        <line num="35" count="6" type="stmt"/>
+        <line num="36" count="6" type="stmt"/>
+        <line num="37" count="6" type="stmt"/>
+        <line num="38" count="6" type="stmt"/>
+        <line num="43" count="6" type="stmt"/>
+        <line num="44" count="6" type="stmt"/>
+        <line num="45" count="6" type="stmt"/>
+        <line num="47" count="6" type="cond" truecount="2" falsecount="0"/>
         <line num="48" count="2" type="stmt"/>
         <line num="49" count="2" type="stmt"/>
-        <line num="55" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="55" count="6" type="cond" truecount="2" falsecount="0"/>
         <line num="56" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="57" count="1" type="stmt"/>
         <line num="60" count="1" type="stmt"/>
         <line num="61" count="1" type="stmt"/>
-        <line num="67" count="3" type="cond" truecount="4" falsecount="0"/>
+        <line num="67" count="6" type="cond" truecount="4" falsecount="0"/>
         <line num="71" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="72" count="1" type="cond" truecount="0" falsecount="2"/>
+        <line num="72" count="1" type="cond" truecount="2" falsecount="0"/>
         <line num="74" count="1" type="stmt"/>
         <line num="76" count="0" type="stmt"/>
         <line num="78" count="0" type="stmt"/>
-        <line num="85" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="86" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="87" count="2" type="stmt"/>
-        <line num="90" count="0" type="stmt"/>
-        <line num="91" count="0" type="stmt"/>
-        <line num="98" count="3" type="cond" truecount="4" falsecount="1"/>
-        <line num="100" count="3" type="cond" truecount="1" falsecount="1"/>
-        <line num="102" count="3" type="stmt"/>
-        <line num="106" count="3" type="stmt"/>
-        <line num="108" count="0" type="stmt"/>
-        <line num="109" count="0" type="stmt"/>
-        <line num="115" count="3" type="cond" truecount="4" falsecount="0"/>
-        <line num="117" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="85" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="86" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="87" count="1" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="91" count="1" type="stmt"/>
+        <line num="98" count="6" type="cond" truecount="5" falsecount="0"/>
+        <line num="100" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="102" count="1" type="stmt"/>
+        <line num="106" count="1" type="stmt"/>
+        <line num="108" count="1" type="stmt"/>
+        <line num="109" count="1" type="stmt"/>
+        <line num="115" count="6" type="cond" truecount="4" falsecount="0"/>
+        <line num="117" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="118" count="1" type="stmt"/>
         <line num="121" count="1" type="stmt"/>
-        <line num="126" count="0" type="stmt"/>
-        <line num="130" count="0" type="stmt"/>
-        <line num="138" count="3" type="stmt"/>
+        <line num="126" count="1" type="stmt"/>
+        <line num="130" count="1" type="stmt"/>
+        <line num="138" count="6" type="stmt"/>
         <line num="140" count="0" type="stmt"/>
         <line num="148" count="11" type="stmt"/>
       </file>

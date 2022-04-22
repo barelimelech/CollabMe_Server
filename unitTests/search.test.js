@@ -5,21 +5,21 @@ const { response } = require('../server')
 const User = require('../models/user_model')
 const Offers = require('../models/offer_model')
 
-const username = 'liem'
+const username = 'nona'
 const pwd = '5566'
-const description="a"
-const headline = "now"
+const description="over"
+const headline = "over"
 const fromprice = "10"
-const idOffer = "12"
-const status = "now"
+const idOffer = "100"
+const status = "pause"
 const fromdate = "16082022";
 const todate = "16082022";
-const toprice="10";
-const profession = ["Art","Sport"];
-const price = "10";
-let user = "62277413fe8636f7c2c9aff2"
+const toprice="100";
+const profession = ["Art","music"];
+const price = "12";
+
 const intrestedVerfiy= false
-const freesearch = "a";
+const freesearch = "over";
 const finishdate = "16082022";
 const Ttodate = "null", Tfromdate = "null", Tfromprice = "null", Ttoprice ="null";
 let id ;
@@ -28,7 +28,9 @@ beforeAll(done=>{
     User.remove({'Username' : username}, (err)=>{
         done()
     })
-
+    Offers.remove({'IdOffer':idOffer}, (err)=>{
+        done()
+    })
    
 })
 
@@ -106,7 +108,7 @@ describe('Testing Offer API',()=>{
         expect(newOffer.IntrestedVerify).toEqual(intrestedVerfiy)  
     })
 
-    test('test getOfferFromSpecificSearch',async ()=>{
+    test('test getOfferFromSpecificSearch1',async ()=>{
         const response = await request(app).post('/search/getOfferFromSpecificSearch').set({ authorization: 'JWT ' + accessToken })
         .send({
             "description":"null",   
@@ -126,32 +128,9 @@ describe('Testing Offer API',()=>{
         expect(newOffer[0].Price).toEqual(price)
         expect(newOffer[0].Profession).toEqual(profession)
         expect(newOffer[0].User).toEqual(username)
+      
 
-        const response2 = await request(app).post('/search/getOfferFromSpecificSearch').set({ authorization: 'JWT ' + accessToken })
-        .send({
-            "Description":"tossi",
-            "HeadLine":"yossi",
-            "fromprice":"3",
-            "toprice" :"5",
-            "fromdate":"3",
-            "fromdate":"3",
-            "professions":["Sport"],  
-            "user":"yossi"
-        });
-        expect(response2.statusCode).toEqual(200)
-
-        const response3 = await request(app).post('/search/getOfferFromSpecificSearch').set({ authorization: 'JWT ' + accessToken })
-        .send({
-            "Description":"null",
-            "HeadLine":"null",
-            "fromprice":"null",
-            "toprice" :"null",
-            "fromdate":"null",
-            "fromdate":"null",
-            "professions":["Sport"],  
-            "user":"null"
-        });
-        expect(response3.statusCode).toEqual(200)
+       
     })
 
     test('test getOfferFromFreeSearch', async () =>{
@@ -166,5 +145,151 @@ describe('Testing Offer API',()=>{
         expect(newOffer1[0].Status).toEqual(status)
         expect(newOffer1[0].User).toEqual(username)
     })
+
+    test('test getOfferFromSpecificSearch2',async ()=>{
+        const response = await request(app).post('/search/getOfferFromSpecificSearch').set({ authorization: 'JWT ' + accessToken })
+        .send({
+            "description":description,   
+            "headline":headline,
+            "fromdate":finishdate,
+            "todate" :finishdate,
+            "fromprice":price,
+            "toprice" :price,
+            "professions":"null",  
+            "user":username
+        });
+        expect(response.statusCode).toEqual(200)
+        const newOffer = response.body    
+        expect(newOffer[0].Description).toEqual(description)
+        expect(newOffer[0].HeadLine).toEqual(headline)
+        expect(newOffer[0].FinishDate).toEqual(finishdate)
+        expect(newOffer[0].Price).toEqual(price)
+        expect(newOffer[0].Profession).toEqual(profession)
+        expect(newOffer[0].User).toEqual(username)
+      
+               
+    })
+
+    test('test getOfferFromSpecificSearch3',async ()=>{
+        const response = await request(app).post('/search/getOfferFromSpecificSearch').set({ authorization: 'JWT ' + accessToken })
+        .send({
+            "description":description,   
+            "headline":"null",
+            "fromdate":"null",
+            "todate" :"null",
+            "fromprice":"null",
+            "toprice" :"null",
+            "professions":"null",  
+            "user":"null"
+        });
+        expect(response.statusCode).toEqual(200)
+        const newOffer = response.body    
+        expect(newOffer[0].Description).toEqual(description)
+        expect(newOffer[0].HeadLine).toEqual(headline)
+        expect(newOffer[0].FinishDate).toEqual(finishdate)
+        expect(newOffer[0].Price).toEqual(price)
+        expect(newOffer[0].Profession).toEqual(profession)
+        expect(newOffer[0].User).toEqual(username)
+      
+               
+    })
+
+    test('test getOfferFromSpecificSearch4',async ()=>{
+        const response = await request(app).post('/search/getOfferFromSpecificSearch').set({ authorization: 'JWT ' + accessToken })
+        .send({
+            "description":"null",   
+            "headline":headline,
+            "fromdate":"null",
+            "todate" :"null",
+            "fromprice":"null",
+            "toprice" :"null",
+            "professions":"null",  
+            "user":"null"
+        });
+        expect(response.statusCode).toEqual(200)
+        const newOffer = response.body    
+        expect(newOffer[0].Description).toEqual(description)
+        expect(newOffer[0].HeadLine).toEqual(headline)
+        expect(newOffer[0].FinishDate).toEqual(finishdate)
+        expect(newOffer[0].Price).toEqual(price)
+        expect(newOffer[0].Profession).toEqual(profession)
+        expect(newOffer[0].User).toEqual(username)
+      
+               
+    })
+
+    test('test getOfferFromSpecificSearch5',async ()=>{
+        const response = await request(app).post('/search/getOfferFromSpecificSearch').set({ authorization: 'JWT ' + accessToken })
+        .send({
+            "description":"null",   
+            "headline":"null",
+            "fromdate":"null",
+            "todate" :"null",
+            "fromprice":"null",
+            "toprice" :"null",
+            "professions":profession,  
+            "user":"null"
+        });
+        expect(response.statusCode).toEqual(200)
+        const newOffer = response.body    
+        expect(newOffer[0].Description).toEqual(description)
+        expect(newOffer[0].HeadLine).toEqual(headline)
+        expect(newOffer[0].FinishDate).toEqual(finishdate)
+        expect(newOffer[0].Price).toEqual(price)
+        expect(newOffer[0].Profession).toEqual(profession)
+        expect(newOffer[0].User).toEqual(username)
+      
+               
+    })
+
+    test('test getOfferFromSpecificSearch6',async ()=>{
+        const response = await request(app).post('/search/getOfferFromSpecificSearch').set({ authorization: 'JWT ' + accessToken })
+        .send({
+            "description":"null",   
+            "headline":"null",
+            "fromdate":finishdate,
+            "todate" :finishdate,
+            "fromprice":"null",
+            "toprice" :"null",
+            "professions":"null",  
+            "user":"null"
+        });
+        expect(response.statusCode).toEqual(200)
+        const newOffer = response.body    
+        expect(newOffer[0].Description).toEqual(description)
+        expect(newOffer[0].HeadLine).toEqual(headline)
+        expect(newOffer[0].FinishDate).toEqual(finishdate)
+        expect(newOffer[0].Price).toEqual(price)
+        expect(newOffer[0].Profession).toEqual(profession)
+        expect(newOffer[0].User).toEqual(username)
+      
+               
+    })
+
+    // test('test getOfferFromSpecificSearch7',async ()=>{
+    //     const response = await request(app).post('/search/getOfferFromSpecificSearch').set({ authorization: 'JWT ' + accessToken })
+    //     .send({
+    //         "description":"null",   
+    //         "headline":"null",
+    //         "fromdate":"null",
+    //         "todate" :"null",
+    //         "fromprice":price,
+    //         "toprice" :"100",
+    //         "professions":"null",  
+    //         "user":"null"
+    //     });
+    //     expect(response.statusCode).toEqual(200)
+    //     const newOffer = response.body    
+    //     expect(newOffer[0].Description).toEqual(description)
+    //     expect(newOffer[0].HeadLine).toEqual(headline)
+    //     expect(newOffer[0].FinishDate).toEqual(finishdate)
+    //     expect(newOffer[0].Price).toEqual(price)
+    //     expect(newOffer[0].Profession).toEqual(profession)
+    //     expect(newOffer[0].User).toEqual(username)
+      
+               
+    // })
+    
+    
 
 });

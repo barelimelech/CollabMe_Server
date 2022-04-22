@@ -4,8 +4,8 @@ const mongoosse = require('mongoose')
 const { response } = require('../server')
 const User = require('../models/user_model')
 const Offers = require('../models/offer_model')
-const username = 'liem'
-const pwd = '5566'
+const username = 'liem4455662'
+const pwd = '55661231'
 const description="hi"
 const headline = "hello"
 const price = "10"
@@ -34,7 +34,7 @@ afterAll(done=>{
 })
 
 
-describe('Testing Offer API',()=>{
+describe('Testing candidates API',()=>{
     let accessToken = ''
     let Password
     
