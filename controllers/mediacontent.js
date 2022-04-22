@@ -1,7 +1,6 @@
 const Offer = require('../models/offer_model')
 
 const addMediaContent = async (req, res) => { 
-    console.log("youre in add media content");
     const idOffer = req.body.IdOffer;
     const mediaContent = req.body.MediaContent;
     var toUpdate;

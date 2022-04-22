@@ -2,7 +2,6 @@ const app = require('../server')
 const request = require('supertest')
 const mongoosse = require('mongoose')
 const { response } = require('../server')
-const Payment = require('../models/payment_model')
 const User = require('../models/user_model')
 let CardNo="655341231";
 let ExpDay="12/12/2019";
