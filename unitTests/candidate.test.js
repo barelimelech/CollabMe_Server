@@ -13,8 +13,8 @@ const idOffer1 = "71"
 const status = "now"
 const profession = ["sport","art"];
 let user = "62277413fe8636f7c2c9aff2"
-let users = ["amit44"]
-let username2 = "amit44";
+let users = ["lola"]
+let username2 = "lola";
 const intrestedVerfiy= false       
 
 beforeAll(done=>{
@@ -42,7 +42,7 @@ describe('Testing candidates API',()=>{
         const response = await request(app).post('/auth/register').send({
             'Username' : username,
             'Password':pwd,
-            'Email': "email@email.email",
+            'Email': "email@email.email223",
             "Sex":"undefind",
             "Tokens":[],
             "Age":28, 
@@ -97,11 +97,11 @@ describe('Testing candidates API',()=>{
            
         
     })
-    test('test registration',async ()=>{
+    test('test registration2',async ()=>{
         const response = await request(app).post('/auth/register').send({
-            'Username' : "amit44",
+            'Username' : "lola",
             'Password':pwd,
-            'Email': "email@email.email",
+            'Email': "email@email.email223",
             "Sex":"undefind",
             "Tokens":[],
             "Age":28, 
@@ -156,13 +156,13 @@ describe('Testing candidates API',()=>{
 
 
      test("get getCandidateFromSearch", async() => {
-        const response = await request(app).get('/candidates/getCandidateFromSearch/'+"amit44").set({ authorization: 'JWT ' + accessToken })
+        const response = await request(app).get('/candidates/getCandidateFromSearch/'+"lola").set({ authorization: 'JWT ' + accessToken })
         .send({            
         });         
         expect(response.statusCode).toEqual(200)
         const user1 = response.body
-        expect(user1.Username).toEqual("amit44")
-        expect(user1.Email).toEqual("email@email.email")
+        expect(user1.Username).toEqual("lola")
+        expect(user1.Email).toEqual("email@email.email223")
         expect(user1.Sex).toEqual("undefind")
         expect(user1.Age).toEqual("28")
         expect(user1.Followers).toEqual("10")

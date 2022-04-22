@@ -153,6 +153,40 @@ describe('Testing Offer API',()=>{
                
     })
 
+    test('autantication fail 403',async ()=>{
+        const response = await request(app).post('/offer/editOffer/' + idOffer).set({ authorization: 'JWT ' + null })
+        .send({
+            "Description":description,   
+            "HeadLine":"hi",
+            "Price" :"30",
+            "IdOffer" :idOffer,
+            "Status":status,
+            "Profession": profession,  
+            "User":user,      
+            "IntrestedVerify":intrestedVerfiy
+        })
+        expect(response.statusCode).toEqual(403)
+             
+               
+    })
+
+    test('autantication fail 401',async ()=>{
+        const response = await request(app).post('/offer/editOffer/' + idOffer).set({ authorization: 'JWT '})
+        .send({
+            "Description":description,   
+            "HeadLine":"hi",
+            "Price" :"30",
+            "IdOffer" :idOffer,
+            "Status":status,
+            "Profession": profession,  
+            "User":user,      
+            "IntrestedVerify":intrestedVerfiy
+        })
+        expect(response.statusCode).toEqual(401)
+             
+               
+    })
+
     
     test('test deleteOffer',async ()=>{
         const response = await request(app).post('/offer/deleteOffer/' + idOffer).set({ authorization: 'JWT ' + accessToken })

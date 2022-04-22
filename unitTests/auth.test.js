@@ -157,7 +157,19 @@ describe('Testing Auth API',()=>{
     })
 
 
+    test('test logout fail',async ()=>{
+        const response = await request(app).post('/auth/logout').set({ authorization: 'JWT ' })
+        expect(response.statusCode).toEqual(401)
+         
+    }) 
 
+    test('test logout fail',async ()=>{
+        const response = await request(app).post('/auth/logout').set({ authorization: 'JWT '+accessToken })
+        expect(response.statusCode).toEqual(403)
+         
+    }) 
+
+    
 
 
    

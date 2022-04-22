@@ -85,6 +85,11 @@ describe("Token refresh test ",()=>{
         expect (response.statusCode).toEqual(403);
         
     }); 
+    test('test Refresh Token fail',async ()=>{
+        const response = await request(app).get('/auth/refreshToken').set({ authorization: 'JWT '})
+        expect(response.statusCode).toEqual(401)
+         
+    }) 
     
 
     test('test login',async ()=>{
