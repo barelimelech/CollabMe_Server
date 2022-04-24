@@ -39,10 +39,6 @@ const offerSchema = new mongoose.Schema({
         type: [String],
         required: false
     },
-    IntrestedVerify: {
-        type: Boolean,
-        required: false
-    },
     Image: {
         type: String,
         required: false

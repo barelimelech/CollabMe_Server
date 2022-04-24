@@ -81,8 +81,8 @@ describe('Testing mediacontent API',()=>{
             "IdOffer" :idOffer,
             "Status":status,
             "Profession": profession,  
-            "User":user,      
-            "IntrestedVerify":intrestedVerfiy
+            "User":user     
+            
         });
         expect(response.statusCode).toEqual(200)
         const newOffer = response.body    
@@ -94,7 +94,7 @@ describe('Testing mediacontent API',()=>{
         expect(newOffer.Status).toEqual(status)
         expect(newOffer.Profession).toEqual(profession)
         expect(newOffer.User).toEqual(user)
-        expect(newOffer.IntrestedVerify).toEqual(intrestedVerfiy)  
+       
     })
 
     test('test addMediaContent',async ()=>{

@@ -92,8 +92,8 @@ describe('Testing Offer API',()=>{
             "IdOffer" :idOffer,
             "Status":status,
             "Profession": profession,  
-            "User":username,      
-            "IntrestedVerify":intrestedVerfiy
+            "User":username 
+            
         });
         expect(response.statusCode).toEqual(200)
         const newOffer = response.body    
@@ -105,7 +105,7 @@ describe('Testing Offer API',()=>{
         expect(newOffer.Status).toEqual(status)
         expect(newOffer.Profession).toEqual(profession)
         expect(newOffer.User).toEqual(username)
-        expect(newOffer.IntrestedVerify).toEqual(intrestedVerfiy)  
+         
     })
 
     test('test getOfferFromSpecificSearch1',async ()=>{

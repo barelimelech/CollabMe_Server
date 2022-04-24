@@ -41,7 +41,6 @@ const addNewOffer = async (req, res) => {
     const profession =  req.body.Profession;
     const user =  req.body.User;
     const users =  req.body.Users;
-    const intrestedVerify =  req.body.IntrestedVerify;
     const image =  req.body.Image;
     
 
@@ -55,8 +54,7 @@ const addNewOffer = async (req, res) => {
         Profession: profession,
         User:user,
         Users: users,
-        Image:image,
-        IntrestedVerify:intrestedVerify,
+        Image:image      
        
     })
 
@@ -91,7 +89,6 @@ const editOffer = async(req, res) => {
         Profession: req.body.Profession,
         User:req.body.User,
         Users: req.body.Users,
-        IntrestedVerify:req.body.IntrestedVerify,
         Image:req.body.Image
     };
 

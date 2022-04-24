@@ -96,8 +96,8 @@ describe('Testing Offer API',()=>{
             "IdOffer" :idOffer,
             "Status":status,
             "Profession": profession,  
-            "User":user,      
-            "IntrestedVerify":intrestedVerfiy
+            "User":user  
+            
         });
         expect(response.statusCode).toEqual(200)
         const newOffer = response.body    
@@ -109,7 +109,7 @@ describe('Testing Offer API',()=>{
         expect(newOffer.Status).toEqual(status)
         expect(newOffer.Profession).toEqual(profession)
         expect(newOffer.User).toEqual(user)
-        expect(newOffer.IntrestedVerify).toEqual(intrestedVerfiy)  
+         
     })
 
     test('getbyidoffer offer',async ()=>{
@@ -125,7 +125,7 @@ describe('Testing Offer API',()=>{
         expect(newOffer1.Status).toEqual(status)
         expect(newOffer1.Profession).toEqual(profession)
         expect(newOffer1.User).toEqual(user)
-        expect(newOffer1.IntrestedVerify).toEqual(intrestedVerfiy)  
+         
     });
 
     test('edit offer',async ()=>{
@@ -137,8 +137,8 @@ describe('Testing Offer API',()=>{
             "IdOffer" :idOffer,
             "Status":status,
             "Profession": profession,  
-            "User":user,      
-            "IntrestedVerify":intrestedVerfiy
+            "User":user   
+            
         })
         expect(response.statusCode).toEqual(200)
         const newOffer = response.body
@@ -149,7 +149,7 @@ describe('Testing Offer API',()=>{
         expect(newOffer.Status).toEqual(status)
         expect(newOffer.Profession).toEqual(profession)
         expect(newOffer.User).toEqual(user)
-        expect(newOffer.IntrestedVerify).toEqual(intrestedVerfiy)        
+               
                
     })
 
@@ -162,8 +162,8 @@ describe('Testing Offer API',()=>{
             "IdOffer" :idOffer,
             "Status":status,
             "Profession": profession,  
-            "User":user,      
-            "IntrestedVerify":intrestedVerfiy
+            "User":user   
+            
         })
         expect(response.statusCode).toEqual(403)
              
@@ -179,8 +179,8 @@ describe('Testing Offer API',()=>{
             "IdOffer" :idOffer,
             "Status":status,
             "Profession": profession,  
-            "User":user,      
-            "IntrestedVerify":intrestedVerfiy
+            "User":user   
+            
         })
         expect(response.statusCode).toEqual(401)
              
