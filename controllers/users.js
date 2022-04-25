@@ -2,6 +2,15 @@ const User = require('../models/user_model')
 const bcrypt = require('bcrypt')
 const { use } = require('../routes')
 
+const getusers = async (req, res) => {
+    try {
+        users = await User.find()
+        res.status(200).send(users)
+    } catch (err) {
+       
+    }
+}
+
 const getUserByUserNmae = async (req, res) => {
     
     try {        
@@ -133,5 +142,6 @@ module.exports = {
     getUserByEmail,
     deleteuser,
     isconnected,
-    editUserPassword
+    editUserPassword,
+    getusers
 }

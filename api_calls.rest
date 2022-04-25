@@ -204,3 +204,7 @@ Content-Type: application/json
     "Company":false,
     "Influencer":true 
 }
+
+###
+GET http://localhost:4000/users/getusers
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjZjYjVhNWFhOGJjZTZlMzg3NWQzMCIsImlhdCI6MTY1MDkwMzkwMSwiZXhwIjoxNjUwOTA3NTAxfQ.7Ix0ZYOX4MI8gX3ixDgc7Rly97_apab2ijBgI0mHTac

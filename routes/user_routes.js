@@ -204,4 +204,8 @@ router.get('/getUser/getUserByEmail/:email',authenticate,user.getUserByEmail);
 router.post('/editUserWithoutAuth/:username', user.editUserPassword)
 
 
+router.get('/getusers', authenticate, user.getusers)
+
+
+
 module.exports = router
