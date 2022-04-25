@@ -162,4 +162,10 @@ describe('Testing Users API',()=>{
         
     });  
 
+
+    test('users get',async ()=>{
+        const response = await request(app).get('/users/getusers').set({ authorization: 'JWT ' + accessToken })
+        expect(response.statusCode).toEqual(200)
+    })
+
 });
