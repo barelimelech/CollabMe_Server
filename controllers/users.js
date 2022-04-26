@@ -69,12 +69,11 @@ const editUser = async(req, res) => {
 
     };
 
-    await User.updateOne({
-         UserName: req.params.Username
+    User.update({
+        Username: req.params.username
          }, updatedUser, function(err, affected){
-            res.send(200, updatedUser);
-        }).clone().catch(function(err){ })
-    
+        res.send(200, updatedUser);
+    });
 }
 
 const editUserPassword = async(req, res) => {
