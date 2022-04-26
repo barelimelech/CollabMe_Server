@@ -203,6 +203,24 @@ router.get('/getUser/getUserByEmail/:email',authenticate,user.getUserByEmail);
 */
 router.post('/editUserWithoutAuth/:username', user.editUserPassword)
 
+/**
+* @swagger
+* /users/getusers:
+*   get:
+*     summary: getall users
+*     tags: [User Api]
+*     security:
+*       - bearerAuth: []
+*     responses:
+*       200:
+*         description: The offers list
+*         content:
+*           application/json:
+*             schema:
+*               type: array
+*               items:
+*                 $ref: '#/components/schemas/Offer'
+*/
 
 router.get('/getusers', authenticate, user.getusers)
 
