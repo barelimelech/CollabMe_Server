@@ -44,7 +44,7 @@ const authenticate = require('../common/auth_middleware')
 *           description: BankAcount of the user        
 *       example:
 *         CardNo: '112233'
-*         ExpDay: '12/12/2019'
+*         ExpDay: '12/12/2022'
 *         Cvv: '222'
 *         Name: 'amit'
 *         IdPerson: '223'

@@ -22,7 +22,7 @@ const swaggerJSDoc = require('swagger-jsdoc')
 *       properties:
 *         Description:
 *           type: string
-*           description: description of the offer
+*           description: Description of the offer
 *         HeadLine:
 *           type: string
 *           description: The Head Line of the offer
@@ -43,22 +43,22 @@ const swaggerJSDoc = require('swagger-jsdoc')
 *           description: The Profession of the User
 *         User:
 *           type: string
-*           description: 
+*           description: User that created the offer
 *         Users:
 *           type: [String]
-*           description: all the candidates
+*           description: List of arrpval user for the offer
 *         IntrestedVerify:
 *           type: Boolean
-*           description: whether of not the company in intrested in verification 
+*           description: Whether of not the company in intrested in verification 
 *         Image:
 *           type: String
 *           description: Image offer
 *         MediaContent:
 *           type: [String]
-*           description: whether of not the company in intrested in verification 
+*           description: Media content of the of the offer
 *       example:
-*         Description: 'aa'
-*         HeadLine: 'aa'
+*         Description: 'offer_tmp_from_swagger'
+*         HeadLine: 'Sawgger Offer'
 *         Price: '11'
 *         IdOffer: '60c463bf-63b5-4a91-b4b4-28a0e3f81572'
 *         Status: 'InProgress'
@@ -66,7 +66,7 @@ const swaggerJSDoc = require('swagger-jsdoc')
 *         User: 'e@e.com'
 *         IntrestedVerify: 'false'
 *         Image: '4342342342342344'
-*         MediaContent: []
+*         MediaContent: ["https://www.youtube.com/watch?v=EHkozMIXZ8w&list=RDMM&index=3&ab_channel=EminemVEVO"]
 */
 
 
@@ -112,7 +112,7 @@ router.get('/getoffers', authenticate, Offer.getOffers)
 *       - bearerAuth: []
 *     responses:
 *       200:
-*         description: offer exist
+*         description: the offer
 *         content:
 *           application/json:
 *             schema:

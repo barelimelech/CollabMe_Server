@@ -47,13 +47,13 @@ const authenticate = require('../common/auth_middleware')
 *           description: Platform types the user is active 
 *         NumberOfPosts:
 *           type: String
-*           description: number of post the user uploded
+*           description: Number of post the user uploded
 *         Company:
 *           type: Boolean
-*           description: whether the user is a company 
+*           description: Whether the user is a company 
 *         Influencer:
 *           type: Boolean
-*           description: whether the user is an influenter
+*           description: Whether the user is an influenter
 *         Image:
 *           type: String
 *           description: Image
@@ -147,7 +147,7 @@ router.post('/deleteuser/:username',authenticate, user.deleteuser)
 * @swagger
 * /users/authenticate:
 *   get:
-*     summary: is connected user 
+*     summary: check if the user is connected
 *     tags: [User Api]
 *     security:
 *       - bearerAuth: []
@@ -184,7 +184,7 @@ router.get('/getUser/getUserByEmail/:email',authenticate,user.getUserByEmail);
 * @swagger
 * /users/editUserWithoutAuth/{username}:
 *   post:
-*     summary: edit user passwored 
+*     summary: edit user password 
 *     tags: [User Api]
 *     parameters:
 *       - in: path
@@ -203,6 +203,24 @@ router.get('/getUser/getUserByEmail/:email',authenticate,user.getUserByEmail);
 */
 router.post('/editUserWithoutAuth/:username', user.editUserPassword)
 
+/**
+* @swagger
+* /users/getusers:
+*   get:
+*     summary: get all the users
+*     tags: [User Api]
+*     security:
+*       - bearerAuth: []
+*     responses:
+*       200:
+*         description: The offers list
+*         content:
+*           application/json:
+*             schema:
+*               type: array
+*               items:
+*                 $ref: '#/components/schemas/User'
+*/
 
 router.get('/getusers', authenticate, user.getusers)
 

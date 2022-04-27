@@ -117,7 +117,6 @@ router.get("/file/:filename", async (req, res) => {
     try{
       res.writeHead(200, {'Content-Type': 'image/jpeg'});
       res.end(data); // Send the file data to the browser.  
-      console.log('was here')
     }catch(err){
       res.status(400).send();
     }
