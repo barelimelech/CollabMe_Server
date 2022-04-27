@@ -65,16 +65,23 @@ const getOfferFromSpecificSearch = async (req, res) => {
         }
         //
             if (fromprice!=="null"&&toprice!=="null"){
-          //      console.log(toprice);
-           //     console.log(fromprice);
 
-            if(flag==true){
-                result = await result.filter((d => (d.Price > fromprice-1 && d.Price < toprice+1)));
-              //  console.log("price in");
+                var fromprice1 = parseInt(fromprice);
+                var toprice1 = parseInt(toprice);
+
+                if(flag==true){
+                result = await result.filter((d => (d.Price > fromprice1-1 && d.Price < toprice1+1)));
+            //    console.log("price in");
                 flag=true;
             }else{
-                result = await Offer.find({'Price':{$gt : fromprice-1, $lt : toprice+1}}); 
+                result = await Offer.find({'Price':
+                {
+                    $gt : fromprice1-1, 
+                    $lt : toprice1+1
+                }}
+                ); 
                // console.log("hello5");
+
                 flag=true;
 
             }
@@ -113,18 +120,20 @@ const getOfferFromSpecificSearch = async (req, res) => {
         }
         
         if (fromdate!==("null")&&todate!==("null")){
+            var fromdate1 = parseInt(fromdate);
+            var todate1 = parseInt(todate);
 
             if(flag==true){
-                result = await result.filter((d => parseInt(d.FinishDate) <= parseInt(todate)));
+                result = await result.filter((d => parseInt(d.FinishDate) <= parseInt(todate1)));
               //  console.log(result);
 
-                result = await result.filter((d => parseInt(d.FinishDate) >= parseInt(fromdate)));
+                result = await result.filter((d => parseInt(d.FinishDate) >= parseInt(fromdate1)));
                // console.log(result);
 
               // console.log("date in");
             }else{
                 result = await Offer.find({'FinishDate':{
-                    $gt : fromdate-1, $lt : todate+1
+                    $gt : fromdate1-1, $lt : todate1+1
                 }}); 
                // console.log("hello5");
                 flag=true;

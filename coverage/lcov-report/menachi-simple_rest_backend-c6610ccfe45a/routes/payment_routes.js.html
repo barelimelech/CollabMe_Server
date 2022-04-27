@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for menachi-simple_rest_backend-c6610ccfe45a/models/user_model.js</title>
+    <title>Code coverage report for menachi-simple_rest_backend-c6610ccfe45a/routes/payment_routes.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">menachi-simple_rest_backend-c6610ccfe45a/models</a> user_model.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">menachi-simple_rest_backend-c6610ccfe45a/routes</a> payment_routes.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -125,8 +125,21 @@
 <a name='L60'></a><a href='#L60'>60</a>
 <a name='L61'></a><a href='#L61'>61</a>
 <a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">11x</span>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -187,69 +200,89 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">11x</span></td><td class="text"><pre class="prettyprint lang-js">const mongoose = require("mongoose")
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span></td><td class="text"><pre class="prettyprint lang-js">const express = require('express')
+const router = express.Router()
 &nbsp;
-const userSchema = new mongoose.Schema({
-    Username: {
-        type: String,
-        required: true
-    },
-    Password: {
-        type: String,
-        required: true
-    },
-    Email: {
-        type: String,
-        required: true
-    },
-    Tokens: {
-        type: [String]
-    },
-    Sex: {
-        type: String,
-        required: false
-    },
-    Age: {
-        type: String,
-        required: false
-    },
-    Followers: {
-        type: String,
-        required: false
-    },
-    Profession :{
-        type: [String],
-        required: false
-    },
-    Platform :{
-        type: [String],
-        required: false
-    },
-    NumberOfPosts: {
-        type: String,
-        required: false
-    },
-    Company: {
-        type: Boolean,
-        required: false
-    },
-    Influencer: {
-        type: Boolean,
-        required: false
-    },
-    Image: {
-        type: String,
-        required: false
-    },
-    RejectedOffers: {
-        type: [String],
-        required: false
-    }
+const Payment = require('../controllers/payment')
+const authenticate = require('../common/auth_middleware')
 &nbsp;
-    
-})
+/**
+* @swagger
+* tags:
+*   name: Payment Api
+*   description: The Payment API
+*/
 &nbsp;
-module.exports = mongoose.model('User', userSchema)</pre></td></tr></table></pre>
+/**
+* @swagger
+* components:
+*   schemas:
+*     Payment:
+*       type: object
+*       required:
+*         - CardNo
+*         - Cvv
+*       properties:
+*         CardNo:
+*           type: String
+*           description: Card number
+*         ExpDay:
+*           type: String
+*           description: ExpDay of card
+*         Cvv:
+*           type: String
+*           description: Cvv of card
+*         IdPerson:
+*           type: String
+*           description: IdPerson of user
+*         Name:
+*           type: String
+*           description: Name of user
+*         OfferId:
+*           type: String
+*           description: OfferId of the offer to pay
+*         BankAcount:
+*           type: String
+*           description: BankAcount of the user        
+*       example:
+*         CardNo: '112233'
+*         ExpDay: '12/12/2019'
+*         Cvv: '222'
+*         Name: 'amit'
+*         IdPerson: '223'
+*         OfferId: '26'
+*         BankAcount: '100'
+*/
+/**
+* @swagger
+* /payment/addpayment:
+*   post:
+*     summary: add payment
+*     tags: [Payment Api]
+*     requestBody:
+*       required: true
+*       content:
+*         application/json:
+*           schema:
+*             $ref: '#/components/schemas/Payment'
+*     security:
+*       - bearerAuth: []
+*     responses:
+*       200:
+*         description: payment was added
+*/
+router.post('/addpayment', authenticate, Payment.addpayment)
+&nbsp;
+module.exports = router</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

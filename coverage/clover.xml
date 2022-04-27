@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1650908133335" clover="3.2.0">
-  <project timestamp="1650908133335" name="All files">
-    <metrics statements="443" coveredstatements="428" conditionals="93" coveredconditionals="81" methods="52" coveredmethods="49" elements="588" coveredelements="558" complexity="0" loc="443" ncloc="443" packages="5" files="21" classes="21"/>
-    <package name="CollabMe_Server">
+<coverage generated="1650908200749" clover="3.2.0">
+  <project timestamp="1650908200750" name="All files">
+    <metrics statements="443" coveredstatements="428" conditionals="93" coveredconditionals="82" methods="52" coveredmethods="49" elements="588" coveredelements="559" complexity="0" loc="443" ncloc="443" packages="5" files="21" classes="21"/>
+    <package name="menachi-simple_rest_backend-c6610ccfe45a">
       <metrics statements="37" coveredstatements="34" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
-      <file name="server.js" path="C:\Users\amitb\CollabMe_Server\server.js">
+      <file name="server.js" path="C:\Users\liemm\Downloads\menachi-simple_rest_backend-c6610ccfe45a\menachi-simple_rest_backend-c6610ccfe45a\server.js">
         <metrics statements="37" coveredstatements="34" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
         <line num="1" count="11" type="stmt"/>
         <line num="2" count="11" type="stmt"/>
@@ -45,9 +45,9 @@
         <line num="76" count="11" type="stmt"/>
       </file>
     </package>
-    <package name="CollabMe_Server.common">
+    <package name="menachi-simple_rest_backend-c6610ccfe45a.common">
       <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
-      <file name="auth_middleware.js" path="C:\Users\amitb\CollabMe_Server\common\auth_middleware.js">
+      <file name="auth_middleware.js" path="C:\Users\liemm\Downloads\menachi-simple_rest_backend-c6610ccfe45a\menachi-simple_rest_backend-c6610ccfe45a\common\auth_middleware.js">
         <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
         <line num="2" count="11" type="stmt"/>
         <line num="4" count="11" type="stmt"/>
@@ -61,9 +61,9 @@
         <line num="17" count="11" type="stmt"/>
       </file>
     </package>
-    <package name="CollabMe_Server.controllers">
-      <metrics statements="289" coveredstatements="278" conditionals="79" coveredconditionals="70" methods="42" coveredmethods="40"/>
-      <file name="auth.js" path="C:\Users\amitb\CollabMe_Server\controllers\auth.js">
+    <package name="menachi-simple_rest_backend-c6610ccfe45a.controllers">
+      <metrics statements="289" coveredstatements="278" conditionals="79" coveredconditionals="71" methods="42" coveredmethods="40"/>
+      <file name="auth.js" path="C:\Users\liemm\Downloads\menachi-simple_rest_backend-c6610ccfe45a\menachi-simple_rest_backend-c6610ccfe45a\controllers\auth.js">
         <metrics statements="93" coveredstatements="91" conditionals="34" coveredconditionals="30" methods="8" coveredmethods="8"/>
         <line num="1" count="11" type="stmt"/>
         <line num="2" count="11" type="stmt"/>
@@ -159,8 +159,8 @@
         <line num="182" count="1" type="stmt"/>
         <line num="189" count="11" type="stmt"/>
       </file>
-      <file name="candidates.js" path="C:\Users\amitb\CollabMe_Server\controllers\candidates.js">
-        <metrics statements="27" coveredstatements="26" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <file name="candidates.js" path="C:\Users\liemm\Downloads\menachi-simple_rest_backend-c6610ccfe45a\menachi-simple_rest_backend-c6610ccfe45a\controllers\candidates.js">
+        <metrics statements="27" coveredstatements="26" conditionals="4" coveredconditionals="3" methods="3" coveredmethods="3"/>
         <line num="1" count="11" type="stmt"/>
         <line num="2" count="11" type="stmt"/>
         <line num="3" count="11" type="stmt"/>
@@ -176,9 +176,9 @@
         <line num="19" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
-        <line num="22" count="10" type="stmt"/>
-        <line num="23" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="24" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="22" count="6" type="stmt"/>
+        <line num="23" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="24" count="6" type="cond" truecount="2" falsecount="0"/>
         <line num="26" count="1" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
         <line num="34" count="1" type="stmt"/>
@@ -189,7 +189,7 @@
         <line num="43" count="0" type="stmt"/>
         <line num="52" count="11" type="stmt"/>
       </file>
-      <file name="mediacontent.js" path="C:\Users\amitb\CollabMe_Server\controllers\mediacontent.js">
+      <file name="mediacontent.js" path="C:\Users\liemm\Downloads\menachi-simple_rest_backend-c6610ccfe45a\menachi-simple_rest_backend-c6610ccfe45a\controllers\mediacontent.js">
         <metrics statements="14" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="11" type="stmt"/>
         <line num="3" count="11" type="stmt"/>
@@ -206,7 +206,7 @@
         <line num="38" count="0" type="stmt"/>
         <line num="45" count="11" type="stmt"/>
       </file>
-      <file name="offers.js" path="C:\Users\amitb\CollabMe_Server\controllers\offers.js">
+      <file name="offers.js" path="C:\Users\liemm\Downloads\menachi-simple_rest_backend-c6610ccfe45a\menachi-simple_rest_backend-c6610ccfe45a\controllers\offers.js">
         <metrics statements="37" coveredstatements="36" conditionals="4" coveredconditionals="3" methods="7" coveredmethods="7"/>
         <line num="1" count="11" type="stmt"/>
         <line num="3" count="11" type="stmt"/>
@@ -246,7 +246,7 @@
         <line num="98" count="1" type="stmt"/>
         <line num="105" count="11" type="stmt"/>
       </file>
-      <file name="payment.js" path="C:\Users\amitb\CollabMe_Server\controllers\payment.js">
+      <file name="payment.js" path="C:\Users\liemm\Downloads\menachi-simple_rest_backend-c6610ccfe45a\menachi-simple_rest_backend-c6610ccfe45a\controllers\payment.js">
         <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="11" type="stmt"/>
         <line num="4" count="11" type="stmt"/>
@@ -262,7 +262,7 @@
         <line num="27" count="1" type="stmt"/>
         <line num="32" count="11" type="stmt"/>
       </file>
-      <file name="search.js" path="C:\Users\amitb\CollabMe_Server\controllers\search.js">
+      <file name="search.js" path="C:\Users\liemm\Downloads\menachi-simple_rest_backend-c6610ccfe45a\menachi-simple_rest_backend-c6610ccfe45a\controllers\search.js">
         <metrics statements="61" coveredstatements="57" conditionals="31" coveredconditionals="30" methods="9" coveredmethods="9"/>
         <line num="1" count="11" type="stmt"/>
         <line num="3" count="11" type="stmt"/>
@@ -326,7 +326,7 @@
         <line num="140" count="0" type="stmt"/>
         <line num="148" count="11" type="stmt"/>
       </file>
-      <file name="users.js" path="C:\Users\amitb\CollabMe_Server\controllers\users.js">
+      <file name="users.js" path="C:\Users\liemm\Downloads\menachi-simple_rest_backend-c6610ccfe45a\menachi-simple_rest_backend-c6610ccfe45a\controllers\users.js">
         <metrics statements="44" coveredstatements="43" conditionals="6" coveredconditionals="5" methods="12" coveredmethods="10"/>
         <line num="1" count="11" type="stmt"/>
         <line num="2" count="11" type="stmt"/>
@@ -374,31 +374,31 @@
         <line num="139" count="11" type="stmt"/>
       </file>
     </package>
-    <package name="CollabMe_Server.models">
+    <package name="menachi-simple_rest_backend-c6610ccfe45a.models">
       <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="offer_model.js" path="C:\Users\amitb\CollabMe_Server\models\offer_model.js">
+      <file name="offer_model.js" path="C:\Users\liemm\Downloads\menachi-simple_rest_backend-c6610ccfe45a\menachi-simple_rest_backend-c6610ccfe45a\models\offer_model.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="11" type="stmt"/>
         <line num="2" count="11" type="stmt"/>
         <line num="4" count="11" type="stmt"/>
         <line num="54" count="11" type="stmt"/>
       </file>
-      <file name="payment_model.js" path="C:\Users\amitb\CollabMe_Server\models\payment_model.js">
+      <file name="payment_model.js" path="C:\Users\liemm\Downloads\menachi-simple_rest_backend-c6610ccfe45a\menachi-simple_rest_backend-c6610ccfe45a\models\payment_model.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="2" count="11" type="stmt"/>
         <line num="4" count="11" type="stmt"/>
         <line num="39" count="11" type="stmt"/>
       </file>
-      <file name="user_model.js" path="C:\Users\amitb\CollabMe_Server\models\user_model.js">
+      <file name="user_model.js" path="C:\Users\liemm\Downloads\menachi-simple_rest_backend-c6610ccfe45a\menachi-simple_rest_backend-c6610ccfe45a\models\user_model.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="11" type="stmt"/>
         <line num="3" count="11" type="stmt"/>
         <line num="63" count="11" type="stmt"/>
       </file>
     </package>
-    <package name="CollabMe_Server.routes">
+    <package name="menachi-simple_rest_backend-c6610ccfe45a.routes">
       <metrics statements="97" coveredstatements="96" conditionals="6" coveredconditionals="4" methods="6" coveredmethods="6"/>
-      <file name="auth_routes.js" path="C:\Users\amitb\CollabMe_Server\routes\auth_routes.js">
+      <file name="auth_routes.js" path="C:\Users\liemm\Downloads\menachi-simple_rest_backend-c6610ccfe45a\menachi-simple_rest_backend-c6610ccfe45a\routes\auth_routes.js">
         <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="11" type="stmt"/>
         <line num="2" count="11" type="stmt"/>
@@ -411,7 +411,7 @@
         <line num="167" count="11" type="stmt"/>
         <line num="169" count="11" type="stmt"/>
       </file>
-      <file name="candidates_routes.js" path="C:\Users\amitb\CollabMe_Server\routes\candidates_routes.js">
+      <file name="candidates_routes.js" path="C:\Users\liemm\Downloads\menachi-simple_rest_backend-c6610ccfe45a\menachi-simple_rest_backend-c6610ccfe45a\routes\candidates_routes.js">
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="11" type="stmt"/>
         <line num="2" count="11" type="stmt"/>
@@ -422,7 +422,7 @@
         <line num="94" count="11" type="stmt"/>
         <line num="97" count="11" type="stmt"/>
       </file>
-      <file name="images_route.js" path="C:\Users\amitb\CollabMe_Server\routes\images_route.js">
+      <file name="images_route.js" path="C:\Users\liemm\Downloads\menachi-simple_rest_backend-c6610ccfe45a\menachi-simple_rest_backend-c6610ccfe45a\routes\images_route.js">
         <metrics statements="29" coveredstatements="28" conditionals="6" coveredconditionals="4" methods="5" coveredmethods="5"/>
         <line num="1" count="11" type="stmt"/>
         <line num="2" count="11" type="stmt"/>
@@ -454,7 +454,7 @@
         <line num="122" count="1" type="stmt"/>
         <line num="131" count="11" type="stmt"/>
       </file>
-      <file name="index.js" path="C:\Users\amitb\CollabMe_Server\routes\index.js">
+      <file name="index.js" path="C:\Users\liemm\Downloads\menachi-simple_rest_backend-c6610ccfe45a\menachi-simple_rest_backend-c6610ccfe45a\routes\index.js">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="11" type="stmt"/>
         <line num="2" count="11" type="stmt"/>
@@ -462,7 +462,7 @@
         <line num="5" count="1" type="stmt"/>
         <line num="8" count="11" type="stmt"/>
       </file>
-      <file name="mediacontent_routes.js" path="C:\Users\amitb\CollabMe_Server\routes\mediacontent_routes.js">
+      <file name="mediacontent_routes.js" path="C:\Users\liemm\Downloads\menachi-simple_rest_backend-c6610ccfe45a\menachi-simple_rest_backend-c6610ccfe45a\routes\mediacontent_routes.js">
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="11" type="stmt"/>
         <line num="2" count="11" type="stmt"/>
@@ -473,7 +473,7 @@
         <line num="60" count="11" type="stmt"/>
         <line num="63" count="11" type="stmt"/>
       </file>
-      <file name="offers_routes.js" path="C:\Users\amitb\CollabMe_Server\routes\offers_routes.js">
+      <file name="offers_routes.js" path="C:\Users\liemm\Downloads\menachi-simple_rest_backend-c6610ccfe45a\menachi-simple_rest_backend-c6610ccfe45a\routes\offers_routes.js">
         <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="11" type="stmt"/>
         <line num="2" count="11" type="stmt"/>
@@ -488,7 +488,7 @@
         <line num="199" count="11" type="stmt"/>
         <line num="203" count="11" type="stmt"/>
       </file>
-      <file name="payment_routes.js" path="C:\Users\amitb\CollabMe_Server\routes\payment_routes.js">
+      <file name="payment_routes.js" path="C:\Users\liemm\Downloads\menachi-simple_rest_backend-c6610ccfe45a\menachi-simple_rest_backend-c6610ccfe45a\routes\payment_routes.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="11" type="stmt"/>
         <line num="2" count="11" type="stmt"/>
@@ -497,7 +497,7 @@
         <line num="72" count="11" type="stmt"/>
         <line num="74" count="11" type="stmt"/>
       </file>
-      <file name="search_routes.js" path="C:\Users\amitb\CollabMe_Server\routes\search_routes.js">
+      <file name="search_routes.js" path="C:\Users\liemm\Downloads\menachi-simple_rest_backend-c6610ccfe45a\menachi-simple_rest_backend-c6610ccfe45a\routes\search_routes.js">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="11" type="stmt"/>
         <line num="2" count="11" type="stmt"/>
@@ -507,7 +507,7 @@
         <line num="62" count="11" type="stmt"/>
         <line num="65" count="11" type="stmt"/>
       </file>
-      <file name="user_routes.js" path="C:\Users\amitb\CollabMe_Server\routes\user_routes.js">
+      <file name="user_routes.js" path="C:\Users\liemm\Downloads\menachi-simple_rest_backend-c6610ccfe45a\menachi-simple_rest_backend-c6610ccfe45a\routes\user_routes.js">
         <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="11" type="stmt"/>
         <line num="2" count="11" type="stmt"/>

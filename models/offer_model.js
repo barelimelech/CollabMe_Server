@@ -11,11 +11,11 @@ const offerSchema = new mongoose.Schema({
         required: false
     },
     FinishDate: {
-        type: String,
+        type: Number,
         required: false
     },
     Price: {
-        type: String,
+        type: Number,
         required: false
     },
    
