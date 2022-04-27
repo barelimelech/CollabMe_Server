@@ -15,7 +15,7 @@ const offerSchema = new mongoose.Schema({
         required: false
     },
     Price: {
-        type: String,
+        type: Number,
         required: false
     },
    
