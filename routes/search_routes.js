@@ -19,7 +19,7 @@ const authenticate = require('../common/auth_middleware')
 *     tags: [Search Api]
 *     parameters:
 *       - in: path
-*         name: free search
+*         name: freesearch
 *         schema:
 *           type: string
 *         required: true
@@ -28,11 +28,13 @@ const authenticate = require('../common/auth_middleware')
 *       - bearerAuth: []
 *     responses:
 *       200:
-*         description: found offers
+*         description: list of offers by free sherch
 *         content:
 *           application/json:
 *             schema:
-*               $ref: '#/components/schemas/Offer'
+*               type: array
+*               items:
+*                 $ref: '#/components/schemas/Offer'
 */
 router.get('/getOfferFromFreeSearch/:freesearch', authenticate, Offer.getOfferFromFreeSearch);
 
@@ -53,11 +55,13 @@ router.get('/getOfferFromFreeSearch/:freesearch', authenticate, Offer.getOfferFr
 *       - bearerAuth: []
 *     responses:
 *       200:
-*         description: the offer 
+*         description: list of offers
 *         content:
 *           application/json:
 *             schema:
-*               $ref: '#/components/schemas/Offer'
+*               type: array
+*               items:
+*                 $ref: '#/components/schemas/Offer'
 */
  router.post('/getOfferFromSpecificSearch', authenticate, Offer.getOfferFromSpecificSearch);
 
