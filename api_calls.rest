@@ -142,16 +142,16 @@ Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDYyNTY0OT
 
 ###
 POST http://localhost:4000/search/getOfferFromSpecificSearch
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjk1NjAyZTY5Y2RiNzVjMzEyN2Y5NiIsImlhdCI6MTY1MTA3NTAxOSwiZXhwIjoxNjUxMDc4NjE5fQ.cfldegyZtmtpFNNNIaeCCbHGrlcEfSHL0sIhNFDgrKE
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjk1NjAyZTY5Y2RiNzVjMzEyN2Y5NiIsImlhdCI6MTY1MTA5NTk3NCwiZXhwIjoxNjUxMDk5NTc0fQ.TmZgA6plOTeq6CeA98pfhq_A2CttXKxtCtuTom8Nq6o
 Content-Type: application/json
 
 {
-        "description":"ddd",   
+        "description":"null",   
         "headline":"null",
-        "fromdate":"null",
-        "todate" :"null",
-        "fromprice":"9",
-        "toprice" :"100",
+        "fromdate":"09092021",
+        "todate" :"18122021",
+        "fromprice":"null",
+        "toprice" :"null",
         "professions": null,  
         "user":"null"
 }

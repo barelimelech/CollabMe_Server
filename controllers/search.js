@@ -123,19 +123,24 @@ const getOfferFromSpecificSearch = async (req, res) => {
             var fromdate1 = parseInt(fromdate);
             var todate1 = parseInt(todate);
 
-            if(flag==true){
-                result = await result.filter((d => parseInt(d.FinishDate) <= parseInt(todate1)));
-              //  console.log(result);
+            var from1=(Math.floor(fromdate1/1000000));
+            var from2 =(Math.floor((fromdate1/10000) % 100));
+            var from3=(Math.floor(fromdate1%10000));
 
-                result = await result.filter((d => parseInt(d.FinishDate) >= parseInt(fromdate1)));
-               // console.log(result);
+            var to1 =(Math.floor(fromdate1/1000000));
+            var to2 = (Math.floor((fromdate1/10000) % 100));
+            var to3 =(Math.floor(fromdate1%10000));
+
+            if(flag==true){
+                result = await result.filter((d => d.FinishDate <= todate1 && d.FinishDate >= fromdate1));
+              //  console.log(result);
 
               // console.log("date in");
             }else{
                 result = await Offer.find({'FinishDate':{
                     $gt : fromdate1-1, $lt : todate1+1
                 }}); 
-               // console.log("hello5");
+            //    console.log("hello5");
                 flag=true;
 
             }
