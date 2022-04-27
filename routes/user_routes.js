@@ -219,7 +219,7 @@ router.post('/editUserWithoutAuth/:username', user.editUserPassword)
 *             schema:
 *               type: array
 *               items:
-*                 $ref: '#/components/schemas/Offer'
+*                 $ref: '#/components/schemas/User'
 */
 
 router.get('/getusers', authenticate, user.getusers)
