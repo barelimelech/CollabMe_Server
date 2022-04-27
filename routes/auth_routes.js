@@ -144,7 +144,7 @@ router.get('/refreshToken', Auth.refreshToken)
 * @swagger
 * /auth/getUserByUserNameInSignIn/{username}:
 *   get:
-*     summary: get the by user name in sign in
+*     summary: get the user name in sign in page
 *     tags: [Auth]
 *     parameters:
 *       - in: path

@@ -52,7 +52,6 @@ router.post('/addMediaContent', authenticate, Offer.addMediaContent)
 *       200:
 *         description: Media content return seccessfully 
 *         content:
-*           application/json:
 *             schema:
 *               type: string
 */

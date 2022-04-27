@@ -15,20 +15,20 @@ const authenticate = require('../common/auth_middleware')
 * @swagger
 * /search/getOfferFromFreeSearch/{freesearch}:
 *   get:
-*     summary: get offer
+*     summary: get offer by search
 *     tags: [Search Api]
 *     parameters:
 *       - in: path
-*         name: freesearch
+*         name: free search
 *         schema:
 *           type: string
 *         required: true
-*         description: search word
+*         description: search word for offers
 *     security:
 *       - bearerAuth: []
 *     responses:
 *       200:
-*         description: found offer
+*         description: found offers
 *         content:
 *           application/json:
 *             schema:
@@ -41,7 +41,7 @@ router.get('/getOfferFromFreeSearch/:freesearch', authenticate, Offer.getOfferFr
 * @swagger
 * /search/getOfferFromSpecificSearch:
 *   post:
-*     summary: add new offer
+*     summary: get offer by specific search
 *     tags: [Search Api]
 *     requestBody:
 *       required: true
@@ -53,7 +53,7 @@ router.get('/getOfferFromFreeSearch/:freesearch', authenticate, Offer.getOfferFr
 *       - bearerAuth: []
 *     responses:
 *       200:
-*         description: get offer 
+*         description: the offer 
 *         content:
 *           application/json:
 *             schema:
