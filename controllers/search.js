@@ -37,7 +37,7 @@ const getOfferFromSpecificSearch = async (req, res) => {
     var professions =req.body.professions;
     var user = req.body.user;
 
-
+    //console.log(professions,description,headline,fromdate,todate,user)
   //  console.log(professions.length);
 
     try {
@@ -134,7 +134,7 @@ const getOfferFromSpecificSearch = async (req, res) => {
 
         }
         //
-
+       // console.log(result)
         res.status(200).send(result);
     } catch (err) {
         res.status(400).send({

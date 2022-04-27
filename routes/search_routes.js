@@ -50,7 +50,7 @@ router.get('/getOfferFromFreeSearch/:freesearch', authenticate, Offer.getOfferFr
 *       content:
 *         application/json:
 *           schema:
-*             $ref: '#/components/schemas/Offer'
+*             $ref: '#/components/schemas/searchbody'
 *     security:
 *       - bearerAuth: []
 *     responses:
@@ -67,3 +67,46 @@ router.get('/getOfferFromFreeSearch/:freesearch', authenticate, Offer.getOfferFr
 
 
 module.exports = router
+/**
+* @swagger
+* components:
+*   schemas:
+*     searchbody:
+*       type: object
+*       required:
+*         - description
+*       properties:
+*         description:
+*           type: String
+*           description: description of offer
+*         headline:
+*           type: String
+*           description: headline of offer
+*         fromdate:
+*           type: String
+*           description: start date of offer
+*         todate:
+*           type: String
+*           description: end date of offer
+*         fromprice:
+*           type: String
+*           description: min price
+*         toprice:
+*           type: String
+*           description: max price
+*         professions:
+*           type: [String]
+*           description: professions
+*         user:
+*           type: String
+*           description: user
+*       example:
+*         description: "null"
+*         headline: "null"
+*         fromdate: 'null'
+*         todate: 'null'
+*         fromprice: 'null'
+*         toprice: 'null'
+*         professions: ["Travel"]
+*         user: 'null'
+*/
