@@ -9,18 +9,18 @@ const username = 'nona'
 const pwd = '5566'
 const description="over"
 const headline = "over"
-const fromprice = "10"
-const idOffer = "100"
+const fromprice = 10
+const idOffer = "5000000"
 const status = "pause"
-const fromdate = "16082022";
-const todate = "16082022";
-const toprice="100";
+const fromdate = 16082022;
+const todate = 16082022;
+const toprice=100;
 const profession = ["Art","music"];
-const price = "12";
+const price = 12;
 
 const intrestedVerfiy= false
 const freesearch = "over";
-const finishdate = "16082022";
+const finishdate = 16082022;
 const Ttodate = "null", Tfromdate = "null", Tfromprice = "null", Ttoprice ="null";
 let id ;
 

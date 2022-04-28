@@ -60,9 +60,9 @@ POST http://localhost:4000/auth/register
 Content-Type: application/json
 
 {
-    "Username": "yoss",       
+    "Username": "momo2244",       
     "Password":"12345", 
-    "Email": "email@email.email",
+    "Email": "email1@email.email",
     "Sex":"undefind",
     "Age":28, 
     "Followers":10,

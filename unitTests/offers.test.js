@@ -9,11 +9,11 @@ const username = 'liem'
 const pwd = '5566'
 const description="hi"
 const headline = "now"
-const price = "10"
+const price = 10
 const idOffer = "10"
 const status = "now"
 const profession = ["sport","art"];
-const finishdate = "14062022";
+const finishdate = 16082022;
 let user = "62277413fe8636f7c2c9aff2"
 const intrestedVerfiy= false
 let id ;
