@@ -27,10 +27,10 @@ const swaggerJSDoc = require('swagger-jsdoc')
 *           type: string
 *           description: The Head Line of the offer
 *         FinishDate:
-*           type: string
+*           type: Number
 *           description: The time in which the the influencer should post
 *         Price:
-*           type: string
+*           type: Number
 *           description: Cost for the work
 *         IdOffer:
 *           type: string
@@ -59,7 +59,7 @@ const swaggerJSDoc = require('swagger-jsdoc')
 *       example:
 *         Description: 'offer_tmp_from_swagger'
 *         HeadLine: 'Sawgger Offer'
-*         Price: '11'
+*         Price: 11
 *         IdOffer: '60c463bf-63b5-4a91-b4b4-28a0e3f81572'
 *         Status: 'InProgress'
 *         Profession: []
