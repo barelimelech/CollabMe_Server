@@ -5,16 +5,26 @@ const getOfferFromFreeSearch = async (req, res) => {
     var num1 = req.params.freesearch;
 
     try {
-        
-        const offers1 = await Offer.find({'User':req.params.freesearch});
-        const offers2 = await Offer.find({'Description':req.params.freesearch});
-        const offers3 = await Offer.find({'HeadLine':req.params.freesearch});
-        const offers4 = await Offer.find({'Price':num1.toString()});
-        const offers5 = await Offer.find({'Profession':req.params.freesearch});
-        const offers6 = await Offer.find({'FinishDate': num1.toString()});
+        let offers4, offers6;
+        const offers1 = await Offer.find({'User': num1});
+        const offers2 = await Offer.find({'Description': num1});
+        const offers3 = await Offer.find({'HeadLine': num1});
+
+        if (Number.isInteger(parseInt(num1)))
+        {
+             offers4 = await Offer.find({'Price':parseInt(num1)});
+             offers6 = await Offer.find({'FinishDate': parseInt(num1)});
+        }
+        else{
+             offers4 = [];
+             offers6 =[];
+        }
+        const offers5 = await Offer.find({'Profession': num1});
 
         const offers = [], offers0 = [];
         offers[0] = offers1; offers[1] = offers2; offers[2] = offers3;offers[4] = offers4;offers[5]=offers5;
+        offers[6] = offers6;
+
         var result =  offers.filter(e => e.length);
 
         res.status(200).send(result.flat());

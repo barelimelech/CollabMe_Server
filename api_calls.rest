@@ -137,18 +137,17 @@ GET http://localhost:4000/auth/getUserByUserNameInSignIn/lolo
 Content-Type: application/
 ###
 
-GET http://localhost:4000/search/getOfferFromFreeSearch/koko
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDYyNTY0OTA4YmVhNjc3ZmE0MGE2MSIsImlhdCI6MTY0ODc2NDQ1NCwiZXhwIjoxNjQ4NzY4MDU0fQ.qx5UfgmrcHpOBqTcYt8FAjS4DUP-lYeLy6iDJtxEVh4
+GET http://localhost:4000/search/getOfferFromFreeSearch/12112022
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjk1NjAyZTY5Y2RiNzVjMzEyN2Y5NiIsImlhdCI6MTY1MTEzNjAzNCwiZXhwIjoxNjUxMTM5NjM0fQ.84s4tmpW-i1UDGjPnbpx37ZFovN0mJFSXbAm-vHCOec
 
 ###
 POST http://localhost:4000/search/getOfferFromSpecificSearch
-Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjk1NjAyZTY5Y2RiNzVjMzEyN2Y5NiIsImlhdCI6MTY1MTA5OTI1OCwiZXhwIjoxNjUxMTAyODU4fQ.4ZoSVZf8Fpv--ygyZxt1-BaNPX02GU5g_PT-vO7_WtQ
-Content-Type: application/json
+Authorization: barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjk1NjAyZTY5Y2RiNzVjMzEyN2Y5NiIsImlhdCI6MTY1MTEzNjAzNCwiZXhwIjoxNjUxMTM5NjM0fQ.84s4tmpW-i1UDGjPnbpx37ZFovN0mJFSXbAm-vHCOec
 
 {
         "description":"null",   
         "headline":"null",
-        "fromdate":"09092021",
+        "fromdate":"null",
         "todate" :"18122022",
         "fromprice":"null",
         "toprice" :"null",
