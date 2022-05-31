@@ -7,20 +7,19 @@ const Offers = require('../models/offer_model')
 
 const username = 'nona'
 const pwd = '5566'
-const description="over"
-const headline = "over"
+const description="adsa"
+const headline = "cococ"
 const fromprice = 10
-const idOffer = "5000000"
+const idOffer = "5000440"
 const status = "pause"
 const fromdate = 16082022;
 const todate = 16082022;
 const toprice=100;
 const profession = ["Art","music"];
 const price = 12;
-
 const intrestedVerfiy= false
-const freesearch = "over";
-const finishdate = 16082022;
+const freesearch = "adsa";
+const finishdate = 10102022;
 const Ttodate = "null", Tfromdate = "null", Tfromprice = "null", Ttoprice ="null";
 let id ;
 

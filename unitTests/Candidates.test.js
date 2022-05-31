@@ -97,9 +97,9 @@ describe('Testing candidates API',()=>{
            
         
     })
-    test('test registration2',async ()=>{
-        const response2 = await request(app).post('/auth/register').send({
-            'Username' : 'lola',
+    test('test registration3',async ()=>{
+        const response = await request(app).post('/auth/register').send({
+            'Username' : "lola",
             'Password':pwd,
             'Email': "email@email.email223",
             "Sex":"undefind",
@@ -111,11 +111,11 @@ describe('Testing candidates API',()=>{
              "NumberOfPosts":20,
              "Company":false,
              "Influencer":true 
-        })
-        expect(response2.statusCode).toEqual(200)
-        userId = response2.body._id
-    })
 
+        })
+        expect(response.statusCode).toEqual(400)
+        userId = response.body._id
+    })
 
     test("get candidates", async() => {
         const response = await request(app).get('/candidates/getCandidates/'+idOffer1).set({ authorization: 'JWT ' + accessToken })
