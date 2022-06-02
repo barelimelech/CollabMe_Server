@@ -68,5 +68,7 @@ app.use('/mediacontent',mediacontent)
 const payment = require('./routes/payment_routes')
 app.use('/payment',payment)
      
+const userchat = require('./routes/userChatList_routes')
+app.use('/UserChatConvo',userchat)
 
 module.exports = app
