@@ -8,7 +8,7 @@ const authenticate = require('../common/auth_middleware')
 
 router.post('/getusersChat', authenticate, userchat.getChatOtherSide)
 
-router.post('/getusersChatConnectotherside', authenticate, userchat.getusersChatConnectotherside)
+// router.post('/getusersChatConnectotherside', authenticate, userchat.getusersChatConnectotherside)
 
 
 
