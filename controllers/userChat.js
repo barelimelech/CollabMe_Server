@@ -8,7 +8,7 @@ const getChatOtherSide = async (req, res) => {
         var usernametext = req.body.theUserNameYouText;
        
        const user = await UserChat.find({'Username' : username})
-       console.log(user)
+    
        const user1 =  user.filter((d => d.theUserNameYouText === usernametext))
         
         if(user1==null){

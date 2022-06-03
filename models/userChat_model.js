@@ -11,8 +11,12 @@ const userchatSchema = new mongoose.Schema({
     theUserNameYouText:{
         type: String,
         required: true
-    }
-    
+    },
+    theOrder:{
+        type: Number,
+        required: true
+
+    } 
 
 
     

@@ -4,6 +4,7 @@
  const UserChat = require('./models/userChat_model.js')
  
  
+     
  var app = express();
  
  app.use(bodyParser.urlencoded({ extended: true }));
@@ -24,30 +25,37 @@
  
      //The moment one of your client connected to socket.io server it will obtain socket id
      //Let's print this out.
-     console.log(`Connection : SocketId = ${socket.id}`)
+   
      //Since we are going to use userName through whole socket connection, Let's make it global.   
       
      
-     socket.on('newMessage',function(data) {
-         console.log('newMessage triggered')
-         console.log(data)           
-         const messageContent = data.messageContent
-         const username = data.username
-         const usernametaxting = data.usernametext
-
-         console.log(`[Room Number ${username}] : ${messageContent} :${usernametaxting}`)
-                 
-         const userchat = UserChat({
+     socket.on('newMessage',async function(data) {
+               
+          const messageContent = data.messageContent
+          const username = data.username
+          const  usernametaxting = data.usernametext
+       
+        const user =  await UserChat.find({'Username' : username})
+        const user1 =  user.filter((d => d.theUserNameYouText === usernametaxting))
+        const user2=  await UserChat.find({'Username' : usernametaxting})
+        const user3 =  user2.filter((d => d.theUserNameYouText === username))
+        const count = Number(Object.keys(user1).length)
+        const count1 = Number(Object.keys(user3).length)
+        const userchat = UserChat({
             TheChatTextUsername:messageContent,
             Username:username,
             theUserNameYouText: usernametaxting,
+            theOrder:count1+count+1
                         
         }).save()    
+       
         
          // Just pass the data that has been passed from the writer socket  
 
         socket.broadcast.emit('newMessage', data); // Need to be parsed into Kotlin object in Kotlin
      })
+
+
  
     
      socket.on('disconnect', function () {
@@ -57,3 +65,5 @@
 
     
  })
+
+ 
