@@ -51,13 +51,18 @@
        
         
          // Just pass the data that has been passed from the writer socket  
-
-        socket.broadcast.emit('newMessage', data); // Need to be parsed into Kotlin object in Kotlin
+       
+       
+        io.to(usernametaxting).emit('newMessage', data); // Need to be parsed into Kotlin object in Kotlin
      })
 
 
- 
-    
+     socket.on('join', async function (data) {
+        socket.join(data.username);
+       // We are using room of socket io
+     });
+
+
      socket.on('disconnect', function () {
         console.log("One of sockets disconnected from our server.")
     });

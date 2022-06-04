@@ -51,5 +51,5 @@ const getChatOtherSide = async (req, res) => {
 // }
 module.exports = {
     getChatOtherSide,
-    // getusersChatConnectotherside
+    
 }
