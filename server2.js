@@ -47,13 +47,19 @@
             theUserNameYouText: usernametaxting,
             theOrder:count1+count+1
                         
-        }).save()    
+        }).save();    
        
-        
-         // Just pass the data that has been passed from the writer socket  
+        // making the connection private per chat
+       socket.to(usernametaxting).emit('newMessage', data); 
+     
+    });
 
-        socket.broadcast.emit('newMessage', data); // Need to be parsed into Kotlin object in Kotlin
-     })
+   /* socket.on("newMessage", ({ content, to }) => {
+        socket.to(to).emit("newMessage", {
+          content,
+          from: socket.id,
+        });
+      });*/
 
 
  
