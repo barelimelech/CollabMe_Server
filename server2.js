@@ -34,7 +34,9 @@
           const messageContent = data.messageContent
           const username = data.username
           const  usernametaxting = data.usernametext
-       
+        const date = data.date
+        const time = data.time
+
         const user =  await UserChat.find({'Username' : username})
         const user1 =  user.filter((d => d.theUserNameYouText === usernametaxting))
         const user2=  await UserChat.find({'Username' : usernametaxting})
@@ -45,7 +47,9 @@
             TheChatTextUsername:messageContent,
             Username:username,
             theUserNameYouText: usernametaxting,
-            theOrder:count1+count+1
+            theOrder:count1+count+1,
+            date:date,
+            time:time
                         
         }).save();    
        
