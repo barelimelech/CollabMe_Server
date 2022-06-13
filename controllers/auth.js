@@ -67,11 +67,6 @@ const register = async (req, res) => {
 
 
 const login = async (req, res) => {
-    // console.log('in log innnnnnn ')
-
-    // console.log(req.body.Username)
-    // console.log(req.body.Password)
-
 
     const username = req.body.Username
     const password = req.body.Password
