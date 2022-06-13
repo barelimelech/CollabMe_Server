@@ -24,7 +24,6 @@
  io.on('connection',function(socket) {
  
      //The moment one of your client connected to socket.io server it will obtain socket id
-     //Let's print this out.
    
      //Since we are going to use userName through whole socket connection, Let's make it global.   
       
@@ -57,7 +56,7 @@
          // Just pass the data that has been passed from the writer socket  
        
        
-        io.to(usernametaxting).emit('newMessage', data); // Need to be parsed into Kotlin object in Kotlin
+        io.to(usernametaxting).emit('newMessage', data); 
      })
 
 

@@ -26,29 +26,6 @@ const getChatOtherSide = async (req, res) => {
     }
 }
 
-
-// const getusersChatConnectotherside = async (req, res) => {
-//     try {      
-//         const usernametext = req.body.theUserNameYouText;    
-//         const username = req.body.Username;
-//         const user = await UserChat.find({'theUserNameYouText' : usernametext})
-//         // console.log(user)
-//         const user2 = user.filter((d => d.Username === username))
-//         // console.log(user2);
-//         if(user2==null){
-//             res.status(400).send({
-//                 'status': 'fail',
-//                 'error': err.message
-//             })
-//         }
-//         res.status(200).send(user2)
-//     } catch (err) {
-//         res.status(400).send({
-//             'status': 'fail',
-//             'error': err.message
-//         })
-//     }
-// }
 module.exports = {
     getChatOtherSide,
     
