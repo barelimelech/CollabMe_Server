@@ -37,7 +37,7 @@ const getOfferFromFreeSearch = async (req, res) => {
 }
 
 const getOfferFromSpecificSearch = async (req, res) => {
-  //  console.log('youre in offer from specific search ');
+
     var description = req.body.description;
     var headline = req.body.headline;
     var fromdate = req.body.fromdate;
@@ -47,9 +47,6 @@ const getOfferFromSpecificSearch = async (req, res) => {
     var professions =req.body.professions;
     var user = req.body.user;
 
-    //console.log(professions,description,headline,fromdate,todate,user)
-  //  console.log(professions.length);
-
     try {
         var result = [];
         var flag=false;
@@ -57,20 +54,16 @@ const getOfferFromSpecificSearch = async (req, res) => {
         if (description!==("null")){
             result = await Offer.find({'Description':description});
             flag=true;
-        //    console.log("description in");
-        //    console.log(result);
             
         }
         //
         if (user!==("null")){
             if(flag==true){
                 result = await result.filter((d => d.User === user));
-         //       console.log("user in");
             }else{
                 result = await Offer.find({'User':user}); 
                 flag=true;
             }
-           // console.log(result);
 
         }
         //
@@ -81,7 +74,6 @@ const getOfferFromSpecificSearch = async (req, res) => {
 
                 if(flag==true){
                 result = await result.filter((d => (d.Price > fromprice1-1 && d.Price < toprice1+1)));
-            //    console.log("price in");
                 flag=true;
             }else{
                 result = await Offer.find({'Price':
@@ -90,76 +82,57 @@ const getOfferFromSpecificSearch = async (req, res) => {
                     $lt : toprice1+1
                 }}
                 ); 
-               // console.log("hello5");
 
                 flag=true;
 
             }
-         //   console.log(result);
 
         }
         //
         if (headline!==("null")){
             if(flag==true){
                 result = await result.filter((d => d.HeadLine === headline));
-               // console.log("headline in");
             }else{
                 result = await Offer.find({'HeadLine':headline}); 
                 flag=true;
             }
-//            console.log(result);
 
         }
         //
-      //  console.log(professions);
         if (professions!=="null" && professions!==null && professions!==undefined){
             
             if(flag==true){ 
                                    
                 result =result.filter(d =>JSON.stringify(d.Profession)==JSON.stringify(professions));    
               
-              // console.log("professions in");              
-
                 flag=true;
             }else{
                 result = await Offer.find({'Profession':professions}); 
                 flag=true;
             }
-         //   console.log(result);
-
         }
         
         if (fromdate!==("null")&&todate!==("null")){
             var fromdate1 = parseInt(fromdate);
             var todate1 = parseInt(todate);
 
-          //  var from1=(Math.floor(fromdate1/1000000));
-          //  var from2 =(Math.floor((fromdate1/10000) % 100));
             var from3=(Math.floor(fromdate1%10000));
-
-          //  var to1 =(Math.floor(fromdate1/1000000));
-          //  var to2 = (Math.floor((fromdate1/10000) % 100));
             var to3 =(Math.floor(todate1%10000));
 
             if(flag==true){
                 result = await result.filter((d => Math.floor(d.FinishDate%10000) <= to3
                      && Math.floor(d.FinishDate%10000) >= from3));
-              //  console.log(result);
 
-              // console.log("date in");
             }else{
                 result = await Offer.find({});
                 result = await result.filter((d => Math.floor(d.FinishDate%10000) <= to3
                 && Math.floor(d.FinishDate%10000) >= from3));
-            //    console.log("hello5");
                 flag=true;
 
             }
-            //console.log(result);
 
         }
         //
-       // console.log(result)
         res.status(200).send(result);
     } catch (err) {
         res.status(400).send({
