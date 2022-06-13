@@ -172,14 +172,4 @@ describe('Testing candidates API',()=>{
         
     });
 
-    // test("get getCandidateFromSearch false username", async() => {
-    //     const response = await request(app).get('/candidates/getCandidateFromSearch/'+null).set({ authorization: 'JWT ' + accessToken })
-    //     .send({            
-    //     });         
-    //     expect(response.statusCode).toEqual(400)
-      
-                 
-        
-    // });
-
 });

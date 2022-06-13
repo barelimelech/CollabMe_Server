@@ -264,31 +264,6 @@ describe('Testing Offer API',()=>{
       
                
     })
-
-    // test('test getOfferFromSpecificSearch7',async ()=>{
-    //     const response = await request(app).post('/search/getOfferFromSpecificSearch').set({ authorization: 'JWT ' + accessToken })
-    //     .send({
-    //         "description":"null",   
-    //         "headline":"null",
-    //         "fromdate":"null",
-    //         "todate" :"null",
-    //         "fromprice":price,
-    //         "toprice" :"100",
-    //         "professions":"null",  
-    //         "user":"null"
-    //     });
-    //     expect(response.statusCode).toEqual(200)
-    //     const newOffer = response.body    
-    //     expect(newOffer[0].Description).toEqual(description)
-    //     expect(newOffer[0].HeadLine).toEqual(headline)
-    //     expect(newOffer[0].FinishDate).toEqual(finishdate)
-    //     expect(newOffer[0].Price).toEqual(price)
-    //     expect(newOffer[0].Profession).toEqual(profession)
-    //     expect(newOffer[0].User).toEqual(username)
-      
-               
-    // })
     
     
-
 });

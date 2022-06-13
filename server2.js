@@ -22,11 +22,6 @@
  var io = require('socket.io')(server);
  
  io.on('connection',function(socket) {
- 
-     //The moment one of your client connected to socket.io server it will obtain socket id
-   
-     //Since we are going to use userName through whole socket connection, Let's make it global.   
-      
      
      socket.on('newMessage',async function(data) {
                
@@ -52,9 +47,6 @@
                         
         }).save();    
        
-        
-         // Just pass the data that has been passed from the writer socket  
-       
        
         io.to(usernametaxting).emit('newMessage', data); 
      })
@@ -62,7 +54,6 @@
 
      socket.on('join', async function (data) {
         socket.join(data.username);
-       // We are using room of socket io
      });
 
 
