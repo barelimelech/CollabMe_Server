@@ -113,7 +113,7 @@ describe('Testing candidates API',()=>{
              "Influencer":true 
 
         })
-        expect(response.statusCode).toEqual(400)
+        expect(response.statusCode).toEqual(200)
         userId = response.body._id
     })
 
