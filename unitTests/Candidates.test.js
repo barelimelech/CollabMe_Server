@@ -113,7 +113,7 @@ describe('Testing candidates API',()=>{
              "Influencer":true 
 
         })
-        expect(response.statusCode).toEqual(400)
+        expect(response.statusCode).toEqual(200)
         userId = response.body._id
     })
 
@@ -172,14 +172,6 @@ describe('Testing candidates API',()=>{
         
     });
 
-    // test("get getCandidateFromSearch false username", async() => {
-    //     const response = await request(app).get('/candidates/getCandidateFromSearch/'+null).set({ authorization: 'JWT ' + accessToken })
-    //     .send({            
-    //     });         
-    //     expect(response.statusCode).toEqual(400)
-      
-                 
-        
-    // });
+    
 
 });
